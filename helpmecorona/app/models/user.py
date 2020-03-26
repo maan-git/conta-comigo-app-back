@@ -77,21 +77,23 @@ class User (AbstractBaseUser):
     # def is_authenticated(self):
     #     return True
 
-    # @property
-    # def is_staff(self):
-    #     # TODO Check
-    #     return True
-    #
+    @property
+    def is_staff(self):
+        # TODO Check
+        return True
+
     # @property
     # def is_admin(self):
     #     # TODO Check
     #     return True
     #
-    # def has_module_perms(self, app_label):
-    #     return False
-    #
-    # def has_perm(self, perm, obj=None):
-    #     return True
+    def has_module_perms(self, app_label):
+        # TODO Check
+        return False
+
+    def has_perm(self, perm, obj=None):
+        # TODO Check
+        return True
 
     # def check_password(self, raw_password):
     #     """
