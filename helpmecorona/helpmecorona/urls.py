@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view_swagger = get_swagger_view(title='Conta comigo API', url=settings.SWAGGER_API_PREFIX)
+
 
 urlpatterns = [
     path('app/', include('app.urls')),
     path('admin/', admin.site.urls),
+    path('docs/', schema_view_swagger),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('help/', include('help.urls'))
 ]

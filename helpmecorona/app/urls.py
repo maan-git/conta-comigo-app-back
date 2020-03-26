@@ -1,11 +1,18 @@
-from django.urls import path
+from rest_framework.routers import DefaultRouter
+from django.conf.urls import url
+from django.conf.urls import include
 
-from . import views
+from .views.login_view import LoginView
+from .views.logout_view import LogoutView
+from .views.user_view import UserView
 
-app_name = 'posts'
+router = DefaultRouter()
+router.register(r'user', UserView)
+
+app_name = 'app'
+
 urlpatterns = [
-    path('', views.index, name='index'),
-    # ex: /post/5/
-    path('detail/<int:post_id>/', views.detail, name='detail'),
-    path('help/<int:post_id>/', views.help, name='help'),
+    url(r'^', include(router.urls)),
+    url(r'^login/', LoginView.as_view()),
+    url(r'^logout/', LogoutView.as_view())
 ]
