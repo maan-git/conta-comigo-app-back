@@ -25,8 +25,6 @@ DATABASES = {
         'USER': 'contacomigo_user',
         'PASSWORD': 'P@$$worD',
         'HOST': 'localhost'
-
-        
     }
 }
 
