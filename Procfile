@@ -1,0 +1,1 @@
+web: gunicorn helpmecorona.wsgi.dev --log-file -
