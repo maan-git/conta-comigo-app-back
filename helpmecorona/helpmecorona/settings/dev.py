@@ -1,9 +1,9 @@
 # Import all configuration from base config file
 from .base import *
 
-import django_heroku
+# import django_heroku
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -21,8 +21,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'HELPMECORONA_DEV',
-        'USER': 'postgres',
+        'NAME': 'contacomigo_dev',
+        'USER': 'contacomigo_user',
         'PASSWORD': 'P@$$worD',
         'HOST': 'localhost'
     }
