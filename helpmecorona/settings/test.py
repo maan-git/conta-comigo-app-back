@@ -18,4 +18,4 @@ DATABASES = {
 }
 
 
-WSGI_APPLICATION = 'helpmecorona.wsgi-dev.application'
+WSGI_APPLICATION = 'helpmecorona.wsgi-test.application'
