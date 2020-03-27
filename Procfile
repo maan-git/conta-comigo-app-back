@@ -1,1 +1,1 @@
-web: gunicorn helpmecorona.wsgi.test --log-file -
+web: gunicorn helpmecorona.wsgi-test --log-file -
