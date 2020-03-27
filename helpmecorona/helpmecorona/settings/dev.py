@@ -1,6 +1,10 @@
 # Import all configuration from base config file
 from .base import *
 
+import django_heroku
+
+django_heroku.settings(locals())
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -23,6 +27,5 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
-
 
 WSGI_APPLICATION = 'helpmecorona.wsgi-dev.application'
