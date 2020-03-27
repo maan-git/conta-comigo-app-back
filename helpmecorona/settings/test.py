@@ -9,10 +9,11 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'HELPMECORONA_TEST',
-        'USER': 'postgres',
-        'PASSWORD': 'P@$$worD',
-        'HOST': 'localhost'
+        'NAME': 'df040sn040cto4',
+        'USER': 'wpnvxytmgcvtds',
+        'PASSWORD': 'b291ba359c3a1f66eb00df9cd734c59c520b59aa5ababf31ee30013d3932947f',
+        'HOST': 'ec2-34-200-101-236.compute-1.amazonaws.com',
+        'PORT': 5432
     }
 }
 
