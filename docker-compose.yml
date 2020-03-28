@@ -2,12 +2,15 @@ version: '3.7'
 
 services:
   web:
-    build: ./app
+    container_name: contacomigo_app
+    build:
+      context: ./
+      dockerfile: Dockerfile-up
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./app/:/usr/src/app/
+      - ./:/usr/app/
     ports:
-      - 8000:8000
+      - "8000:8000"
     env_file:
       - ./.env.dev
     depends_on:
@@ -17,9 +20,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=hello_django
-      - POSTGRES_PASSWORD=hello_django
-      - POSTGRES_DB=hello_django_dev
+      - POSTGRES_USER=contacomigo_user
+      - POSTGRES_PASSWORD=P@$$worD
+      - POSTGRES_DB=contacomigo_dev
 
 volumes:
   postgres_data:
