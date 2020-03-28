@@ -31,7 +31,17 @@ const actions = {
     //   commit('SET_LIST', success.data.data);
     // });
   },
-  setToken() {},
+  register({ commit }, data) {
+    commit('SET_LOADING', true);
+    return api().post('register', data).then((success) => {
+      commit('SET_TOKEN', success);
+      commit('SET_LOGIN_ERROR', null);
+      commit('SET_LOADING', false);
+    }).catch((error) => {
+      commit('SET_LOGIN_ERROR', error.response.data.error);
+      commit('SET_LOADING', false);
+    });
+  },
 };
 
 const mutations = {

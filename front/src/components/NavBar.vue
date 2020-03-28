@@ -32,5 +32,8 @@
     <v-btn to="/login" text>
       <span>login</span>
     </v-btn>
+    <v-btn to="/create-account" text>
+      <span>create account</span>
+    </v-btn>
   </v-app-bar>
 </template>
