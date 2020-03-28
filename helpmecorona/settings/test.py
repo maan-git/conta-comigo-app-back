@@ -7,9 +7,12 @@ from .base import *
 # Cors allowed sources
 # TODO Configure to test
 CORS_ORIGIN_WHITELIST = (
-    'localhost:80',
-    'localhost:8080',
-    'localhost:8081'
+    'http://localhost:80',
+    'http://localhost:8080',
+    'http://localhost:8081',
+    'https://localhost:80',
+    'https://localhost:8080',
+    'https://localhost:8081'
 )
 
 
