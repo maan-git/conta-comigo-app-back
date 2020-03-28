@@ -10,21 +10,23 @@ class GenericReadSerializer(ModelSerializer):
     class Meta:
         model = None
         depth = 1
-        fields = '__all__'
+        fields = "__all__"
 
 
 class GenericWriteSerializer(ModelSerializer):
     class Meta:
         model = None
         depth = 0
-        fields = '__all__'
+        fields = "__all__"
 
 
-def get_param_or_400(request_data: dict,
-                     param_name: str,
-                     parameter_type: type = None,
-                     default_value=None,
-                     integer_list: bool = False):
+def get_param_or_400(
+    request_data: dict,
+    param_name: str,
+    parameter_type: type = None,
+    default_value=None,
+    integer_list: bool = False,
+):
     if not param_name:
         return None
 
@@ -32,7 +34,10 @@ def get_param_or_400(request_data: dict,
 
     if param_value is None:
         if default_value is None:
-            raise ParseError(detail='The ' + param_name + ' parameter is required', code=status.HTTP_400_BAD_REQUEST)
+            raise ParseError(
+                detail="The " + param_name + " parameter is required",
+                code=status.HTTP_400_BAD_REQUEST,
+            )
         else:
             return default_value
 
@@ -43,7 +48,9 @@ def get_param_or_400(request_data: dict,
             if parameter_type == float:
                 param_value = commom_utils.convert_to_float(param_value, default_value)
             if parameter_type == bool:
-                param_value = commom_utils.convert_to_boolean(param_value, default_value)
+                param_value = commom_utils.convert_to_boolean(
+                    param_value, default_value
+                )
             if parameter_type == list:
                 param_value = param_value.split(",")
                 if not isinstance(param_value, list):
@@ -53,9 +60,14 @@ def get_param_or_400(request_data: dict,
             if parameter_type == datetime.date:
                 param_value = commom_utils.convert_to_date(param_value, default_value)
             if parameter_type == datetime.datetime:
-                param_value = commom_utils.convert_to_datetime(param_value, default_value)
+                param_value = commom_utils.convert_to_datetime(
+                    param_value, default_value
+                )
     except ValueError:
-        raise ParseError(detail='The ' + param_name + ' value is not valid', code=status.HTTP_400_BAD_REQUEST)
+        raise ParseError(
+            detail="The " + param_name + " value is not valid",
+            code=status.HTTP_400_BAD_REQUEST,
+        )
 
     return param_value
 

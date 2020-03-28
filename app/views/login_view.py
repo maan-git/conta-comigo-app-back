@@ -17,18 +17,15 @@ class LoginView(APIView):
     permission_classes = (AllowAny,)
 
     schema = AutoSchema(
-        manual_fields=[
-            coreapi.Field("username"),
-            coreapi.Field("password")
-        ]
+        manual_fields=[coreapi.Field("username"), coreapi.Field("password")]
     )
 
     def post(self, request: Request, *args, **kwargs):
         """
         Authenticate an user.
         """
-        username = get_param_or_400(request.data, 'username', str)
-        password = get_param_or_400(request.data, 'password', str)
+        username = get_param_or_400(request.data, "username", str)
+        password = get_param_or_400(request.data, "password", str)
 
         user = authenticate(username=username, password=password)
 
@@ -36,4 +33,4 @@ class LoginView(APIView):
             login(request, user)
             return Response(data=UserSerializer(user).data)
         else:
-            raise exceptions.AuthenticationFailed(_('Invalid username/password.'))
+            raise exceptions.AuthenticationFailed(_("Invalid username/password."))

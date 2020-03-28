@@ -16,4 +16,4 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-WSGI_APPLICATION = 'helpmecorona.wsgi-dev.application'
+WSGI_APPLICATION = "helpmecorona.wsgi-dev.application"

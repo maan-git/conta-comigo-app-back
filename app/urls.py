@@ -12,17 +12,17 @@ from .views.neighborhood_view import NeighborhoodView
 from .views.country_view import CountryView
 
 router = DefaultRouter()
-router.register(r'user', UserView)
-router.register(r'city', CityView)
-router.register(r'address', AddressView)
-router.register(r'zip', ZipView)
-router.register(r'neighborhood', NeighborhoodView)
-router.register(r'country', CountryView)
+router.register(r"user", UserView)
+router.register(r"city", CityView)
+router.register(r"address", AddressView)
+router.register(r"zip", ZipView)
+router.register(r"neighborhood", NeighborhoodView)
+router.register(r"country", CountryView)
 
-app_name = 'app'
+app_name = "app"
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
-    url(r'^login/', LoginView.as_view()),
-    url(r'^logout/', LogoutView.as_view())
+    url(r"^", include(router.urls)),
+    url(r"^login/", LoginView.as_view()),
+    url(r"^logout/", LogoutView.as_view()),
 ]

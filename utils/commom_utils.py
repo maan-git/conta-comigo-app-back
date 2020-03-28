@@ -48,7 +48,7 @@ def get_package_version(package_name):
     """
     Return package version as listed in `__version__` in `init.py`.
     """
-    init_py = open(os.path.join(package_name, '__init__.py')).read()
+    init_py = open(os.path.join(package_name, "__init__.py")).read()
     return re.match("__version__ = ['\"]([^'\"]+)['\"]", init_py).group(1)
 
 
