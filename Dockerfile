@@ -8,6 +8,3 @@ COPY . /code/
 
 # collect static files
 RUN python manage.py collectstatic --noinput
-
-# Run migrations
-RUN python manage.py migrate

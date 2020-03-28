@@ -6,3 +6,7 @@ build:
     web: Dockerfile
 run:
   web: gunicorn helpmecorona.wsgi-test --log-file -
+release:
+  image: web
+  command:
+    - python manage.py migrate
