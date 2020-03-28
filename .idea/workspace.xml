@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/dev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584891856780</updated>
-      <workItem from="1585416862714" duration="2901000" />
+      <workItem from="1585416862714" duration="3604000" />
     </task>
     <servers />
   </component>
