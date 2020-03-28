@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +47,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app" />
       <recent name="$PROJECT_DIR$/app/views" />
       <recent name="$PROJECT_DIR$/app/models" />
       <recent name="$PROJECT_DIR$/app/templates/posts" />
     </key>
   </component>
-  <component name="RunManager" selected="Django server.Runserver">
+  <component name="RunManager" selected="Python.Migrate">
     <configuration name="Migrate" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,7 +103,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.Runserver" />
       <item itemvalue="Python.Migrate" />
     </list>
   </component>
