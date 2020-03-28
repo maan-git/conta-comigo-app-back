@@ -1,3 +1,5 @@
+import VueMask from 'v-mask';
+
 import Vue from 'vue';
 import App from './App.vue';
 import './registerServiceWorker';
@@ -7,6 +9,7 @@ import vuetify from './plugins/vuetify';
 import '@babel/polyfill';
 
 Vue.config.productionTip = false;
+Vue.use(VueMask);
 
 new Vue({
   router,
