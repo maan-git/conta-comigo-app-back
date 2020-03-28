@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import About from '../views/About.vue';
 import CreateAccount from '../views/CreateAccount.vue';
+import CreateHelp from '../views/CreateHelp.vue';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,12 @@ const routes = [
     name: 'CreateAccount',
     component: CreateAccount,
   },
+  {
+  path: '/create-help',
+  name: 'CreateHelp',
+  component: CreateHelp,
+},
+  
 ];
 
 const router = new VueRouter({

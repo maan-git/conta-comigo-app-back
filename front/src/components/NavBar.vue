@@ -35,5 +35,8 @@
     <v-btn to="/create-account" text>
       <span>create account</span>
     </v-btn>
+    <v-btn to="/create-help" text>
+      <span>create help</span>
+    </v-btn>
   </v-app-bar>
 </template>
