@@ -9,4 +9,4 @@ run:
 release:
   image: web
   command:
-    - ./deployment-tasks.sh
+    - bash ./deployment-tasks.sh
