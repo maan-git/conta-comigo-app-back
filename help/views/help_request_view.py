@@ -38,16 +38,16 @@ class HelpRequestView(ModelViewSet):
     def candidate_to_help(self, request: Request, pk):
         help_request = self.get_object()
 
-        # TODO In the future this may be removed since we will allow more users
-        if help_request.helping_users.exists():
-            raise ParseError(detail=_('Another user is already helping in the request'),
-                             code=status.HTTP_400_BAD_REQUEST)
-
         if help_request.owner_user == request.user:
             raise ParseError(detail=_('You can not help in your own request'),
                              code=status.HTTP_400_BAD_REQUEST)
 
         helping_user_relation = HelpRequestHelpers.objects.filter(helper_user=request.user).first()
+
+        # TODO In the future this may be removed since we will allow more users
+        if helping_user_relation and helping_user_relation.status_id == HelpingStatus.AllStatus.Helping:
+            raise ParseError(detail=_('Another user is already helping in the request'),
+                             code=status.HTTP_400_BAD_REQUEST)
 
         if helping_user_relation and helping_user_relation.status_id == HelpingStatus.AllStatus.Helping:
             raise ParseError(detail=_('You are already helping in this request'),
