@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'corsheaders',
+    'simple_history',
+    'utils',
     'app',
     'help'
 ]
@@ -56,7 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware'
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -246,3 +249,7 @@ DATABASES = {
     'default': dj_database_url.config(conn_max_age=600,
                                       default='postgres://contacomigo:12345@localhost:5432/contacomigo_dev')
 }
+
+FIXTURE_DIRS = (
+   '/help/fixtures/',
+)
