@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/migrations/0007_historicaluser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/fixtures/help_0001_help_category.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/fixtures/help_0002_help_request_status.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/fixtures/help_0003_helping_status.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/migrations/0002_helprequestcancelingreason.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/models/help_request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/models/help_request_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/models/helping_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/models/helprequest_helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/views/help_request_status_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/views/helping_status_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/admin_edit_only_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/simple_description_base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployment-tasks.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/help_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_category_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_category_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroku.yml" beforeDir="false" afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
