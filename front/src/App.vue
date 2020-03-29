@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :class="{'purple': true}">
     <NavBar v-if="false"/>
     <v-content>
       <router-view></router-view>
@@ -20,3 +20,8 @@ export default {
   data: () => ({}),
 };
 </script>
+<style lang="css" scoped>
+.theme--light.purple {
+  background-color: #532594;
+}
+</style>
