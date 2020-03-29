@@ -1,6 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
 from app.models.user import User
-from utils.views_utils import get_generic_read_serializer
 from app.serializers.user_serializer import UserSerializer
 from app.serializers.user_serializer import UserSerializerPost
 from rest_framework.permissions import AllowAny
