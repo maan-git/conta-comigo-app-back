@@ -3,37 +3,43 @@
     <v-flex xs12 sm6 offset-sm3>
       <v-card class="pa-5">
         <v-form class="ma-5" >
-        <h1>{{newHelp ? "Cadastrar Ajuda" : " Visualizar Ajuda"}}</h1>
-        <v-chip
+          <h1>
+            {{newHelp ? "Cadastrar Ajuda" : " Visualizar Ajuda"}}
+          </h1>
+          <v-chip
             class="ma-2"
             color="primary"
             href="#"
             :active="!newHelp"
             label
-        >
-        <v-icon left>mdi-account-circle-outline</v-icon>
-        Nome Usuario
-        </v-chip>
+          >
+            <v-icon left>mdi-account-circle-outline</v-icon>
+            Nome Usuario
+          </v-chip>
 
-        <v-select
+          <v-select
             :items="categories"
             label="Selecione a Categoria"
             outlined
             required
             :disabled = "!newHelp"
-        >
-        </v-select>
-            <v-textarea
+          ></v-select>
+          <v-textarea
             outlined
             v-model="description.value"
             label="Descrição"
             :disabled = "!newHelp"
             required
-        >
-        </v-textarea>
-          <v-btn v-if="newHelp" class="mt-5" block @click="saveHelp()" color="primary">Salvar</v-btn>
-          <v-btn v-if="newHelp" class="mt-5" block @click="saveHelp()" color="primary">Editar</v-btn>
-          <v-btn v-if="!newHelp" class="mt-5" block color="pink"><v-icon dark>mdi-heart</v-icon>Conta Comigo!</v-btn>
+          ></v-textarea>
+          <v-btn v-if="newHelp" class="mt-5" block @click="saveHelp()" color="primary">
+            Salvar
+          </v-btn>
+          <v-btn v-if="newHelp" class="mt-5" block @click="saveHelp()" color="primary">
+            Editar
+          </v-btn>
+          <v-btn v-if="!newHelp" class="mt-5" block color="pink">
+            <v-icon dark>mdi-heart
+          </v-icon>Conta Comigo!</v-btn>
         </v-form>
       </v-card>
     </v-flex>
@@ -42,7 +48,7 @@
 <script>
 import { mapState } from 'vuex';
 
-export default {      
+export default {
   computed: mapState(['help']),
   props: ['newHelp'],
   data() {
@@ -58,7 +64,7 @@ export default {
   },
   methods: {
     saveHelp() {
-      console.log("salvou!");
+      console.log('salvou!');
     },
   },
 };

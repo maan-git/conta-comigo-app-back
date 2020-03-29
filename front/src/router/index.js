@@ -30,11 +30,10 @@ const routes = [
     component: CreateAccount,
   },
   {
-  path: '/create-help',
-  name: 'CreateHelp',
-  component: CreateHelp,
-},
-  
+    path: '/create-help',
+    name: 'CreateHelp',
+    component: CreateHelp,
+  },
 ];
 
 const router = new VueRouter({
