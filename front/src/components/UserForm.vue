@@ -8,7 +8,7 @@
             :disabled="disapleForm()"
             outlined
             label="Nome"
-            :rules="[requiredRule('Nome'), moreThanRule(6)]"
+            :rules="[$vln.requiredRule('Nome'), $vln.moreThanRule(6)]"
             required
             v-model="nome"
             ></v-text-field>
@@ -17,7 +17,7 @@
             outlined
             label="Email"
             required
-            :rules="[requiredRule('E-mail'), emailRule()]"
+            :rules="[$vln.requiredRule('E-mail'), $vln.emailRule()]"
             v-model="email"
             ></v-text-field>
           <v-text-field
@@ -26,7 +26,7 @@
             label="Senha"
             required
             type="password"
-            :rules="[requiredRule('Senha'), moreThanRule(6)]"
+            :rules="[$vln.requiredRule('Senha'), $vln.moreThanRule(6)]"
             v-model="password"
             ></v-text-field>
           <v-text-field
@@ -36,11 +36,11 @@
             required
             v-model="cpf"
             v-mask="cpfMask"
-            :rules="[requiredRule('CPF'), cpflRule()]"
+            :rules="[$vln.requiredRule('CPF'), $vln.cpflRule()]"
             ></v-text-field>
 
             <v-radio-group
-              :rules="[requiredRule('Sexo')]"
+              :rules="[$vln.requiredRule('Sexo')]"
               :disabled="disapleForm()"
               v-model="sexo"
               label="Sexo:"
@@ -60,7 +60,7 @@
               ></v-radio>
             </v-radio-group>
 
-            <!-- date picker -->
+            date picker
             <v-menu
               ref="dpnascimento"
               v-model="datanascimentomenu"
@@ -78,10 +78,9 @@
                   v-on="on"
                   clearable
                   outlined
-                  :rules="[requiredRule('Data de nascimento')]"
+                  :rules="[$vln.requiredRule('Data de nascimento')]"
                   @click:clear="datanascimento = null"
                 ></v-text-field>
-                  <!-- prepend-icon="event" -->
               </template>
               <v-date-picker
                 ref="picker"
@@ -91,7 +90,7 @@
                 @change="saveDate"
               ></v-date-picker>
             </v-menu>
-            <!-- date picker -->
+            date picker
 
           <v-text-field
             :disabled="disapleForm()"
@@ -100,7 +99,8 @@
             required
             v-model="telefone"
             v-mask="'(##) ####-####'"
-            :rules="[requiredRule('Telefone'), foneRule(10)]"></v-text-field>
+            :rules="[$vln.requiredRule('Telefone'),$vln.foneRule(10)]"
+          ></v-text-field>
 
             <v-row justify="space-around">
               <v-col>
@@ -168,64 +168,6 @@ export default {
         this.$store.dispatch('user/register', { email: this.email, password: this.password });
       }
     },
-
-    requiredRule(field) {
-      return (v) => !!v || `${field} é obrigatório`;
-    },
-
-    lessThanRule(max) {
-      return (v) => (v && v.length <= max) || `Tem que ter menos de ${max} caracteres`;
-    },
-    moreThanRule(min) {
-      return (v) => (v && v.length >= min) || `Tem que ter mais de ${min} caracteres`;
-    },
-    mustHaveNumberRule(num) {
-      return (v) => (v && v.length === num) || `Tem que ter ${num} caracteres`;
-    },
-    foneRule(num) {
-      return (v) => {
-        const fone = v.replace(/\(/g, '').replace(/\)/g, '').replace(/ /g, '').replace(/-/g, '');
-        return (v && fone.length >= num) || `Tem que ter ${num} caracteres`;
-      };
-    },
-    emailRule() {
-      return (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid';
-    },
-    cpflRule() {
-      return (v) => {
-        const erroMsg = 'CPF não valido';
-        // eslint-disable-next-line no-useless-escape
-        const strCPF = v.replace(/\./g, '').replace(/-/g, '');
-        let Soma = 0;
-        let Resto = 0;
-        Soma = 0;
-        if (strCPF === '00000000000') { return erroMsg; }
-
-        // eslint-disable-next-line no-plusplus
-        for (let i = 1; i <= 9; i++) {
-          // eslint-disable-next-line radix
-          Soma += parseInt(strCPF.substring(i - 1, i)) * (11 - i);
-        }
-        Resto = (Soma * 10) % 11;
-
-        if ((Resto === 10) || (Resto === 11)) Resto = 0;
-        // eslint-disable-next-line radix
-        if (Resto !== parseInt(strCPF.substring(9, 10))) { return erroMsg; }
-
-        Soma = 0;
-        // eslint-disable-next-line no-plusplus
-        for (let i = 1; i <= 10; i++) {
-          // eslint-disable-next-line radix
-          Soma += parseInt(strCPF.substring(i - 1, i)) * (12 - i);
-        }
-        Resto = (Soma * 10) % 11;
-
-        if ((Resto === 10) || (Resto === 11)) Resto = 0;
-        // eslint-disable-next-line radix
-        if (Resto !== parseInt(strCPF.substring(10, 11))) { return erroMsg; }
-        return true;
-      };
-    },
     saveDate(date) {
       const mdate = new Date(date);
       const dia = mdate.getDay() < 0 ? `0${mdate.getDay()}` : mdate.getDay();
@@ -235,6 +177,9 @@ export default {
     disapleForm() {
       return this.editavel && !this.user.loading;
     },
+  },
+  created() {
+    console.log('created', this.$vln);
   },
 };
 </script>
