@@ -14,7 +14,7 @@
             label
           >
             <v-icon left>mdi-account-circle-outline</v-icon>
-            Nome Usuario
+            {{ id_user }}
           </v-chip>
 
           <v-select
@@ -50,7 +50,7 @@ import { mapState } from 'vuex';
 
 export default {
   computed: mapState(['help']),
-  props: ['newHelp'],
+  props: ['newHelp', 'category', 'id_user'],
   data() {
     return {
       categories: [

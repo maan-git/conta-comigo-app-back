@@ -5,6 +5,7 @@ import Login from '../views/Login.vue';
 import About from '../views/About.vue';
 import CreateAccount from '../views/CreateAccount.vue';
 import CreateHelp from '../views/CreateHelp.vue';
+import ListHelp from '../views/ListHelp.vue';
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/create-help',
     name: 'CreateHelp',
     component: CreateHelp,
+  },
+  {
+    path: '/list-help',
+    name: 'ListHelp',
+    component: ListHelp,
   },
 ];
 

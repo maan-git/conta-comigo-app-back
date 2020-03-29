@@ -38,5 +38,8 @@
     <v-btn to="/create-help" text>
       <span>create help</span>
     </v-btn>
+        <v-btn to="/list-help" text>
+      <span>list help</span>
+    </v-btn>
   </v-app-bar>
 </template>
