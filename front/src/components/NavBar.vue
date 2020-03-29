@@ -7,9 +7,9 @@
     <div class="d-flex align-center">
       <v-img
         alt="Vuetify Logo"
-        class="shrink mr-2"
+        class="shrink mr-2 hidden-md-and-up"
         contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+        :src="require('../assets/icone.svg')"
         transition="scale-transition"
         width="40"
       />
@@ -19,7 +19,7 @@
         class="shrink mt-1 hidden-sm-and-down"
         contain
         min-width="100"
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+        :src="require('../assets/logo_completa.svg')"
         width="100"
       />
     </div>

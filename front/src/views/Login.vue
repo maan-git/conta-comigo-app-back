@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     loginClick() {
-      this.$store.dispatch('user/login', { email: this.email, password: this.password });
+      this.$store.dispatch('user/login', { username: this.email, password: this.password });
     },
   },
 };
