@@ -5,18 +5,29 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0003_address'),
-    ]
+    dependencies = [("app", "0003_address")]
 
     operations = [
         migrations.CreateModel(
-            name='Zip',
+            name="Zip",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('zip', models.CharField(max_length=12, verbose_name='Zip code')),
-                ('active', models.BooleanField(default=True, verbose_name='Active')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("zip", models.CharField(max_length=12, verbose_name="Zip code")),
+                ("active", models.BooleanField(default=True, verbose_name="Active")),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
             ],
-        ),
+        )
     ]

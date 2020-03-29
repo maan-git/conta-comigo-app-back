@@ -4,21 +4,19 @@ from django.db.transaction import atomic
 
 
 class UserSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = User
-        exclude = ('password',)
+        exclude = ("password",)
 
 
 class UserSerializerPost(serializers.ModelSerializer):
-
     class Meta:
         model = User
-        exclude = ('last_login', 'is_active')
+        exclude = ("last_login", "is_active")
 
     @atomic
     def create(self, validated_data):
-        password = validated_data.pop('password')
+        password = validated_data.pop("password")
         user = User.objects.create(**validated_data)
         user.set_password(password)
         user.save()

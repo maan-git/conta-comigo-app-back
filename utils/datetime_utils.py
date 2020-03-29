@@ -22,20 +22,30 @@ def get_date(year: int, month: int, day: int):
     return datetime(year=year, month=month, day=day)
 
 
-def str_to_date(string_to_convert: str, formats: dict = None, default_value: date = None):
-    return _convert_str(string_to_convert, True, formats=formats, default_value=default_value)
+def str_to_date(
+    string_to_convert: str, formats: dict = None, default_value: date = None
+):
+    return _convert_str(
+        string_to_convert, True, formats=formats, default_value=default_value
+    )
 
 
-def str_to_datetime(string_to_convert: str, formats: dict = None, default_value: datetime = None):
-    return _convert_str(string_to_convert, False, formats=formats, default_value=default_value)
+def str_to_datetime(
+    string_to_convert: str, formats: dict = None, default_value: datetime = None
+):
+    return _convert_str(
+        string_to_convert, False, formats=formats, default_value=default_value
+    )
 
 
-def _convert_str(string_to_convert: str, to_date: bool, formats: dict = None, default_value = None):
+def _convert_str(
+    string_to_convert: str, to_date: bool, formats: dict = None, default_value=None
+):
     if not formats:
-        formats = list(settings.REST_FRAMEWORK.get('DATE_INPUT_FORMATS'))
+        formats = list(settings.REST_FRAMEWORK.get("DATE_INPUT_FORMATS"))
         if not to_date:
             # Datetime accepts the date formats too
-            formats.extend(settings.REST_FRAMEWORK.get('DATETIME_INPUT_FORMATS'))
+            formats.extend(settings.REST_FRAMEWORK.get("DATETIME_INPUT_FORMATS"))
 
     if formats is None:
         return None
@@ -55,9 +65,11 @@ def _convert_str(string_to_convert: str, to_date: bool, formats: dict = None, de
     else:
         error = ValueError(string_to_convert)
         if not error.args:
-            error.args = ('',)
+            error.args = ("",)
 
-        error.args = error.args + ("The value is not valid for any of the formats " + formats,)
+        error.args = error.args + (
+            "The value is not valid for any of the formats " + formats,
+        )
         raise error.args
 
 

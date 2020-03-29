@@ -5,7 +5,7 @@ from utils.views_utils import get_generic_read_serializer
 
 class ZipView(ModelViewSet):
     queryset = Zip.objects.all()
-    ordering = ('name',)
+    ordering = ("name",)
 
     def get_serializer_class(self):
         serializer_class = get_generic_read_serializer(Zip, 1)

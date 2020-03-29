@@ -1,25 +1,33 @@
-version: '3.7'
+version: '3'
 
 services:
-  web:
-    build: ./app
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./app/:/usr/src/app/
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: contacomigo
+      POSTGRES_DB: contacomigo_dev
     ports:
-      - 8000:8000
-    env_file:
-      - ./.env.dev
+      - 5432:5432
+  migration:
+    build: .
+    command: python manage.py migrate --noinput
+    environment:
+      DATABASE_URL: postgres://contacomigo:12345@db:5432/contacomigo_dev
+    volumes:
+      - .:/code
     depends_on:
       - db
-  db:
-    image: postgres:12.0-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
     environment:
-      - POSTGRES_USER=hello_django
-      - POSTGRES_PASSWORD=hello_django
-      - POSTGRES_DB=hello_django_dev
-
-volumes:
-  postgres_data:
+      DATABASE_URL: postgres://contacomigo:12345@db:5432/contacomigo_dev
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - migration
+      - db

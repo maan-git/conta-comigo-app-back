@@ -16,16 +16,4 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'contacomigo_dev',
-        'USER': 'contacomigo_user',
-        'PASSWORD': 'P@$$worD',
-        'HOST': 'localhost'
-    }
-}
-
-WSGI_APPLICATION = 'helpmecorona.wsgi-dev.application'
+WSGI_APPLICATION = "helpmecorona.wsgi-dev.application"
