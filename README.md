@@ -39,17 +39,3 @@ Você deve instalar o **pyenv** ou  **virtualenvwrapper**
 Nesse [link](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation) você pode encontrar dicas de como instalar o **pyenv**.
 
 Nesse [link](https://virtualenvwrapper.readthedocs.io/en/latest/) você pode encontar dicas de como instalar o **virtualenvwrapper**
-
-Após instalação e ativação de sua **env** execute o comando **make install** para instalar todas as dependencias do projeto.
-
-```bash
-$ make install
-```
-
-## Executando os Testes Unitários
-
-Para executar os testes, certifique-se de ter os requisitos de desenvolvimento instalados.
-
-```bash
-$ make test
-```
