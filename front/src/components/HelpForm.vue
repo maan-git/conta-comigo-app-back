@@ -26,18 +26,27 @@
           ></v-select>
           <v-textarea
             outlined
-            v-model="description.value"
+            v-model="mydescription"
             label="Descrição"
             :disabled = "!newHelp"
             required
           ></v-textarea>
-          <v-btn v-if="newHelp" class="mt-5" block @click="saveHelp()" color="primary">
-            Salvar
-          </v-btn>
-          <v-btn v-if="newHelp" class="mt-5" block @click="saveHelp()" color="primary">
-            Editar
-          </v-btn>
-          <v-btn v-if="!newHelp" class="mt-5" block color="pink">
+          <v-btn
+            rounded
+            v-if="newHelp"
+            class="mt-5"
+            block
+            @click="saveHelp()"
+            color="primary" x-large>Salvar</v-btn>
+          <v-btn
+            rounded
+            v-if="newHelp"
+            class="mt-5"
+            block
+            @click="saveHelp()"
+            color="primary"
+            x-large>Editar</v-btn>
+          <v-btn rounded v-if="!newHelp" class="mt-5" block outlined color="red" x-large>
             <v-icon dark>mdi-heart
           </v-icon>Conta Comigo!</v-btn>
         </v-form>
@@ -50,7 +59,7 @@ import { mapState } from 'vuex';
 
 export default {
   computed: mapState(['help']),
-  props: ['newHelp', 'category', 'id_user'],
+  props: ['newHelp', 'category', 'id_user', 'description'],
   data() {
     return {
       categories: [
@@ -59,13 +68,19 @@ export default {
         { text: 'Olhar Crianças' },
         { text: 'Outros' },
       ],
-      description: { value: '', rules: '' },
+      // eslint-disable-next-line vue/no-reserved-keys
+      mydescription: '',
     };
   },
   methods: {
     saveHelp() {
-      console.log('salvou!');
+      console.log('salvou!', this.mydescription);
     },
+  },
+  created() {
+    if (this.description) {
+      this.mydescription = this.description;
+    }
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <v-container>
     <HelpForm v-for="help in helpList"
       :key="help.id_user" :newHelp="newHelp"
-      v-bind:description = help.description
+      :description="help.description"
       :id_user=help.id_user>
     </HelpForm>
     <v-layout mt-5>
