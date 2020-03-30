@@ -68,7 +68,6 @@ export default {
         { text: 'Olhar Crianças' },
         { text: 'Outros' },
       ],
-      // eslint-disable-next-line vue/no-reserved-keys
       mydescription: '',
     };
   },
