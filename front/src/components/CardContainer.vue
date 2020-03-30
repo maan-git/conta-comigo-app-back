@@ -1,9 +1,9 @@
 <template>
-  <div class="conte">
-    <v-container class="text-center my-5">
+  <div class="card-container">
+    <div class="text-center my-5">
       <img width="178" :src="require('../assets/logo_completa.svg')">
-    </v-container>
-    <div class="conte-card">
+    </div>
+    <div class="card-container__card">
       <slot></slot>
     </div>
   </div>
@@ -14,29 +14,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-  .conte {
-    display: flex;
-    flex-direction: column;
-    position:absolute;
+  .card-container {
     width:100%;
     height:100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    &-card {
+    &__card {
       background-color: white;
       border-radius: 54px;
       padding: 20px;
       max-width: 800px;
     }
     @media screen and ( max-width: 600px) {
-      .conte {
-        &-card {
-          height: 100%;
-          align-self: stretch;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-        }
+      .card-container__card {
+        align-self: stretch;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
       }
+      .card-container { justify-content: flex-end; }
     }
   }
 </style>

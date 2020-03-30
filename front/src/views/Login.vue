@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="login">
     <CardContainer>
       <v-form ref="formLogin" class="ma-5 text-center" >
         <p class="primary--text font-weight-bold title">Login</p>
@@ -63,10 +63,10 @@ export default {
   },
 };
 </script>
-<style lang="css" scoped>
-.card-mobile {
-  /* height: 100%; */
-  border-bottom: none;
+<style lang="scss" scoped>
+.login {
+  width: 100%;
+  height: 100%;
 }
 .v-card:not(.v-sheet--tile):not(.v-card--shaped).card-mobile {
   border-radius: 54px;
