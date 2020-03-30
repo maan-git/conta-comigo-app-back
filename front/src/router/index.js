@@ -1,12 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-import Login from '../views/Login.vue';
-import About from '../views/About.vue';
-import CreateAccount from '../views/CreateAccount.vue';
-import CreateHelp from '../views/CreateHelp.vue';
-import ListHelp from '../views/ListHelp.vue';
-import HowTo from '../views/HowTo.vue';
 
 Vue.use(VueRouter);
 
@@ -14,37 +7,37 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('../views/Home.vue'),
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login,
+    component: () => import('../views/Login.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    component: About,
+    component: () => import('../views/About.vue'),
   },
   {
     path: '/create-account',
     name: 'CreateAccount',
-    component: CreateAccount,
+    component: () => import('../views/CreateAccount.vue'),
   },
   {
     path: '/create-help',
     name: 'CreateHelp',
-    component: CreateHelp,
+    component: () => import('../views/CreateHelp.vue'),
   },
   {
     path: '/list-help',
     name: 'ListHelp',
-    component: ListHelp,
+    component: () => import('../views/ListHelp.vue'),
   },
   {
     path: '/how-to',
     name: 'HowTo',
-    component: HowTo,
+    component: () => import('../views/HowTo.vue'),
   },
 ];
 
