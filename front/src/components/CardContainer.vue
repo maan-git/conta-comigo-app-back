@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" :class="{'justify-end': $vuetify.breakpoint.xs}">
     <div class="text-center my-5">
       <img width="178" :src="require('../assets/logo_completa.svg')">
     </div>
