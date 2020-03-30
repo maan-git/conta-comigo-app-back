@@ -23,5 +23,6 @@ export default {
 <style lang="css" scoped>
 .theme--light.purple {
   background-color: #532594;
+  background-image: url('./assets/patern.svg');
 }
 </style>
