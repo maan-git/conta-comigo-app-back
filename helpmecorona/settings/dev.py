@@ -16,8 +16,8 @@ DATABASES = {
     "default": {
         "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql_psycopg2"),
         "NAME": os.environ.get("SQL_DATABASE", "contacomigo_dev"),
-        "USER": os.environ.get("SQL_USER", "contacomigo_user_dev"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "contacomigo_pass"),
+        "USER": os.environ.get("SQL_USER", "contacomigo_user"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "P@$$worD"),
         "HOST": os.environ.get("SQL_HOST", "localhost"),
         "PORT": os.environ.get("SQL_PORT", "5432"),
     }
