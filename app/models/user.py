@@ -4,6 +4,11 @@ from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.base_user import AbstractBaseUser
 from simple_history.models import HistoricalRecords
 
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
+
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -18,6 +23,8 @@ class UserManager(BaseUserManager):
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
+        create_auth_token()
+        user['token'] = Token.objects.get(user=user).key
         return user
 
     def create_user(self, email, password=None, **extra_fields):
@@ -33,7 +40,7 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, **extra_fields)
 
 
-class User (AbstractBaseUser):
+class User(AbstractBaseUser):
     email = django_models.EmailField(_('email address'), unique=True)
     first_name = django_models.CharField(_('first name'), max_length=30, blank=True)
     last_name = django_models.CharField(_('last name'), max_length=30, blank=True)
@@ -108,3 +115,9 @@ class User (AbstractBaseUser):
     #
     # def set_password(self, password):
     #     pass
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        print(Token.objects.create(user=instance))

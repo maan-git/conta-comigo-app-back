@@ -3,8 +3,8 @@ version: '3.7'
 services:
   web:
     build:
-      context: ./app
-      dockerfile: Dockerfile.dev
+      context: ./
+      dockerfile: Dockerfile-dev
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app/
@@ -19,8 +19,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=contacomigo_user_dev
-      - POSTGRES_PASSWORD=contacomigo_pass
+      - POSTGRES_USER=contacomigo_user
+      - POSTGRES_PASSWORD=P@$$worD
       - POSTGRES_DB=contacomigo_dev
 
 volumes:
