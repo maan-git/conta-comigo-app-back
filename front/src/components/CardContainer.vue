@@ -1,6 +1,6 @@
 <template>
-  <div class="card-container" :class="{'justify-end': $vuetify.breakpoint.xs}">
-    <div class="text-center my-5">
+  <div class="card-container" :class="{'justify-space-between': $vuetify.breakpoint.xs}">
+    <div class="card-container__img text-center my-5">
       <img width="178" :src="require('../assets/logo_completa.svg')">
     </div>
     <div class="card-container__card">
@@ -26,14 +26,21 @@ export default {
       border-radius: 54px;
       padding: 20px;
       max-width: 800px;
+      margin-bottom: 100px;
     }
     @media screen and ( max-width: 600px) {
-      .card-container__card {
-        align-self: stretch;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+      .card-container {
+        &__img {
+          height: 100%;
+          display: flex;
+        }
+        &__card {
+          align-self: stretch;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          margin-bottom: 0;
+        }
       }
-      .card-container { justify-content: flex-end; }
     }
   }
 </style>
