@@ -29,5 +29,5 @@ urlpatterns = [
     path("docs/", schema_view_swagger),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("help/", include("help.urls")),
-    path("", include("app.urls")),
+    path("", schema_view_swagger),
 ]
