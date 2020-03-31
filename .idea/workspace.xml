@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Django server.Runserver">
+  <component name="RunManager" selected="Python.Migrate">
     <configuration name="Migrate" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -108,7 +108,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.Runserver" />
       <item itemvalue="Python.Migrate" />
     </list>
   </component>
