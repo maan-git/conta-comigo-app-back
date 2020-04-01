@@ -4,7 +4,7 @@ import coreapi
 from rest_framework.schemas import ManualSchema
 from rest_framework.viewsets import ModelViewSet
 from help.models.help_request import HelpRequest
-from requests import Request
+from rest_framework.request import Request
 from rest_framework.response import Response
 from help.serializers.help_request_serializer import HelpRequestSerializer
 from help.serializers.help_request_serializer import HelpRequestSerializerWrite
