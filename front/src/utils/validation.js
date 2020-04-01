@@ -11,7 +11,8 @@ export const foneRule = (num) => (v) => {
   return (v && fone.length >= num) || `Tem que ter ${num} caracteres`;
 };
 
-export const emailRule = () => (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid';
+export const emailRule = () => (v) => /.+@.+\..+/.test(v) || 'E-mail inválido';
+export const mustBeEqualPass = (val) => (v) => val === v || 'Deve ser igual a senha';
 
 export const cpflRule = () => (v) => {
   const erroMsg = 'CPF não valido';
@@ -55,4 +56,5 @@ export default {
   foneRule,
   emailRule,
   cpflRule,
+  mustBeEqualPass,
 };

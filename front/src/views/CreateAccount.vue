@@ -1,7 +1,7 @@
 <template>
   <div>
     <CardContainer>
-      <div class="text-center mx-3 px-5">
+      <div class="text-center">
         <p class="primary--text font-weight-bold title">Cadastro</p>
         <span class="subtitle-1 grey--text">{{text}}</span>
       </div>
