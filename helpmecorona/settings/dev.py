@@ -12,13 +12,11 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+# If environment is not set, don't initialize the databases objects, since it may be running under docker and
+# The values may come from env file
 DATABASES = {
-    "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql_psycopg2"),
-        "NAME": os.environ.get("SQL_DATABASE", "contacomigo_dev"),
-        "USER": os.environ.get("SQL_USER", "contacomigo_user"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "P@$$worD"),
-        "HOST": os.environ.get("SQL_HOST", "localhost"),
-        "PORT": os.environ.get("SQL_PORT", "5432"),
-    }
+    # Read the database values from environment variable DATABASE_URL in format:
+    # postgres://username:password@server:port/database
+    "default": dj_database_url.config(conn_max_age=600,
+                                      default="postgres://contacomigo_user:12345@db:5432/contacomigo_dev")
 }
