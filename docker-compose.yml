@@ -16,7 +16,7 @@ services:
     environment:
       DATABASE_URL: postgres://contacomigo:12345@db:5432/contacomigo_dev
     volumes:
-      - .:/code
+      - .:/app
     depends_on:
       - db
   web:
@@ -25,7 +25,7 @@ services:
     environment:
       DATABASE_URL: postgres://contacomigo:12345@db:5432/contacomigo_dev
     volumes:
-      - .:/code
+      - .:/app
     ports:
       - 8000:8000
     depends_on:

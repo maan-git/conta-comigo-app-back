@@ -225,15 +225,6 @@ SWAGGER_SETTINGS = {
 # TODO check if will be needed in production
 SWAGGER_API_PREFIX = ""
 
-DATABASES = {
-    # Read the database values from environment variable DATABASE_URL in format:
-    # postgres://username:password@server:port/database
-    "default": dj_database_url.config(
-        conn_max_age=600,
-        default="postgres://contacomigo:12345@localhost:5432/contacomigo_dev",
-    )
-}
-
 FIXTURE_DIRS = (
    '/help/fixtures/',
 )

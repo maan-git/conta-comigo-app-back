@@ -90,3 +90,35 @@ class HelpRequestView(ModelViewSet):
         helping_user_relation.save()
 
         return Response(status=200)
+
+    @action(methods=["post"],
+            detail=True,
+            url_path="changestatusrequest",
+            schema=ManualSchema(fields=[
+                coreapi.Field(
+                    "id",
+                    required=True,
+                    location="path",
+                    schema=coreschema.Integer()
+                ),
+                coreapi.Field(
+                    "status_id",
+                    required=True,
+                    location="path",
+                    schema=coreschema.Integer()
+                )])
+            )
+    def change_status_request(self, request: Request, pk):
+        helping_user_relation = HelpRequestHelpers.objects.filter(helper_user=request.user).first()
+
+        if not helping_user_relation:
+            raise ParseError(detail=_('You are not helping in this request'),
+                             code=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            helping_user_relation.status_id = request['status_id']
+        except:
+            raise ParseError(detail=_('Status id is invalid'),
+                             code=status.HTTP_400_BAD_REQUEST)
+
+        return Response(status=200)
