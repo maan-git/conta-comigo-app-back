@@ -1,10 +1,12 @@
 <template>
   <v-container>
-    <HelpForm v-for="help in helpList"
-      :key="help.id_user" :newHelp="newHelp"
-      :description="help.description"
-      :id_user=help.id_user>
-    </HelpForm>
+    <div v-if="help.helpList">
+      <HelpForm v-for="help in help.helpList"
+        :key="help.id_user" :newHelp="newHelp"
+        :description="help.description"
+        :id_user=help.id_user>
+      </HelpForm>
+    </div>
     <v-layout mt-5>
       <v-flex xs12 sm6 offset-sm3>
         <v-btn @click="listHelp()" >
@@ -15,24 +17,25 @@
   </v-container>
 </template>
 <script>
+import { mapState } from 'vuex';
 import HelpForm from '@/components/HelpForm.vue';
 
 export default {
   components: {
     HelpForm,
   },
+  computed: mapState(['help']),
   data() {
     return {
       newHelp: false,
-      helpList: [
-        { id_user: 'Teste', description: 'Preciso de Ajuda' },
-        { id_user: 'VueJs', description: 'Preciso de Ajuda' },
-        { id_user: 'Django Libre', description: 'Preciso de Ajuda' }],
     };
   },
+  async beforeCreate() {
+    await !this.$store.dispatch('user/getCurrentUser');
+  },
   methods: {
-    listHelp() {
-      this.$store.dispatch('help/list', { });
+    async listHelp() {
+      await this.$store.dispatch('help/listHelp');
     },
   },
 };
