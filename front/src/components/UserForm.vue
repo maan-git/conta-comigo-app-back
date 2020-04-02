@@ -4,18 +4,18 @@
       <v-stepper-header>
         <v-stepper-step step="1">Dados Pessoais</v-stepper-step>
 
-        <v-divider></v-divider>
+        <!-- <v-divider></v-divider> -->
 
         <v-stepper-step step="2">Endereço</v-stepper-step>
 
-        <v-divider></v-divider>
+        <!-- <v-divider></v-divider> -->
 
         <v-stepper-step step="3">Dados da conta</v-stepper-step>
       </v-stepper-header>
       <v-stepper-items>
         <v-stepper-content step="1">
           <!-- TODO imagem -->
-          <form ref="steponedata">
+          <v-form ref="steponedata">
             <v-text-field
               :disabled="disapleForm()"
               outlined
@@ -103,17 +103,18 @@
               color="primary"
               @click="stepOneClick()"
               :loading="user.loading">Próximo</v-btn>
-          </form>
+          </v-form>
         </v-stepper-content>
         <v-stepper-content step="2">
-          <form ref="steptwodata">
+          <v-form ref="steptwodata">
             <v-text-field
               :disabled="disapleForm()"
               outlined
               label="Cep"
+              v-mask="cepMask"
               :rules="[$vln.requiredRule('Cep')]"
               required
-              v-model="nome"
+              v-model="cep"
             ></v-text-field>
             <v-text-field
               :disabled="disapleForm()"
@@ -154,10 +155,10 @@
               color="primary"
               @click="stepTwoClick()"
               :loading="user.loading">Próximo</v-btn>
-          </form>
+          </v-form>
         </v-stepper-content>
         <v-stepper-content step="3">
-          <form ref="stepthreedata">
+          <v-form ref="stepthreedata">
             <v-text-field
               :disabled="disapleForm()"
               outlined
@@ -187,6 +188,7 @@
               <v-checkbox
                 :disabled="disapleForm()"
                 v-model="checkbox"
+                :rules="[$vln.requiredRule('Ler o contrato')]"
                 label="Li e aceito os termos de uso do Conta Comigo app"
               ></v-checkbox>
             <v-btn
@@ -195,8 +197,8 @@
               x-large
               color="primary"
               @click="stepThreeClick()"
-              :loading="user.loading">Próximo</v-btn>
-          </form>
+              :loading="user.loading">Registrar-se</v-btn>
+          </v-form>
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
@@ -270,6 +272,7 @@ export default {
       grupoderisco: false,
 
       cep: '',
+      cepMask: '#####-###',
       endereco: '',
       bairro: '',
       cidade: '',
@@ -290,15 +293,17 @@ export default {
   },
   methods: {
     stepOneClick() {
-      console.log('stepOneClick', this.$refs.steponedata);
-      this.e1 = 2;
+      if (this.$refs.steponedata.validate()) {
+        this.e1 = 2;
+      }
     },
     stepTwoClick() {
-      console.log('stepTwoClick()', this.$refs.steptwodata);
-      this.e1 = 3;
+      if (this.$refs.steptwodata.validate()) {
+        this.e1 = 3;
+      }
     },
     stepThreeClick() {
-      console.log('stepThreeClick()', this.$refs.stepthreedata);
+      console.log('stepThreeClick()', this.$refs.stepthreedata.validate());
       // this.e1 = 2;
     },
 
@@ -336,3 +341,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.v-stepper{
+  box-shadow: none;
+  &__header{
+    box-shadow: none;
+  }
+  &__step {
+    flex-basis: 0;
+  }
+}
+</style>
