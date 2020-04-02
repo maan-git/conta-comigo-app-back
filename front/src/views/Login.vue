@@ -59,6 +59,7 @@ export default {
       if (this.$refs.formLogin.validate()) {
         this.$store.dispatch('user/login', { username: this.email, password: this.password });
       }
+      this.$router.replace('/list-help');
     },
   },
 };

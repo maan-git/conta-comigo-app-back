@@ -4,7 +4,7 @@ import api from '../api';
 const state = {
   help: null,
   token: '',
-  list: null,
+  helpList: null,
   loginError: null,
   loading: false,
 };
@@ -12,15 +12,15 @@ const state = {
 const getters = {
   getHelp(state) { return state.help; },
   getToken(state) { return state.token; },
-  getList(state) { return state.list; },
+  getHelpList(state) { return state.helpList; },
   getLoginError(state) { return state.loginError; },
 };
 
 const actions = {
-  login({ commit }, data) {
+  listHelp({ commit }) {
     commit('SET_LOADING', true);
-    return api().post('login', data).then((success) => {
-      commit('SET_TOKEN', success);
+    api().get('/help/helprequest/').then((success) => {
+      commit('SET_HELPLIST', success.data.results);
       commit('SET_LOGIN_ERROR', null);
       commit('SET_LOADING', false);
     }).catch((error) => {
@@ -52,8 +52,8 @@ const mutations = {
   SET_TOKEN(state, value) {
     state.token = value;
   },
-  SET_LIST(state, value) {
-    state.list = value;
+  SET_HELPLIST(state, value) {
+    state.helpList = value;
   },
   SET_LOGIN_ERROR(state, value) {
     state.loginError = value;
