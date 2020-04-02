@@ -28,3 +28,6 @@ class HelpRequest (django_models.Model):
                                         related_name='help_requests',
                                         db_index=True)
     history = HistoricalRecords()
+
+
+

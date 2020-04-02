@@ -15,6 +15,8 @@ from help.models.helping_status import HelpingStatus
 from help.models.help_request_status import HelpRequestStatus
 from help.models.helprequest_helpers import HelpRequestHelpers
 
+from utils.views_utils import get_param_or_400
+
 
 class HelpRequestView(ModelViewSet):
     queryset = HelpRequest.objects.all()
@@ -105,33 +107,33 @@ class HelpRequestView(ModelViewSet):
                 coreapi.Field(
                     "id",
                     required=True,
-                    location="path",
+                    location="body",
                     schema=coreschema.Integer()
                 ),
                 coreapi.Field(
                     "status_id",
                     required=True,
-                    location="path",
+                    location="body",
                     schema=coreschema.Integer()
                 )
             ])
             )
     def update_status_help(self, request: Request, pk):
+        help_request = self.get_object()
+        status_id = get_param_or_400(request.data, 'status_id', int)
+
         helping_user_help_relation = self._validate_user_help_relation(request, pk)
-        print("Testing here:")
-        print(HelpRequestStatus.AllStatus.Canceled)
-        print(f"Request: {self.request.POST}")
 
         if helping_user_help_relation.status_id == HelpRequestStatus.AllStatus.Created and \
-                request['status_id'] == HelpRequestStatus.AllStatus.Canceled:
+                status_id == HelpRequestStatus.AllStatus.Canceled:
             helping_user_help_relation.status_id = HelpRequestStatus.AllStatus.Canceled
             helping_user_help_relation.save()
 
         elif helping_user_help_relation.status_id == HelpRequestStatus.AllStatus.InProgress and \
-                (request['status_id'] == HelpRequestStatus.AllStatus.Canceled or \
-                 request['status_id'] == HelpRequestStatus.AllStatus.Finished):
-            helping_user_help_relation.status_id = filter(lambda x: request['status_id'] == x,
-                                                          HelpRequestStatus.AllStatus)
+                (status_id == HelpRequestStatus.AllStatus.Canceled or \
+                 status_id == HelpRequestStatus.AllStatus.Finished):
+            helping_user_help_relation.status_id = list(filter(lambda x: request['status_id'] == x,
+                                                               HelpRequestStatus.AllStatus))[0]
             helping_user_help_relation.save()
         else:
             raise ParseError(detail=_('You cannot make this operation'),
