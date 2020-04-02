@@ -26,16 +26,21 @@ class HelpRequestView(ModelViewSet):
 
     @action(methods=["post"],
             detail=True,
-            url_path="candidatetohelp",
-            schema=ManualSchema(fields=[
-                coreapi.Field(
-                    "id",
-                    required=True,
-                    location="path",
-                    schema=coreschema.Integer()
-                )])
+            url_path="applytohelp",
+            schema=ManualSchema(description='Logged user applies to help in a help request',
+                                fields=[
+                                    coreapi.Field(
+                                        "id",
+                                        required=True,
+                                        location="path",
+                                        schema=coreschema.Integer(),
+                                        description='Help request ID'
+                                    )])
             )
-    def candidate_to_help(self, request: Request, pk):
+    def apply_to_help(self, request: Request, pk):
+        """
+        Logged user applies to help in a help request.
+        """
         help_request = self.get_object()
 
         if help_request.owner_user == request.user:
@@ -63,16 +68,18 @@ class HelpRequestView(ModelViewSet):
 
     @action(methods=["post"],
             detail=True,
-            url_path="giveuphelp",
-            schema=ManualSchema(fields=[
-                coreapi.Field(
-                    "id",
-                    required=True,
-                    location="path",
-                    schema=coreschema.Integer()
-                )])
+            url_path='unapplyfromhelp',
+            schema=ManualSchema(description='Logged user unapply from a help request',
+                                fields=[
+                                    coreapi.Field(
+                                        'id',
+                                        required=True,
+                                        location='path',
+                                        schema=coreschema.Integer(),
+                                        description='Help request ID'
+                                    )])
             )
-    def give_up_help(self, request: Request, pk):
+    def unapply_from_help(self, request: Request, pk):
         helping_user_relation = HelpRequestHelpers.objects.filter(helper_user=request.user).first()
 
         if not helping_user_relation:

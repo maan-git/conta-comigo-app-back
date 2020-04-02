@@ -15,7 +15,7 @@ class UserView(ModelViewSet):
     permission_classes = [AllowAny]
 
     def get_serializer_class(self):
-        if self.request.method == "GET":
+        if self.request.method == 'GET':
             return UserSerializer
         else:
             return UserSerializerPost
@@ -24,16 +24,17 @@ class UserView(ModelViewSet):
         """
        Instantiates and returns the list of permissions that this view requires.
        """
-        if self.action == "create":
+        if self.action == 'create':
             permission_classes = [AllowAny]
         else:
             permission_classes = [IsAuthenticated]
         return [permission() for permission in permission_classes]
 
-    @action(methods=["get"],
+    @action(methods=['get'],
             detail=False,
-            url_path="current",
-            schema=ManualSchema(fields=[]))
+            url_path='current',
+            schema=ManualSchema(fields=[],
+                                description='Get the data from the currently logged user'))
     def get_current_user_data(self, request: Request):
         """
         Get the data from the currently logged user
