@@ -7,3 +7,4 @@ class HelpRequestStatus (SimpleDescriptionBaseWithId):
         InProgress = 20
         Canceled = 99
         Finished = 100
+

@@ -121,23 +121,25 @@ class HelpRequestView(ModelViewSet):
     def update_status_help(self, request: Request, pk):
         help_request = self.get_object()
         status_id = get_param_or_400(request.data, 'status_id', int)
+        print(help_request)
+        print(status_id)
 
-        helping_user_help_relation = self._validate_user_help_relation(request, pk)
-
-        if helping_user_help_relation.status_id == HelpRequestStatus.AllStatus.Created and \
-                status_id == HelpRequestStatus.AllStatus.Canceled:
-            helping_user_help_relation.status_id = HelpRequestStatus.AllStatus.Canceled
-            helping_user_help_relation.save()
-
-        elif helping_user_help_relation.status_id == HelpRequestStatus.AllStatus.InProgress and \
-                (status_id == HelpRequestStatus.AllStatus.Canceled or \
-                 status_id == HelpRequestStatus.AllStatus.Finished):
-            helping_user_help_relation.status_id = list(filter(lambda x: request['status_id'] == x,
-                                                               HelpRequestStatus.AllStatus))[0]
-            helping_user_help_relation.save()
-        else:
-            raise ParseError(detail=_('You cannot make this operation'),
-                             code=status.HTTP_400_BAD_REQUEST)
+        # helping_user_help_relation = self._validate_user_help_relation(request, pk)
+        #
+        # if helping_user_help_relation.status_id == HelpRequestStatus.AllStatus.Created and \
+        #         status_id == HelpRequestStatus.AllStatus.Canceled:
+        #     helping_user_help_relation.status_id = HelpRequestStatus.AllStatus.Canceled
+        #     helping_user_help_relation.save()
+        #
+        # elif helping_user_help_relation.status_id == HelpRequestStatus.AllStatus.InProgress and \
+        #         (status_id == HelpRequestStatus.AllStatus.Canceled or \
+        #          status_id == HelpRequestStatus.AllStatus.Finished):
+        #     helping_user_help_relation.status_id = list(filter(lambda x: request['status_id'] == x,
+        #                                                        HelpRequestStatus.AllStatus))[0]
+        #     helping_user_help_relation.save()
+        # else:
+        #     raise ParseError(detail=_('You cannot make this operation'),
+        #                      code=status.HTTP_400_BAD_REQUEST)
 
         return Response(status=200)
 
@@ -149,9 +151,9 @@ class HelpRequestView(ModelViewSet):
                              code=status.HTTP_400_BAD_REQUEST)
         return helping_user_relation
 
-    def _validate_user_help_relation(self, request: Request, pk):
-        helping_user_help_relation = HelpRequest.objects.filter(owner_user=request.user).first()
-        if not helping_user_help_relation:
-            raise ParseError(detail=_('You are not owner of this post'),
-                             code=status.HTTP_400_BAD_REQUEST)
-        return helping_user_help_relation
+    # def _validate_user_help_relation(self, request: Request, pk):
+    #     helping_user_help_relation = HelpRequest.objects.filter(owner_user=request.user).first()
+    #     if not helping_user_help_relation:
+    #         raise ParseError(detail=_('You are not owner of this post'),
+    #                          code=status.HTTP_400_BAD_REQUEST)
+    #     return helping_user_help_relation
