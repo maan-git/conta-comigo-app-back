@@ -1,5 +1,3 @@
-from rest_framework.authtoken.models import Token
-
 import coreapi
 from django.contrib.auth import login
 from django.utils.translation import ugettext_lazy as _
@@ -35,8 +33,6 @@ class LoginView(APIView):
         if user:
             login(request, user)
             data = UserSerializer(user).data
-            data['token'] = Token.objects.get(user=user).key
             return Response(data=data)
-            # return Response(data=UserSerializer(user).data)
         else:
             raise exceptions.AuthenticationFailed(_('Invalid username/password.'))
