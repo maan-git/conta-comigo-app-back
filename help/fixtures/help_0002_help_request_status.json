@@ -1,0 +1,42 @@
+[
+  {
+    "model": "help.HelpRequestStatus",
+    "pk": 1,
+    "fields":
+    {
+      "description": "Criado",
+      "active": true,
+      "created": "2020-03-29T16:33:00.000Z"
+    }
+  },
+  {
+    "model": "help.HelpRequestStatus",
+    "pk": 20,
+    "fields":
+    {
+      "description": "Em andamento",
+      "active": true,
+      "created": "2020-03-29T16:33:00.000Z"
+    }
+  },
+  {
+    "model": "help.HelpRequestStatus",
+    "pk": 99,
+    "fields":
+    {
+      "description": "Cancelado",
+      "active": true,
+      "created": "2020-03-29T16:33:00.000Z"
+    }
+  },
+  {
+    "model": "help.HelpRequestStatus",
+    "pk": 100,
+    "fields":
+    {
+      "description": "Finalizado",
+      "active": true,
+      "created": "2020-03-29T16:33:00.000Z"
+    }
+  }
+]

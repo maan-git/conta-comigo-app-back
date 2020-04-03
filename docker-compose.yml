@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: contacomigo
+      POSTGRES_DB: contacomigo_dev
+    ports:
+      - 5432:5432
+  migration:
+    build: .
+    command: python manage.py migrate --noinput
+    environment:
+      DATABASE_URL: postgres://contacomigo:12345@db:5432/contacomigo_dev
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DATABASE_URL: postgres://contacomigo:12345@db:5432/contacomigo_dev
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - migration
+      - db

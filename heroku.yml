@@ -1,0 +1,12 @@
+setup:
+  addons:
+  - plan: heroku-postgresql
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: gunicorn helpmecorona.wsgi --log-file -
+release:
+  image: web
+  command:
+    - bash ./deployment-tasks.sh
