@@ -64,11 +64,12 @@ class HelpRequestSerializerWrite(HelpRequestSerializer):
 
 class HelpStatusRequestSerializer(serializers.ModelSerializer):
 
-    def update_help_status(self, request):
-        help_request = self.get_object()
-        status_id = get_param_or_400(request.data, 'status_id', int)
-
-        helping_user_help_relation = self._validate_user_help_relation(request)
+    def update_help_status(self, user, help_id=None, status_id=None):
+        # help_request = self.get_object()
+        # status_id = get_param_or_400(request.data, 'status_id', int)
+        print(f"1: {user}")
+        helping_user_help_relation = self._validate_user_help_relation(user.email)
+        print(helping_user_help_relation)
 
         if helping_user_help_relation.status_id == HelpRequestStatus.AllStatus.Created and \
                 status_id == HelpRequestStatus.AllStatus.Canceled:
@@ -85,9 +86,10 @@ class HelpStatusRequestSerializer(serializers.ModelSerializer):
             raise ParseError(detail=('You cannot make this operation'),
                              code=status.HTTP_400_BAD_REQUEST)
 
-    def _validate_user_help_relation(self, request):
-        helping_user_help_relation = HelpRequest.objects.filter(owner_user=request.user).first()
+    def _validate_user_help_relation(self, user):
+        print(user)
+        helping_user_help_relation = HelpRequest.objects.filter(owner_user=user).first()
         if not helping_user_help_relation:
-            raise ParseError(detail=_('You are not owner of this post'),
+            raise ParseError(detail=('You are not owner of this post'),
                              code=status.HTTP_400_BAD_REQUEST)
         return helping_user_help_relation

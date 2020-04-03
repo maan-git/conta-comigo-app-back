@@ -15,5 +15,12 @@ CORS_ORIGIN_WHITELIST = (
     "https://localhost:8081",
 )
 
+DATABASES = {
+    # Read the database values from environment variable DATABASE_URL in format:
+    # postgres://username:password@server:port/database
+    "default": dj_database_url.config(conn_max_age=600,
+                                      default="postgres://contacomigo:12345@localhost:5432/contacomigo_test")
+}
+
 
 WSGI_APPLICATION = "helpmecorona.wsgi-test.application"

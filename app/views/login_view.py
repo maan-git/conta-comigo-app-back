@@ -1,3 +1,5 @@
+from rest_framework.authtoken.models import Token
+
 import coreapi
 from django.contrib.auth import login
 from django.utils.translation import ugettext_lazy as _
@@ -9,7 +11,6 @@ from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from utils.views_utils import get_param_or_400
 from app.serializers.user_serializer import UserSerializer
-from app.models.user import User
 from django.contrib.auth import authenticate
 
 
@@ -17,10 +18,12 @@ class LoginView(APIView):
     permission_classes = (AllowAny,)
 
     schema = AutoSchema(
-        manual_fields=[coreapi.Field("username"), coreapi.Field("password")]
+        manual_fields=[coreapi.Field('username', description='User email'),
+                       coreapi.Field('password', description='User password')]
     )
 
-    def post(self, request: Request, *args, **kwargs):
+    @classmethod
+    def post(cls, request: Request, *args, **kwargs):
         """
         Authenticate an user.
         """
@@ -31,6 +34,9 @@ class LoginView(APIView):
 
         if user:
             login(request, user)
-            return Response(data=UserSerializer(user).data)
+            data = UserSerializer(user).data
+            data['token'] = Token.objects.get(user=user).key
+            return Response(data=data)
+            # return Response(data=UserSerializer(user).data)
         else:
-            raise exceptions.AuthenticationFailed(_("Invalid username/password."))
+            raise exceptions.AuthenticationFailed(_('Invalid username/password.'))
