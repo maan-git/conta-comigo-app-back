@@ -119,17 +119,37 @@ class HelpRequestView(ModelViewSet):
         Logged user applies to help in a help request.
         """
         help_request = self.get_object()
-        helping_user = self._validate_user_help_relation(request, pk)
-        print(pk)
 
-        if helping_user and helping_user.status_id != HelpRequestStatus.AllStatus.Canceled \
-                and helping_user.status_id != HelpRequestStatus.AllStatus.Finished:
-            helping_user.status_id = HelpRequestStatus.AllStatus.Canceled
-            helping_user.save()
+        if help_request.owner_user != request.user:
+            helping_user_help_relation = HelpRequest.objects.filter(owner_user=request.user).first()
+            if helping_user_help_relation and helping_user_help_relation.status_id != HelpRequestStatus.AllStatus.Canceled \
+                    and helping_user_help_relation.status_id != HelpRequestStatus.AllStatus.Finished:
+                helping_user_help_relation.status_id = HelpRequestStatus.AllStatus.Canceled
+                helping_user_help_relation.save()
+            return Response(status=200)
+        else:
+            raise ParseError(detail=_('You can not help in your own request'),
+                             code=status.HTTP_400_BAD_REQUEST)
 
+    @action(methods=["post"],
+            detail=True,
+            url_path="finishquest",
+            schema=ManualSchema(description='To finish the request',
+                                fields=[
+                                    coreapi.Field(
+                                        'id',
+                                        required=True,
+                                        location='path',
+                                        schema=coreschema.Integer(),
+                                        description='Help request ID'
+                                    )])
+            )
+    def finish_request(self, request: Request, pk):
+        """
+        Logged user applies to help in a help request.
+        """
+        help_request = self.get_object()
         return Response(status=200)
-
-
 
     def _validate_user_relation(self, request: Request, pk):
         helping_user_relation = HelpRequestHelpers.objects.filter(helper_user=request.user).first()
