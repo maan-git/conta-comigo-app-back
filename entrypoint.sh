@@ -14,6 +14,6 @@ fi
 #python manage.py flush --no-input
 python manage.py migrate
 python manage.py collectstatic --no-input --clear
-python manage.py loaddata help_0001_help_category help_0002_help_request_status help_0003_helping_status
+python manage.py loaddata help_0001_help_category help_0002_help_request_status help_0003_helping_status help_0004_help_request_cancel_reason
 
 exec "$@"

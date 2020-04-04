@@ -1,59 +1,68 @@
 from rest_framework.decorators import action
 import coreschema
 import coreapi
-from rest_framework.schemas import ManualSchema, AutoSchema
+from rest_framework.schemas import ManualSchema
 from rest_framework.viewsets import ModelViewSet
 from help.models.help_request import HelpRequest
 from rest_framework.request import Request
 from rest_framework.response import Response
 from help.serializers.help_request_serializer import HelpRequestSerializer
 from help.serializers.help_request_serializer import HelpRequestSerializerWrite
-from help.serializers.help_request_serializer import HelpStatusRequestSerializer
 from rest_framework.exceptions import ParseError
 from django.utils.translation import ugettext_lazy as _
 from rest_framework import status
 from help.models.helping_status import HelpingStatus
 from help.models.help_request_status import HelpRequestStatus
 from help.models.helprequest_helpers import HelpRequestHelpers
-
+from django.db import transaction
 from utils.views_utils import get_param_or_400
-from rest_framework.renderers import JSONRenderer
+
+
+help_request_field_desc = "Help request ID"
 
 
 class HelpRequestView(ModelViewSet):
-    queryset = HelpRequest.objects.all()
-
     def get_serializer_class(self):
         if self.request.method == "GET":
             return HelpRequestSerializer
         else:
             return HelpRequestSerializerWrite
 
-    def get_status_serializer_class(self):
-        if self.request.method == "POST":
-            return HelpStatusRequestSerializer
+    def get_queryset(self):
+        queryset = HelpRequest.objects.all()
 
-    @action(methods=["post"],
+        if not self.request.user.is_superuser and self.action in ['create', 'update', 'destroy']:
+            queryset = queryset.filter(owner_user=self.request.user)
+        # TODO check other cases (e.g. requests user is helping in)
+
+        return queryset
+
+    @action(methods=['post'],
             detail=True,
-            url_path="applytohelp",
-            schema=ManualSchema(description='Logged user applies to help in a help request',
+            url_path='applytohelp',
+            schema=ManualSchema(description="Logged user applies to help in a help request",
                                 fields=[
                                     coreapi.Field(
-                                        "id",
+                                        'id',
                                         required=True,
-                                        location="path",
+                                        location='path',
                                         schema=coreschema.Integer(),
-                                        description='Help request ID'
-                                    )])
+                                        description=help_request_field_desc)])
             )
+    @transaction.atomic
     def apply_to_help(self, request: Request, pk):
         """
         Logged user applies to help in a help request.
         """
-        help_request = self.get_object()
+        # Lock database row to control concurrency in status update
+        help_request = HelpRequest.objects.select_for_update() .get(id=pk)
 
         if help_request.owner_user == request.user:
-            raise ParseError(detail=_('You can not help in your own request'),
+            raise ParseError(detail=_("You can not help in your own request"),
+                             code=status.HTTP_400_BAD_REQUEST)
+
+        if help_request.finished:
+            raise ParseError(detail=_("You can not help in finished requests"),
                              code=status.HTTP_400_BAD_REQUEST)
 
         helping_user_relation = HelpRequestHelpers.objects.filter(helper_user=request.user).first()
@@ -61,11 +70,11 @@ class HelpRequestView(ModelViewSet):
         # TODO In the future this may be removed since we will allow more users
         if helping_user_relation and \
                 helping_user_relation.status_id == HelpingStatus.AllStatus.Helping:
-            raise ParseError(detail=_('Another user is already helping in the request'),
+            raise ParseError(detail=_("Another user is already helping in the request"),
                              code=status.HTTP_400_BAD_REQUEST)
 
         if helping_user_relation and helping_user_relation.status_id == HelpingStatus.AllStatus.Helping:
-            raise ParseError(detail=_('You are already helping in this request'),
+            raise ParseError(detail=_("You are already helping in this request"),
                              code=status.HTTP_400_BAD_REQUEST)
 
         if not helping_user_relation:
@@ -79,21 +88,28 @@ class HelpRequestView(ModelViewSet):
     @action(methods=["post"],
             detail=True,
             url_path='unapplyfromhelp',
-            schema=ManualSchema(description='Logged user unapply from a help request',
+            schema=ManualSchema(description="Logged user unapply from a help request",
                                 fields=[
                                     coreapi.Field(
                                         'id',
                                         required=True,
                                         location='path',
                                         schema=coreschema.Integer(),
-                                        description='Help request ID'
-                                    )])
+                                        description=help_request_field_desc)])
             )
+    @transaction.atomic
     def unapply_from_help(self, request: Request, pk):
+        # Lock database row to control concurrency in status update
+        help_request = HelpRequest.objects.select_for_update().get(id=pk)
+
         helping_user_relation = HelpRequestHelpers.objects.filter(helper_user=request.user).first()
 
         if not helping_user_relation:
-            raise ParseError(detail=_('You are not helping in this request'),
+            raise ParseError(detail=_("You are not helping in this request"),
+                             code=status.HTTP_400_BAD_REQUEST)
+
+        if help_request.finished:
+            raise ParseError(detail=_("You can not unapply from finished requests"),
                              code=status.HTTP_400_BAD_REQUEST)
 
         helping_user_relation.status_id = HelpingStatus.AllStatus.Canceled
@@ -103,65 +119,45 @@ class HelpRequestView(ModelViewSet):
 
     @action(methods=["post"],
             detail=True,
-            url_path="unapplyownequest",
-            schema=ManualSchema(description='Logged user unapply from a help request',
+            url_path='cancelrequest',
+            schema=ManualSchema(description="Request owner cancels the request",
                                 fields=[
-                                    coreapi.Field(
-                                        'id',
-                                        required=True,
-                                        location='path',
-                                        schema=coreschema.Integer(),
-                                        description='Help request ID'
-                                    )])
+                                    coreapi.Field("id",
+                                                  required=True,
+                                                  location='path',
+                                                  schema=coreschema.Integer(),
+                                                  description=help_request_field_desc),
+                                    coreapi.Field("reasonId",
+                                                  required=True,
+                                                  location='form',
+                                                  schema=coreschema.Integer(),
+                                                  description="Cancellation reason ID")])
             )
-    def unapply_of_own_request(self, request: Request, pk):
-        """
-        Logged user applies to help in a help request.
-        """
-        help_request = self.get_object()
+    @transaction.atomic
+    def cancel_request(self, request: Request, pk):
+        # Lock database row to control concurrency in status update
+        help_request = HelpRequest.objects.select_for_update().get(id=pk)
+        reason_id = get_param_or_400(request.data, 'reasonId', int)
 
-        if help_request.owner_user != request.user:
-            helping_user_help_relation = HelpRequest.objects.filter(owner_user=request.user).first()
-            if helping_user_help_relation and helping_user_help_relation.status_id != HelpRequestStatus.AllStatus.Canceled \
-                    and helping_user_help_relation.status_id != HelpRequestStatus.AllStatus.Finished:
-                helping_user_help_relation.status_id = HelpRequestStatus.AllStatus.Canceled
-                helping_user_help_relation.save()
-            return Response(status=200)
-        else:
-            raise ParseError(detail=_('You can not help in your own request'),
-                             code=status.HTTP_400_BAD_REQUEST)
+        help_request.status_id = HelpRequestStatus.AllStatus.Canceled
+        help_request.cancel_reason_id = reason_id
+        help_request.save()
+        return Response()
 
     @action(methods=["post"],
             detail=True,
-            url_path="finishquest",
-            schema=ManualSchema(description='To finish the request',
+            url_path='finishrequest',
+            schema=ManualSchema(description="Request owner finishes the request (help executed successfully)",
                                 fields=[
-                                    coreapi.Field(
-                                        'id',
-                                        required=True,
-                                        location='path',
-                                        schema=coreschema.Integer(),
-                                        description='Help request ID'
-                                    )])
+                                    coreapi.Field('id',
+                                                  required=True,
+                                                  location='path',
+                                                  schema=coreschema.Integer())])
             )
+    @transaction.atomic
     def finish_request(self, request: Request, pk):
-        """
-        Logged user applies to help in a help request.
-        """
-        help_request = self.get_object()
-        return Response(status=200)
-
-    def _validate_user_relation(self, request: Request, pk):
-        helping_user_relation = HelpRequestHelpers.objects.filter(helper_user=request.user).first()
-
-        if not helping_user_relation:
-            raise ParseError(detail=_('You are not helping in this request'),
-                             code=status.HTTP_400_BAD_REQUEST)
-        return helping_user_relation
-
-    def _validate_user_help_relation(self, request: Request, pk):
-        helping_user_help_relation = HelpRequest.objects.filter(owner_user=request.user).first()
-        if not helping_user_help_relation:
-            raise ParseError(detail=_('You are not owner of this post'),
-                             code=status.HTTP_400_BAD_REQUEST)
-        return helping_user_help_relation
+        # Lock database row to control concurrency in status update
+        help_request = HelpRequest.objects.select_for_update().get(id=pk)
+        help_request.status_id = HelpRequestStatus.AllStatus.Finished
+        help_request.save()
+        return Response()
