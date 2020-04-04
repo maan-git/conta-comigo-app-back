@@ -13,11 +13,13 @@ from help.models.helping_status import HelpingStatus
 
 # Created → Canceled
 # Created → In progress
+# In progress → Created
 # In progress → Canceled
 # In progress → Canceled
 allowed_status_changes = [
     {'from': HelpRequestStatus.AllStatus.Created, 'to': HelpRequestStatus.AllStatus.Canceled},
     {'from': HelpRequestStatus.AllStatus.Created, 'to': HelpRequestStatus.AllStatus.InProgress},
+    {'from': HelpRequestStatus.AllStatus.InProgress, 'to': HelpRequestStatus.AllStatus.Created},
     {'from': HelpRequestStatus.AllStatus.InProgress, 'to': HelpRequestStatus.AllStatus.Canceled},
     {'from': HelpRequestStatus.AllStatus.InProgress, 'to': HelpRequestStatus.AllStatus.Finished}
 ]
