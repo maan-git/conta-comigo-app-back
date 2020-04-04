@@ -78,7 +78,9 @@ class HelpRequestView(ModelViewSet):
                              code=status.HTTP_400_BAD_REQUEST)
 
         if not helping_user_relation:
-            help_request.helping_users.add(request.user)
+            # This didn't work: help_request.helping_users.add(request.user)
+            # The post_save signal was not being called in the HelpRequestHelpers class
+            HelpRequestHelpers.objects.create(help_request=help_request, helper_user=request.user)
         else:
             helping_user_relation.status_id = HelpingStatus.AllStatus.Helping
             helping_user_relation.save()
