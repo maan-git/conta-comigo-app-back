@@ -55,7 +55,7 @@ class HelpRequestView(ModelViewSet):
         Logged user applies to help in a help request.
         """
         # Lock database row to control concurrency in status update
-        help_request = HelpRequest.objects.select_for_update() .get(id=pk)
+        help_request = HelpRequest.objects.select_for_update().get(id=pk)
 
         if help_request.owner_user == request.user:
             raise ParseError(detail=_("You can not help in your own request"),
