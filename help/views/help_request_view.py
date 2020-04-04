@@ -137,7 +137,11 @@ class HelpRequestView(ModelViewSet):
     def cancel_request(self, request: Request, pk):
         # Lock database row to control concurrency in status update
         queryset = self.get_queryset()
-        help_request = queryset.select_for_update().get(id=pk)
+        try:
+            help_request = queryset.select_for_update().get(id=pk)
+        except HelpRequest.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
         reason_id = get_param_or_400(request.data, 'reasonId', int)
 
         help_request.status_id = HelpRequestStatus.AllStatus.Canceled
@@ -159,7 +163,11 @@ class HelpRequestView(ModelViewSet):
     def finish_request(self, request: Request, pk):
         # Lock database row to control concurrency in status update
         queryset = self.get_queryset()
-        help_request = queryset.select_for_update().get(id=pk)
+        try:
+            help_request = queryset.select_for_update().get(id=pk)
+        except HelpRequest.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
         help_request.status_id = HelpRequestStatus.AllStatus.Finished
         help_request.save()
         return Response()
