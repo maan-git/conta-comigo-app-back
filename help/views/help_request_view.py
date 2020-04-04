@@ -31,7 +31,7 @@ class HelpRequestView(ModelViewSet):
     def get_queryset(self):
         queryset = HelpRequest.objects.all()
 
-        if not self.request.user.is_superuser and self.action in ['create', 'update', 'destroy']:
+        if not self.request.user.is_superuser and self.request.method != "GET":
             queryset = queryset.filter(owner_user=self.request.user)
         # TODO check other cases (e.g. requests user is helping in)
 
