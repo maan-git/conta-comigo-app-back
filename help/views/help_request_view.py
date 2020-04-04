@@ -136,7 +136,8 @@ class HelpRequestView(ModelViewSet):
     @transaction.atomic
     def cancel_request(self, request: Request, pk):
         # Lock database row to control concurrency in status update
-        help_request = HelpRequest.objects.select_for_update().get(id=pk)
+        queryset = self.get_queryset()
+        help_request = queryset.select_for_update().get(id=pk)
         reason_id = get_param_or_400(request.data, 'reasonId', int)
 
         help_request.status_id = HelpRequestStatus.AllStatus.Canceled
@@ -157,7 +158,8 @@ class HelpRequestView(ModelViewSet):
     @transaction.atomic
     def finish_request(self, request: Request, pk):
         # Lock database row to control concurrency in status update
-        help_request = HelpRequest.objects.select_for_update().get(id=pk)
+        queryset = self.get_queryset()
+        help_request = queryset.select_for_update().get(id=pk)
         help_request.status_id = HelpRequestStatus.AllStatus.Finished
         help_request.save()
         return Response()
