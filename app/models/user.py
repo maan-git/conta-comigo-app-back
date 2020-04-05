@@ -3,7 +3,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.base_user import AbstractBaseUser
 from simple_history.models import HistoricalRecords
-
 from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -74,47 +73,27 @@ class User(AbstractBaseUser):
         """
         return self.first_name
 
-    # @AbstractBaseUser.is_active
-    # def is_active(self):
-    #     return True
-
+    # Check if will be needed to be implemented
     # @property
     # def is_anonymous(self):
-    #     return True
-    #
-    # @property
-    # def is_authenticated(self):
     #     return True
 
     @property
     def is_staff(self):
-        # TODO Check
-        return True
+        # TODO Improve validations to allow non superusers to log-in into admin interface
+        return self.is_superuser
 
-    # @property
-    # def is_admin(self):
-    #     # TODO Check
-    #     return True
-    #
+    @property
+    def is_admin(self):
+        return self.is_superuser
+
     def has_module_perms(self, app_label):
-        # TODO Check
+        # TODO Implement
         return False
 
     def has_perm(self, perm, obj=None):
-        # TODO Check
+        # TODO Implement
         return True
-
-    # def check_password(self, raw_password):
-    #     """
-    #     Return a boolean of whether the raw_password was correct. Handles
-    #     hashing formats behind the scenes.
-    #     """
-    #     user = authenticate_user_ldap(getattr(self, self.USERNAME_FIELD, None), raw_password)
-    #
-    #     return user is not None
-    #
-    # def set_password(self, password):
-    #     pass
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
