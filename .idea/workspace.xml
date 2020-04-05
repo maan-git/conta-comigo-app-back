@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_category_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_category_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_cancel_reason_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_cancel_reason_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_status_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_status_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/helping_status_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/helping_status_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/admin_edit_only_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/admin_edit_only_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/views_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/views_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +44,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -181,6 +174,7 @@
       <workItem from="1585416862714" duration="8106000" />
       <workItem from="1585941797940" duration="1321000" />
       <workItem from="1585955284755" duration="15578000" />
+      <workItem from="1586110121106" duration="71000" />
     </task>
     <servers />
   </component>

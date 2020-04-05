@@ -13,6 +13,7 @@ CORS_ORIGIN_WHITELIST = (
     "https://localhost:80",
     "https://localhost:8080",
     "https://localhost:8081",
+    "https://conta-comigo-ap.herokuapp.com/app/login/"
 )
 
 DATABASES = {
