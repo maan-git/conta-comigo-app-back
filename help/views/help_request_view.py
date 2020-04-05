@@ -65,7 +65,8 @@ class HelpRequestView(ModelViewSet):
             raise ParseError(detail=_("You can not help in finished requests"),
                              code=status.HTTP_400_BAD_REQUEST)
 
-        helping_user_relation = HelpRequestHelpers.objects.filter(help_request=help_request).first()
+        helping_user_relation = HelpRequestHelpers.objects.filter(help_request=help_request,
+                                                                  status_id=HelpingStatus.AllStatus.Helping).first()
 
         # TODO In the future this may be removed since we will allow more users
         if helping_user_relation and \
@@ -104,7 +105,8 @@ class HelpRequestView(ModelViewSet):
         # Lock database row to control concurrency in status update
         help_request = HelpRequest.objects.select_for_update().get(id=pk)
 
-        helping_user_relation = HelpRequestHelpers.objects.filter(help_request=help_request).first()
+        helping_user_relation = HelpRequestHelpers.objects.filter(help_request=help_request,
+                                                                  status_id=HelpingStatus.AllStatus.Helping).first()
 
         if not helping_user_relation:
             raise ParseError(detail=_("You are not helping in this request"),
