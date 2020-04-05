@@ -228,3 +228,5 @@ SWAGGER_API_PREFIX = ""
 FIXTURE_DIRS = (
    '/help/fixtures/',
 )
+
+MEDIA_URL = '/'

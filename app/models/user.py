@@ -45,7 +45,7 @@ class User(AbstractBaseUser):
     last_name = django_models.CharField(_('last name'), max_length=30, blank=True)
     date_joined = django_models.DateTimeField(_('date joined'), auto_now_add=True)
     is_active = django_models.BooleanField(_('active'), default=True)
-    avatar = django_models.ImageField(upload_to='avatars/', null=True, blank=True)
+    avatar = django_models.ImageField(upload_to='images/%Y/%m/', null=True, blank=True)
     is_superuser = django_models.BooleanField(_('Super user'), default=True)
     history = HistoricalRecords()
 

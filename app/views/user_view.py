@@ -9,10 +9,14 @@ from app.serializers.user_serializer import UserSerializer
 from app.serializers.user_serializer import UserSerializerPost
 from utils.views_utils import ModelViewSetNoDelete
 
+from rest_framework import status
+from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
+
 
 class UserView(ModelViewSetNoDelete):
     queryset = User.objects.all()
     permission_classes = [AllowAny]
+    parser_classes = (JSONParser, FormParser, MultiPartParser)
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
@@ -42,3 +46,12 @@ class UserView(ModelViewSetNoDelete):
         serializer_class = self.get_serializer_class()
 
         return Response(data=serializer_class(request.user).data)
+
+    def post(self, request, pk=None, format=None):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(
+                photo=request.data.get('avatar')
+            )
+            return Response(data=serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
