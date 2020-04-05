@@ -62,21 +62,20 @@ class HelpRequestView(ModelViewSet):
                              code=status.HTTP_400_BAD_REQUEST)
 
         if help_request.finished:
-            raise ParseError(detail=_("You can not help in finished requests"),
+            raise ParseError(detail=_("You can not help in finished/canceled requests"),
                              code=status.HTTP_400_BAD_REQUEST)
 
         helping_user_relation = HelpRequestHelpers.objects.filter(help_request=help_request,
                                                                   status_id=HelpingStatus.AllStatus.Helping).first()
 
-        # TODO In the future this may be removed since we will allow more users
-        if helping_user_relation and \
-                helping_user_relation.status_id == HelpingStatus.AllStatus.Helping:
-            raise ParseError(detail=_("Another user is already helping in the request"),
-                             code=status.HTTP_400_BAD_REQUEST)
-
-        if helping_user_relation and helping_user_relation.status_id == HelpingStatus.AllStatus.Helping:
-            raise ParseError(detail=_("You are already helping in this request"),
-                             code=status.HTTP_400_BAD_REQUEST)
+        if helping_user_relation:
+            if helping_user_relation.helper_user == request.user:
+                raise ParseError(detail=_("You are already helping in this request"),
+                                 code=status.HTTP_400_BAD_REQUEST)
+            else:
+                # TODO In the future this may be removed since we will allow more users
+                raise ParseError(detail=_("Another user is already helping in the request"),
+                                 code=status.HTTP_400_BAD_REQUEST)
 
         if not helping_user_relation:
             # This didn't work: help_request.helping_users.add(request.user)
