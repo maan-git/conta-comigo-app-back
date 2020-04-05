@@ -7,10 +7,6 @@ from help.models.helping_status import HelpingStatus
 from help.models.helprequest_helpers import HelpRequestHelpers
 from help.models.help_request_cancel_reason import HelpRequestCancelReason
 
-from utils.views_utils import get_param_or_400
-from rest_framework.exceptions import ParseError
-from rest_framework import status
-
 
 class CategorySimpleSerializer(serializers.ModelSerializer):
     class Meta:
