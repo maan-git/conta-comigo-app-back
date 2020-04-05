@@ -4,6 +4,8 @@ from rest_framework import status
 from rest_framework.exceptions import ParseError
 from rest_framework.serializers import ModelSerializer
 from . import commom_utils
+from rest_framework import mixins
+from rest_framework.viewsets import GenericViewSet
 
 
 class GenericReadSerializer(ModelSerializer):
@@ -86,3 +88,15 @@ def get_generic_write_serializer(model: type, depth: int):
     serializer.Meta.model = model
     serializer.Meta.depth = depth
     return serializer
+
+
+class ModelViewSetNoDelete(mixins.CreateModelMixin,
+                           mixins.RetrieveModelMixin,
+                           mixins.UpdateModelMixin,
+                           mixins.ListModelMixin,
+                           GenericViewSet):
+    """
+    A viewset that provides default `create()`, `retrieve()`, `update()`,
+    `partial_update()` and `list()` actions.
+    """
+    pass

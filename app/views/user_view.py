@@ -1,6 +1,5 @@
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 from rest_framework.schemas import ManualSchema
 from rest_framework.permissions import AllowAny
@@ -8,9 +7,10 @@ from rest_framework.permissions import IsAuthenticated
 from app.models.user import User
 from app.serializers.user_serializer import UserSerializer
 from app.serializers.user_serializer import UserSerializerPost
+from utils.views_utils import ModelViewSetNoDelete
 
 
-class UserView(ModelViewSet):
+class UserView(ModelViewSetNoDelete):
     queryset = User.objects.all()
     permission_classes = [AllowAny]
 

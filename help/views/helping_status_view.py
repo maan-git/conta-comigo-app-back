@@ -1,9 +1,9 @@
 from help.models.helping_status import HelpingStatus
 from utils.views_utils import get_generic_read_serializer
-from utils.admin_edit_only_view import AdminEditOnlyView
+from utils.admin_edit_only_view import AdminEditOnlyViewNoDelete
 
 
-class HelpingStatusView(AdminEditOnlyView):
+class HelpingStatusView(AdminEditOnlyViewNoDelete):
     queryset = HelpingStatus.objects.all()
     ordering = ('description',)
 

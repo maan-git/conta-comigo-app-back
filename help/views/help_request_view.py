@@ -2,7 +2,6 @@ from rest_framework.decorators import action
 import coreschema
 import coreapi
 from rest_framework.schemas import ManualSchema
-from rest_framework.viewsets import ModelViewSet
 from help.models.help_request import HelpRequest
 from rest_framework.request import Request
 from rest_framework.response import Response
@@ -10,18 +9,20 @@ from help.serializers.help_request_serializer import HelpRequestSerializer
 from help.serializers.help_request_serializer import HelpRequestSerializerWrite
 from rest_framework.exceptions import ParseError
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _non_lazy
 from rest_framework import status
 from help.models.helping_status import HelpingStatus
 from help.models.help_request_status import HelpRequestStatus
 from help.models.helprequest_helpers import HelpRequestHelpers
 from django.db import transaction
 from utils.views_utils import get_param_or_400
+from utils.views_utils import ModelViewSetNoDelete
 
 
-help_request_field_desc = "Help request ID"
+help_request_field_desc = _non_lazy("Help request ID")
 
 
-class HelpRequestView(ModelViewSet):
+class HelpRequestView(ModelViewSetNoDelete):
     def get_serializer_class(self):
         if self.request.method == "GET":
             return HelpRequestSerializer
