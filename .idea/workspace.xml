@@ -160,8 +160,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.Install fixtures" />
-      <item itemvalue="Python.Migrate" />
       <item itemvalue="Python.Make migrations" />
+      <item itemvalue="Python.Migrate" />
     </list>
   </component>
   <component name="SvnConfiguration">
