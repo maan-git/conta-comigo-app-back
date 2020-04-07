@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/data/addresses_date.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/fixtures/app_0001_global_variable_type.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/fixtures/app_0002_brazilian_states.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/fixtures/app_0003_global_variable.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/management/commands/loadaddresses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0008_auto_20200406_2249.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/city.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/global_variable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/global_variable_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/neighborhood.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/address_provider_republica_virtual.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/external_address_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/city_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/neighborhood_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/state_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/user_address.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/address.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/address.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user_address.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/address_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/address_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment-tasks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deployment-tasks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/dev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/commom_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/commom_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/datetime_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/datetime_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/views_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/views_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/city.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/city.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/neighborhood.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/neighborhood.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +63,7 @@
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Load addresses">
+  <component name="RunManager" selected="Django server.Runserver">
     <configuration name="Install fixtures" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app-maan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,7 +202,7 @@
       <workItem from="1585416862714" duration="8106000" />
       <workItem from="1585941797940" duration="1321000" />
       <workItem from="1585955284755" duration="15578000" />
-      <workItem from="1586110121106" duration="51497000" />
+      <workItem from="1586110121106" duration="51968000" />
     </task>
     <servers />
   </component>
@@ -269,38 +243,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586220006336" />
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586303881806">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
-    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586303881806" />
+    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586303881806">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
-    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586303881806" />
+    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586303881806">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
-    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586303881806" />
+    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586303881806">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586303881806" />
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586303907021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
-    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586303907021" />
+    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586303907021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
-    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586303907021" />
+    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586303907021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
-    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586303492881">
+    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586303907021" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586303907021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586303492881" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586303907021" />
     <state x="371" y="107" key="SettingsEditor" timestamp="1586112070809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -337,11 +311,6 @@
           <url>file://$USER_HOME$/VirtualEnvs/conta-comigo/Lib/site-packages/django/contrib/contenttypes/models.py</url>
           <line>18</line>
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/models/address.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils/datetime_utils.py</url>

@@ -14,7 +14,7 @@ class City(django_models.Model):
                                      db_index=True)
 
 
-def import_from_external_source(external_address: dict) -> City:
+def import_from_external_source(external_address: dict) -> {City, None}:
     try:
         state = State.objects.get(initials=external_address.get('state_initials'))
     except State.DoesNotExist:

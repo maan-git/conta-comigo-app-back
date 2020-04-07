@@ -36,7 +36,7 @@ class Address(django_models.Model):
         return app_address
 
 
-def import_from_external_source(external_address: dict) -> Address:
+def import_from_external_source(external_address: dict) -> {Address, None}:
     neighborhood = import_external_neighborhood(external_address)
 
     if neighborhood is None:

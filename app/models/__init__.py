@@ -5,3 +5,4 @@ from . import global_variable
 from . import city
 from . import neighborhood
 from . import address
+

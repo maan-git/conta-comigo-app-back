@@ -15,7 +15,7 @@ class Neighborhood(django_models.Model):
                                     db_index=True)
 
 
-def import_from_external_source(external_address: dict) -> Neighborhood:
+def import_from_external_source(external_address: dict) -> {Neighborhood, None}:
     city = import_city_external(external_address)
 
     if city is None:
