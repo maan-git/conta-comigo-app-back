@@ -1,0 +1,47 @@
+[
+  {
+    "model": "app.GlobalVariableType",
+    "pk": 1,
+    "fields":
+    {
+      "description": "Inteiro",
+      "created": "2020-04-06T21:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.GlobalVariableType",
+    "pk": 2,
+    "fields":
+    {
+      "description": "Data",
+      "created": "2020-04-06T21:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.GlobalVariableType",
+    "pk": 3,
+    "fields":
+    {
+      "description": "Data e hora",
+      "created": "2020-04-06T21:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.GlobalVariableType",
+    "pk": 4,
+    "fields":
+    {
+      "description": "Decimal",
+      "created": "2020-04-06T21:36:00.000Z"
+    }
+  },
+  {
+    "model": "app.GlobalVariableType",
+    "pk": 5,
+    "fields":
+    {
+      "description": "Booleano",
+      "created": "2020-04-06T21:36:00.000Z"
+    }
+  }
+]

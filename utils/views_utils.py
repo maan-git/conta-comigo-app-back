@@ -46,11 +46,11 @@ def get_param_or_400(
     try:
         if parameter_type is not None:
             if parameter_type == int:
-                param_value = commom_utils.convert_to_int(param_value, default_value)
+                param_value = commom_utils.str_to_int(param_value, default_value)
             if parameter_type == float:
-                param_value = commom_utils.convert_to_float(param_value, default_value)
+                param_value = commom_utils.str_to_float(param_value, default_value)
             if parameter_type == bool:
-                param_value = commom_utils.convert_to_boolean(
+                param_value = commom_utils.str_to_boolean(
                     param_value, default_value
                 )
             if parameter_type == list:
@@ -60,9 +60,9 @@ def get_param_or_400(
                 if integer_list:
                     param_value = [int(v) for v in param_value]
             if parameter_type == datetime.date:
-                param_value = commom_utils.convert_to_date(param_value, default_value)
+                param_value = commom_utils.str_to_date(param_value, default_value)
             if parameter_type == datetime.datetime:
-                param_value = commom_utils.convert_to_datetime(
+                param_value = commom_utils.str_to_datetime(
                     param_value, default_value
                 )
     except ValueError:
@@ -98,5 +98,14 @@ class ModelViewSetNoDelete(mixins.CreateModelMixin,
     """
     A viewset that provides default `create()`, `retrieve()`, `update()`,
     `partial_update()` and `list()` actions.
+    """
+    pass
+
+
+class ModelViewSetReadOnly(mixins.RetrieveModelMixin,
+                           mixins.ListModelMixin,
+                           GenericViewSet):
+    """
+    A viewset that provides default `retrieve()` and `list()` actions.
     """
     pass

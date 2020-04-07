@@ -1,5 +1,6 @@
 # Import all configuration from base config file
 from .base import *
+import dj_database_url
 
 # TODO Configure silk
 # MIDDLEWARE.append('silk.middleware.SilkyMiddleware')

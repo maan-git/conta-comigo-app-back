@@ -14,7 +14,7 @@ import os
 import sys
 from corsheaders.defaults import default_headers
 from rest_framework.settings import ISO_8601
-import dj_database_url
+from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -145,6 +145,9 @@ REST_FRAMEWORK = {
     ),
     # 'DATETIME_FORMAT': ISO_8601,
     "DATETIME_INPUT_FORMATS": (
+        "%Y-%m-%dT%H:%M:%S.%f",
+        "%Y-%m-%dT%H:%M:%S.%fZ",
+        "%Y-%m-%dT%H:%M:%S",
         "%Y/%m/%d %H:%M",
         "%m/%d/%Y %H:%M",
         "%d/%m/%Y %H:%M",
@@ -184,7 +187,7 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "INFO",
+            "level": "DEBUG",
             "class": "logging.StreamHandler",
             "formatter": "simple",
             "stream": sys.stdout,
@@ -226,5 +229,8 @@ SWAGGER_SETTINGS = {
 SWAGGER_API_PREFIX = ""
 
 FIXTURE_DIRS = (
-   '/help/fixtures/',
+    '/help/fixtures/',
+    '/app/fixtures/'
 )
+
+EXTERNAL_ADDRESS_PROVIDER = ExternalProviderRepVirtual
