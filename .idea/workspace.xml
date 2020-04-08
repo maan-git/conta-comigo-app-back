@@ -2,55 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/data/addresses.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/data/addresses_date.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/fixtures/app_0001_global_variable_type.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/fixtures/app_0002_brazilian_states.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/fixtures/app_0003_global_variable.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/management/commands/loadaddresses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0008_auto_20200406_2249.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0009_auto_20200406_2302.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0010_auto_20200407_0223.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0011_auto_20200407_1450.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0012_auto_20200407_1541.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0013_auto_20200407_1542.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0014_auto_20200408_0107.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0015_user_addresses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0016_auto_20200408_0149.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0017_auto_20200408_0151.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/global_variable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/global_variable_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user_address.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/serializers/user_address_serializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/address_provider_republica_virtual.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/external_address_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/state_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/address.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/address.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/city.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/city.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/country.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/neighborhood.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/neighborhood.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/zip.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/address_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/address_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/city_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/city_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/country_view.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/neighborhood_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/neighborhood_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/zip_view.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment-tasks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deployment-tasks.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/dev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/commom_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/commom_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/datetime_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/datetime_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/views_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/views_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +208,8 @@
       <workItem from="1585941797940" duration="1321000" />
       <workItem from="1585955284755" duration="15578000" />
       <workItem from="1586110121106" duration="58187000" />
-      <workItem from="1586310738356" duration="183000" />
+      <workItem from="1586310738356" duration="2027000" />
+      <workItem from="1586338699342" duration="567000" />
     </task>
     <servers />
   </component>
@@ -295,38 +250,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586220006336" />
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586310740325">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586338563645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586310740325" />
-    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586310740325">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586338563645" />
+    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586338563645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586310740325" />
-    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586310740325">
+    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586338563645" />
+    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586338563642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586310740325" />
-    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586310740325">
+    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586338563642" />
+    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586338563645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586310740325" />
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586310739968">
+    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586338563645" />
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586338563645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586310739968" />
-    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586310739968">
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586338563645" />
+    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586338563645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586310739968" />
-    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586310739968">
+    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586338563645" />
+    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586338563645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586310739968" />
-    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586310739968">
+    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586338563645" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586338563645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586310739968" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586338563645" />
     <state x="371" y="107" key="SettingsEditor" timestamp="1586112070809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -336,10 +291,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="774" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1586282541226" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1585955333253">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586338699122">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585955333253" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586338699122" />
     <state x="468" y="0" width="983" height="1040" key="find.popup" timestamp="1586120154296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
