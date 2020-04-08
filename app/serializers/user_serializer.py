@@ -11,13 +11,13 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        exclude = ("password",)
+        exclude = ("password", "addresses",)
 
 
 class UserSerializerPost(serializers.ModelSerializer):
     class Meta:
         model = User
-        exclude = ("last_login", "is_active")
+        exclude = ("addresses", "last_login", "is_active")
 
     @atomic
     def create(self, validated_data):

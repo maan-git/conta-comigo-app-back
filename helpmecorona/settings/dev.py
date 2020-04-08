@@ -1,5 +1,6 @@
 # Import all configuration from base config file
 from .base import *
+import dj_database_url
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -3,9 +3,10 @@ import re
 import os
 from django.template import loader
 from . import datetime_utils
+from rest_framework.settings import ISO_8601
 
 
-def convert_to_int(value, default_value: int = None):
+def str_to_int(value, default_value: int = None):
     try:
         converted_value = int(value)
     except ValueError:
@@ -17,7 +18,11 @@ def convert_to_int(value, default_value: int = None):
     return converted_value
 
 
-def convert_to_float(value, default_value: float = None):
+def int_to_str(value: int) -> str:
+    return str(value)
+
+
+def str_to_float(value, default_value: float = None):
     try:
         converted_value = float(value)
     except ValueError:
@@ -29,19 +34,38 @@ def convert_to_float(value, default_value: float = None):
     return converted_value
 
 
-def convert_to_datetime(value, default_value: datetime.datetime = None):
+def float_to_str(value: float) -> str:
+    return str(value)
+
+
+def str_to_datetime(value, default_value: datetime.datetime = None):
     return datetime_utils.str_to_datetime(value, default_value=default_value)
 
 
-def convert_to_date(value, default_value: datetime.date = None):
+def datetime_to_str(value: datetime.datetime) -> str:
+    return value.isoformat()
+
+
+def str_to_date(value, default_value: datetime.date = None):
     return datetime_utils.str_to_date(value, default_value=default_value)
 
 
-def convert_to_boolean(value, default_value: bool = None):
+def date_to_str(value: datetime.date) -> str:
+    return value.strftime('%Y/%m/%d')
+
+
+def str_to_boolean(value, default_value: bool = None):
     if value is None:
         return default_value
 
+    if isinstance(value, bool):
+        return value
+
     return value.upper().strip() == "TRUE"
+
+
+def boolean_to_str(value: bool) -> str:
+    return 'True' if value else 'False';
 
 
 def get_package_version(package_name):

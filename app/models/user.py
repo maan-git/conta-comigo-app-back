@@ -3,10 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.base_user import AbstractBaseUser
 from simple_history.models import HistoricalRecords
-from django.conf import settings
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from rest_framework.authtoken.models import Token
+from app.models.user_address import UserAddress
 
 
 class UserManager(BaseUserManager):
@@ -22,8 +19,6 @@ class UserManager(BaseUserManager):
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
-        create_auth_token()
-        user['token'] = Token.objects.get(user=user).key
         return user
 
     def create_user(self, email, password=None, **extra_fields):
@@ -47,6 +42,7 @@ class User(AbstractBaseUser):
     is_active = django_models.BooleanField(_('active'), default=True)
     avatar = django_models.ImageField(upload_to='images/%Y/%m/', null=True, blank=True)
     is_superuser = django_models.BooleanField(_('Super user'), default=True)
+    addresses = django_models.ManyToManyField(UserAddress, related_query_name='user')
     history = HistoricalRecords()
 
     REQUIRED_FIELDS = []
@@ -94,9 +90,3 @@ class User(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         # TODO Implement
         return True
-
-
-@receiver(post_save, sender=settings.AUTH_USER_MODEL)
-def create_auth_token(sender, instance=None, created=False, **kwargs):
-    if created:
-        print(Token.objects.create(user=instance))

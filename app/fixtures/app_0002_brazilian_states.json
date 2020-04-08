@@ -1,0 +1,282 @@
+[
+  {
+    "model": "app.State",
+    "pk": 1,
+    "fields":
+    {
+      "description": "Acre",
+      "initials": "AC",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 2,
+    "fields":
+    {
+      "description": "Alagoas",
+      "initials": "AL",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 3,
+    "fields":
+    {
+      "description": "Amapá",
+      "initials": "AP",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 4,
+    "fields":
+    {
+      "description": "Amazonas",
+      "initials": "AM",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 5,
+    "fields":
+    {
+      "description": "Bahia",
+      "initials": "BA",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 6,
+    "fields":
+    {
+      "description": "Ceará",
+      "initials": "CE",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 7,
+    "fields":
+    {
+      "description": "Espírito Santo",
+      "initials": "ES",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 8,
+    "fields":
+    {
+      "description": "Goiás",
+      "initials": "GO",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 9,
+    "fields":
+    {
+      "description": "Maranhão",
+      "initials": "MA",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 10,
+    "fields":
+    {
+      "description": "Mato Grosso",
+      "initials": "MT",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 11,
+    "fields":
+    {
+      "description": "Mato Grosso do Sul",
+      "initials": "MS",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 12,
+    "fields":
+    {
+      "description": "Minas Gerais",
+      "initials": "MG",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 1,
+    "fields":
+    {
+      "description": "Acre",
+      "initials": "AC",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 13,
+    "fields":
+    {
+      "description": "Pará",
+      "initials": "PA",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 14,
+    "fields":
+    {
+      "description": "Paraíba",
+      "initials": "PB",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 15,
+    "fields":
+    {
+      "description": "Paraná",
+      "initials": "PR",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 16,
+    "fields":
+    {
+      "description": "Pernambuco",
+      "initials": "PE",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 17,
+    "fields":
+    {
+      "description": "Piauí",
+      "initials": "PI",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 18,
+    "fields":
+    {
+      "description": "Rio de Janeiro",
+      "initials": "RJ",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 19,
+    "fields":
+    {
+      "description": "Rio Grande do Norte",
+      "initials": "RN",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 20,
+    "fields":
+    {
+      "description": "Rio Grande do Sul",
+      "initials": "RS",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 21,
+    "fields":
+    {
+      "description": "Rondônia",
+      "initials": "RO",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 22,
+    "fields":
+    {
+      "description": "Roraima",
+      "initials": "RR",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 23,
+    "fields":
+    {
+      "description": "Santa Catarina",
+      "initials": "SC",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 24,
+    "fields":
+    {
+      "description": "São Paulo",
+      "initials": "SP",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 25,
+    "fields":
+    {
+      "description": "Sergipe",
+      "initials": "SE",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 26,
+    "fields":
+    {
+      "description": "Tocantins",
+      "initials": "TO",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  },
+  {
+    "model": "app.State",
+    "pk": 27,
+    "fields":
+    {
+      "description": "Distrito Federal",
+      "initials": "DF",
+      "created": "2020-04-06T22:47:00.000Z"
+    }
+  }
+]

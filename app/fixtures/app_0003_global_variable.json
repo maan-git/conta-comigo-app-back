@@ -1,0 +1,14 @@
+[
+  {
+    "model": "app.GlobalVariable",
+    "pk": 1,
+    "fields":
+    {
+      "key": "LAST_ADDRESSES_UPDATE",
+      "description": "Date and time of the last addesses update",
+      "type": "3",
+      "created": "2020-04-06T23:03:00.000Z",
+      "value": ""
+    }
+  }
+]
