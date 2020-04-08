@@ -32,6 +32,9 @@ class AddressView(GenericViewSet):
     def find_address_by_zip(self, request: Request):
         zip_code = get_param_or_400(request.query_params, 'zip', str)
 
+        if len(zip_code) != 8:
+            raise ValueError(_("Zip code length should have exactly 8"))
+
         result_dict = {
             'city': {
                 'id': None,
