@@ -8,7 +8,7 @@ class City(django_models.Model):
     active = django_models.BooleanField(_("Active"), default=True)
     created = django_models.DateTimeField(_("Creation date"), auto_now_add=True)
     state = django_models.ForeignKey(State,
-                                     verbose_name=_("Brazilian UF"),
+                                     verbose_name=_("State"),
                                      on_delete=django_models.DO_NOTHING,
                                      related_name='cities',
                                      db_index=True)

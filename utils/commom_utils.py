@@ -58,6 +58,9 @@ def str_to_boolean(value, default_value: bool = None):
     if value is None:
         return default_value
 
+    if isinstance(value, bool):
+        return value
+
     return value.upper().strip() == "TRUE"
 
 

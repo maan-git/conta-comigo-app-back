@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.base_user import AbstractBaseUser
 from simple_history.models import HistoricalRecords
+from app.models.user_address import UserAddress
 
 
 class UserManager(BaseUserManager):
@@ -41,6 +42,7 @@ class User(AbstractBaseUser):
     is_active = django_models.BooleanField(_('active'), default=True)
     avatar = django_models.ImageField(upload_to='avatars/', null=True, blank=True)
     is_superuser = django_models.BooleanField(_('Super user'), default=True)
+    addresses = django_models.ManyToManyField(UserAddress, related_query_name='user')
     history = HistoricalRecords()
 
     REQUIRED_FIELDS = []

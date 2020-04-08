@@ -4,7 +4,11 @@ from utils.views_utils import get_generic_read_serializer
 
 
 class NeighborhoodView(ModelViewSetReadOnly):
-    queryset = Neighborhood.objects.all()
+    queryset = Neighborhood.objects.all().select_related('city', 'city__state')
+    filter_fields = {
+        'city__state_id': ['exact'],
+        'city_id': ['exact']
+    }
 
     def get_serializer_class(self):
         serializer_class = get_generic_read_serializer(Neighborhood, 1)

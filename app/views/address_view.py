@@ -1,10 +1,10 @@
+import coreapi
+import coreschema
 from utils.views_utils import get_generic_read_serializer
 from utils.views_utils import get_param_or_400
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.decorators import action
-import coreapi
-import coreschema
-from rest_framework.request import Request as RestRequest
+from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.schemas import ManualSchema
 from app.models.address import Address
@@ -29,7 +29,7 @@ class AddressView(GenericViewSet):
                                         schema=coreschema.String(),
                                         description='Zip code')])
             )
-    def find_address_by_zip(self, request: RestRequest):
+    def find_address_by_zip(self, request: Request):
         zip_code = get_param_or_400(request.query_params, 'zip', str)
 
         result_dict = {
