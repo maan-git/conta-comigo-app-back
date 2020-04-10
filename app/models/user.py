@@ -4,6 +4,8 @@ from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.base_user import AbstractBaseUser
 from simple_history.models import HistoricalRecords
 from app.models.user_address import UserAddress
+from utils.models_validations import validate_phone
+from utils.models_validations import validate_cpf
 
 
 class UserManager(BaseUserManager):
@@ -43,6 +45,12 @@ class User(AbstractBaseUser):
     avatar = django_models.ImageField(upload_to='images/%Y/%m/', null=True, blank=True)
     is_superuser = django_models.BooleanField(_('Super user'), default=True)
     addresses = django_models.ManyToManyField(UserAddress, related_query_name='user')
+    cpf = django_models.CharField(_('CPF'), max_length=11, validators=[validate_cpf])
+    birth_date = django_models.DateField(_('Data de nascimento'))
+    phone_number = django_models.CharField(_('Telefone'), max_length=14, validators=[validate_phone])
+    is_phone_whatsapp = django_models.BooleanField(_("Telefone é whatsapp"))
+    is_at_risk_group = django_models.BooleanField(_("É do grupo de risco"))
+    live_alone = django_models.BooleanField(_("Mora sozinho"))
     history = HistoricalRecords()
 
     REQUIRED_FIELDS = []
