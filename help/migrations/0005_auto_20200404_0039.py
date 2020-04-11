@@ -6,19 +6,32 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('help', '0004_helprequestcancelreason'),
-    ]
+    dependencies = [("help", "0004_helprequestcancelreason")]
 
     operations = [
         migrations.AddField(
-            model_name='helprequest',
-            name='cancel_reason',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, related_name='help_requests', to='help.HelpRequestCancelReason', verbose_name='Cancel reason'),
+            model_name="helprequest",
+            name="cancel_reason",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="help_requests",
+                to="help.HelpRequestCancelReason",
+                verbose_name="Cancel reason",
+            ),
         ),
         migrations.AddField(
-            model_name='historicalhelprequest',
-            name='cancel_reason',
-            field=models.ForeignKey(blank=True, db_constraint=False, null=True, on_delete=django.db.models.deletion.DO_NOTHING, related_name='+', to='help.HelpRequestCancelReason', verbose_name='Cancel reason'),
+            model_name="historicalhelprequest",
+            name="cancel_reason",
+            field=models.ForeignKey(
+                blank=True,
+                db_constraint=False,
+                null=True,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="+",
+                to="help.HelpRequestCancelReason",
+                verbose_name="Cancel reason",
+            ),
         ),
     ]

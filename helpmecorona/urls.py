@@ -25,10 +25,10 @@ schema_view_swagger = get_swagger_view(
 from django.conf.urls.static import static
 
 urlpatterns = [
-                  path("app/", include("app.urls")),
-                  path("admin/", admin.site.urls),
-                  path("docs/", schema_view_swagger),
-                  path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-                  path("help/", include("help.urls")),
-                  path("", schema_view_swagger),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True)
+    path("app/", include("app.urls")),
+    path("admin/", admin.site.urls),
+    path("docs/", schema_view_swagger),
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("help/", include("help.urls")),
+    path("", schema_view_swagger),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True)

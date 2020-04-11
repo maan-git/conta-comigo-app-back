@@ -14,14 +14,16 @@ CORS_ORIGIN_WHITELIST = (
     "https://localhost:80",
     "https://localhost:8080",
     "https://localhost:8081",
-    "https://conta-comigo-app-front.herokuapp.com"
+    "https://conta-comigo-app-front.herokuapp.com",
 )
 
 DATABASES = {
     # Read the database values from environment variable DATABASE_URL in format:
     # postgres://username:password@server:port/database
-    "default": dj_database_url.config(conn_max_age=600,
-                                      default="postgres://contacomigo:12345@localhost:5432/contacomigo_test")
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        default="postgres://contacomigo:12345@localhost:5432/contacomigo_test",
+    )
 }
 
 

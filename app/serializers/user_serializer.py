@@ -6,7 +6,7 @@ from django.db.transaction import atomic
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        exclude = ("password", "addresses",)
+        exclude = ("password", "addresses")
 
 
 class UserSerializerPost(serializers.ModelSerializer):

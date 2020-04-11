@@ -7,12 +7,16 @@ from help.models.help_request_status import HelpRequestStatus
 
 
 class HelpRequestHelpers(django_models.Model):
-    help_request = django_models.ForeignKey("HelpRequest", on_delete=django_models.CASCADE)
+    help_request = django_models.ForeignKey(
+        "HelpRequest", on_delete=django_models.CASCADE
+    )
     helper_user = django_models.ForeignKey("app.User", on_delete=django_models.CASCADE)
     created = django_models.DateTimeField("Creation date", auto_now_add=True)
-    status = django_models.ForeignKey(HelpingStatus,
-                                      on_delete=django_models.CASCADE,
-                                      default=HelpingStatus.AllStatus.Helping)
+    status = django_models.ForeignKey(
+        HelpingStatus,
+        on_delete=django_models.CASCADE,
+        default=HelpingStatus.AllStatus.Helping,
+    )
     history = HistoricalRecords()
 
 

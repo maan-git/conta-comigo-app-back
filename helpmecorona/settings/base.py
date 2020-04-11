@@ -32,34 +32,34 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework_swagger',
-    'rest_framework.authtoken',
-    'django_filters',
-    'corsheaders',
-    'simple_history',
-    'utils',
-    'app',
-    'help'
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "rest_framework",
+    "rest_framework_swagger",
+    "rest_framework.authtoken",
+    "django_filters",
+    "corsheaders",
+    "simple_history",
+    "utils",
+    "app",
+    "help",
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'simple_history.middleware.HistoryRequestMiddleware'
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -228,11 +228,8 @@ SWAGGER_SETTINGS = {
 # TODO check if will be needed in production
 SWAGGER_API_PREFIX = ""
 
-FIXTURE_DIRS = (
-    '/help/fixtures/',
-    '/app/fixtures/'
-)
+FIXTURE_DIRS = ("/help/fixtures/", "/app/fixtures/")
 
-MEDIA_URL = '/'
+MEDIA_URL = "/"
 
 EXTERNAL_ADDRESS_PROVIDER = ExternalProviderRepVirtual

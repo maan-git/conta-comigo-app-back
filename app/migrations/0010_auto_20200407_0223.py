@@ -6,49 +6,116 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0009_auto_20200406_2302'),
-    ]
+    dependencies = [("app", "0009_auto_20200406_2302")]
 
     operations = [
         migrations.CreateModel(
-            name='City',
+            name="City",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=50, verbose_name='Description')),
-                ('active', models.BooleanField(default=True, verbose_name='Active')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(max_length=50, verbose_name="Description"),
+                ),
+                ("active", models.BooleanField(default=True, verbose_name="Active")),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
             ],
         ),
         migrations.AlterField(
-            model_name='brazilianuf',
-            name='initials',
-            field=models.CharField(max_length=2, unique=True, verbose_name='Initials'),
+            model_name="brazilianuf",
+            name="initials",
+            field=models.CharField(max_length=2, unique=True, verbose_name="Initials"),
         ),
         migrations.CreateModel(
-            name='Neighborhood',
+            name="Neighborhood",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=50, verbose_name='Description')),
-                ('active', models.BooleanField(default=True, verbose_name='Active')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
-                ('city', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='neighborhoods', to='app.City', verbose_name='City')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(max_length=50, verbose_name="Description"),
+                ),
+                ("active", models.BooleanField(default=True, verbose_name="Active")),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
+                (
+                    "city",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        related_name="neighborhoods",
+                        to="app.City",
+                        verbose_name="City",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='city',
-            name='brazilian_uf',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='cities', to='app.BrazilianUf', verbose_name='Brazilian UF'),
+            model_name="city",
+            name="brazilian_uf",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="cities",
+                to="app.BrazilianUf",
+                verbose_name="Brazilian UF",
+            ),
         ),
         migrations.CreateModel(
-            name='Address',
+            name="Address",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=50, verbose_name='Description')),
-                ('active', models.BooleanField(default=True, verbose_name='Active')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
-                ('zip_code', models.CharField(max_length=8, verbose_name='Zip code')),
-                ('neighborhood', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='adresses', to='app.Neighborhood', verbose_name='Neighborhood')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(max_length=50, verbose_name="Description"),
+                ),
+                ("active", models.BooleanField(default=True, verbose_name="Active")),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
+                ("zip_code", models.CharField(max_length=8, verbose_name="Zip code")),
+                (
+                    "neighborhood",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        related_name="adresses",
+                        to="app.Neighborhood",
+                        verbose_name="Neighborhood",
+                    ),
+                ),
             ],
         ),
     ]

@@ -51,7 +51,7 @@ def str_to_date(value, default_value: datetime.date = None):
 
 
 def date_to_str(value: datetime.date) -> str:
-    return value.strftime('%Y/%m/%d')
+    return value.strftime("%Y/%m/%d")
 
 
 def str_to_boolean(value, default_value: bool = None):
@@ -65,7 +65,7 @@ def str_to_boolean(value, default_value: bool = None):
 
 
 def boolean_to_str(value: bool) -> str:
-    return 'True' if value else 'False';
+    return "True" if value else "False"
 
 
 def get_package_version(package_name):

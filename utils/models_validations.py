@@ -6,10 +6,9 @@ import phonenumbers
 
 
 def validate_phone(value):
-    if not phonenumbers.is_valid_number(phonenumbers.parse(value, 'BR')):
+    if not phonenumbers.is_valid_number(phonenumbers.parse(value, "BR")):
         raise ValidationError(
-            _('%(value)s is not a valid phone number'),
-            params={'value': value},
+            _("%(value)s is not a valid phone number"), params={"value": value}
         )
 
 
@@ -23,6 +22,5 @@ def validate_cpf(value):
 
     if not valid:
         raise ValidationError(
-            _('%(value)s is not a valid CPF'),
-            params={'value': value},
+            _("%(value)s is not a valid CPF"), params={"value": value}
         )

@@ -9,7 +9,7 @@ class AdminEditOnlyView(ModelViewSet):
         """
        Instantiates and returns the list of permissions to allow only admins to edit this view data.
        """
-        if self.action in ['list', 'retrieve']:
+        if self.action in ["list", "retrieve"]:
             permission_classes = [AllowAny]
         else:
             permission_classes = [IsAdminUser]
@@ -21,7 +21,7 @@ class AdminEditOnlyViewNoDelete(ModelViewSetNoDelete):
         """
        Instantiates and returns the list of permissions to allow only admins to edit this view data.
        """
-        if self.action in ['list', 'retrieve']:
+        if self.action in ["list", "retrieve"]:
             permission_classes = [AllowAny]
         else:
             permission_classes = [IsAdminUser]

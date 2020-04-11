@@ -10,7 +10,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 
-DEFAULT_USER_IMAGE_URL = 'https://firebasestorage.googleapis.com/v0/b/conta-comigo-app-files.appspot.com/o/icon-conta-comigo.jpeg?alt=media&token=0094390a-0f27-4735-a0be-5926c5302b6e'
+DEFAULT_USER_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/conta-comigo-app-files.appspot.com/o/icon-conta-comigo.jpeg?alt=media&token=0094390a-0f27-4735-a0be-5926c5302b6e"
 
 
 class UserManager(BaseUserManager):
@@ -42,17 +42,19 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    email = django_models.EmailField(_('email address'), unique=True)
-    first_name = django_models.CharField(_('first name'), max_length=30, blank=True)
-    last_name = django_models.CharField(_('last name'), max_length=30, blank=True)
-    date_joined = django_models.DateTimeField(_('date joined'), auto_now_add=True)
-    is_active = django_models.BooleanField(_('active'), default=True)
-    avatar = django_models.URLField(_('Avatar'), default=DEFAULT_USER_IMAGE_URL)
-    is_superuser = django_models.BooleanField(_('Super user'), default=True)
-    addresses = django_models.ManyToManyField(UserAddress, related_query_name='user')
-    cpf = django_models.CharField(_('CPF'), max_length=11, validators=[validate_cpf])
-    birth_date = django_models.DateField(_('Data de nascimento'))
-    phone_number = django_models.CharField(_('Telefone'), max_length=14, validators=[validate_phone])
+    email = django_models.EmailField(_("email address"), unique=True)
+    first_name = django_models.CharField(_("first name"), max_length=30, blank=True)
+    last_name = django_models.CharField(_("last name"), max_length=30, blank=True)
+    date_joined = django_models.DateTimeField(_("date joined"), auto_now_add=True)
+    is_active = django_models.BooleanField(_("active"), default=True)
+    avatar = django_models.URLField(_("Avatar"), default=DEFAULT_USER_IMAGE_URL)
+    is_superuser = django_models.BooleanField(_("Super user"), default=True)
+    addresses = django_models.ManyToManyField(UserAddress, related_query_name="user")
+    cpf = django_models.CharField(_("CPF"), max_length=11, validators=[validate_cpf])
+    birth_date = django_models.DateField(_("Data de nascimento"))
+    phone_number = django_models.CharField(
+        _("Telefone"), max_length=14, validators=[validate_phone]
+    )
     is_phone_whatsapp = django_models.BooleanField(_("Telefone é whatsapp"))
     is_at_risk_group = django_models.BooleanField(_("É do grupo de risco"))
     live_alone = django_models.BooleanField(_("Mora sozinho"))

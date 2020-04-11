@@ -17,42 +17,65 @@ from help.models.helping_status import HelpingStatus
 # In progress → Canceled
 # In progress → Canceled
 allowed_status_changes = [
-    {'from': HelpRequestStatus.AllStatus.Created, 'to': HelpRequestStatus.AllStatus.Canceled},
-    {'from': HelpRequestStatus.AllStatus.Created, 'to': HelpRequestStatus.AllStatus.InProgress},
-    {'from': HelpRequestStatus.AllStatus.InProgress, 'to': HelpRequestStatus.AllStatus.Created},
-    {'from': HelpRequestStatus.AllStatus.InProgress, 'to': HelpRequestStatus.AllStatus.Canceled},
-    {'from': HelpRequestStatus.AllStatus.InProgress, 'to': HelpRequestStatus.AllStatus.Finished}
+    {
+        "from": HelpRequestStatus.AllStatus.Created,
+        "to": HelpRequestStatus.AllStatus.Canceled,
+    },
+    {
+        "from": HelpRequestStatus.AllStatus.Created,
+        "to": HelpRequestStatus.AllStatus.InProgress,
+    },
+    {
+        "from": HelpRequestStatus.AllStatus.InProgress,
+        "to": HelpRequestStatus.AllStatus.Created,
+    },
+    {
+        "from": HelpRequestStatus.AllStatus.InProgress,
+        "to": HelpRequestStatus.AllStatus.Canceled,
+    },
+    {
+        "from": HelpRequestStatus.AllStatus.InProgress,
+        "to": HelpRequestStatus.AllStatus.Finished,
+    },
 ]
 
 
-class HelpRequest (django_models.Model):
-    owner_user = django_models.ForeignKey(User,
-                                          on_delete=django_models.DO_NOTHING,
-                                          related_name='help_requests')
-    helping_users = django_models.ManyToManyField(User,
-                                                  through="HelpRequestHelpers",
-                                                  verbose_name=_("Users helping"),
-                                                  related_name='helping_requests')
+class HelpRequest(django_models.Model):
+    owner_user = django_models.ForeignKey(
+        User, on_delete=django_models.DO_NOTHING, related_name="help_requests"
+    )
+    helping_users = django_models.ManyToManyField(
+        User,
+        through="HelpRequestHelpers",
+        verbose_name=_("Users helping"),
+        related_name="helping_requests",
+    )
     description = django_models.TextField(_("Description"), db_index=True)
     created = django_models.DateTimeField(_("Creation date"), auto_now_add=True)
-    status = django_models.ForeignKey(HelpRequestStatus,
-                                      verbose_name=_("Status"),
-                                      on_delete=django_models.DO_NOTHING,
-                                      related_name='help_requests',
-                                      default=HelpRequestStatus.AllStatus.Created,
-                                      db_index=True)
-    category = django_models.ForeignKey(HelpCategory,
-                                        verbose_name=_("Category"),
-                                        on_delete=django_models.DO_NOTHING,
-                                        related_name='help_requests',
-                                        db_index=True)
-    cancel_reason = django_models.ForeignKey(HelpRequestCancelReason,
-                                             verbose_name=_("Cancel reason"),
-                                             on_delete=django_models.DO_NOTHING,
-                                             related_name='help_requests',
-                                             db_index=True,
-                                             null=True,
-                                             blank=True)
+    status = django_models.ForeignKey(
+        HelpRequestStatus,
+        verbose_name=_("Status"),
+        on_delete=django_models.DO_NOTHING,
+        related_name="help_requests",
+        default=HelpRequestStatus.AllStatus.Created,
+        db_index=True,
+    )
+    category = django_models.ForeignKey(
+        HelpCategory,
+        verbose_name=_("Category"),
+        on_delete=django_models.DO_NOTHING,
+        related_name="help_requests",
+        db_index=True,
+    )
+    cancel_reason = django_models.ForeignKey(
+        HelpRequestCancelReason,
+        verbose_name=_("Cancel reason"),
+        on_delete=django_models.DO_NOTHING,
+        related_name="help_requests",
+        db_index=True,
+        null=True,
+        blank=True,
+    )
     history = HistoricalRecords()
 
     def __init__(self, *args, **kwargs):
@@ -65,22 +88,40 @@ class HelpRequest (django_models.Model):
     def check_status_change(self):
         if self.original_status_id and self.original_status_id != self.status_id:
             if self.is_status_final(self.original_status_id):
-                raise ValidationError(_("This help request was already in a final status"))
+                raise ValidationError(
+                    _("This help request was already in a final status")
+                )
             else:
-                allowed = any([item for item
-                               in allowed_status_changes
-                               if item.get('from') == self.original_status_id and item.get('to') == self.status_id])
+                allowed = any(
+                    [
+                        item
+                        for item in allowed_status_changes
+                        if item.get("from") == self.original_status_id
+                        and item.get("to") == self.status_id
+                    ]
+                )
 
                 if not allowed:
-                    raise ValidationError(_("Status change not allowed from {} to {}".format(self.original_status_id,
-                                                                                             self.status_id)))
+                    raise ValidationError(
+                        _(
+                            "Status change not allowed from {} to {}".format(
+                                self.original_status_id, self.status_id
+                            )
+                        )
+                    )
 
-                if self.status_id == HelpRequestStatus.AllStatus.Canceled and self.cancel_reason_id is None:
+                if (
+                    self.status_id == HelpRequestStatus.AllStatus.Canceled
+                    and self.cancel_reason_id is None
+                ):
                     raise ValidationError(_("Cancellations require a cancel reason"))
 
     @classmethod
     def is_status_final(cls, status_id: int):
-        return status_id in [HelpRequestStatus.AllStatus.Canceled, HelpRequestStatus.AllStatus.Finished]
+        return status_id in [
+            HelpRequestStatus.AllStatus.Canceled,
+            HelpRequestStatus.AllStatus.Finished,
+        ]
 
     @property
     def finished(self):
@@ -89,7 +130,10 @@ class HelpRequest (django_models.Model):
     @property
     def any_user_helping(self):
         from help.models.helprequest_helpers import HelpRequestHelpers
-        return HelpRequestHelpers.objects.filter(help_request=self, status_id=HelpingStatus.AllStatus.Helping).exists()
+
+        return HelpRequestHelpers.objects.filter(
+            help_request=self, status_id=HelpingStatus.AllStatus.Helping
+        ).exists()
 
 
 @receiver(pre_save, sender=HelpRequest)

@@ -16,8 +16,10 @@ class LoginView(APIView):
     permission_classes = (AllowAny,)
 
     schema = AutoSchema(
-        manual_fields=[coreapi.Field('username', description='User email'),
-                       coreapi.Field('password', description='User password')]
+        manual_fields=[
+            coreapi.Field("username", description="User email"),
+            coreapi.Field("password", description="User password"),
+        ]
     )
 
     @classmethod
@@ -35,4 +37,4 @@ class LoginView(APIView):
             data = UserSerializer(user).data
             return Response(data=data)
         else:
-            raise exceptions.AuthenticationFailed(_('Invalid username/password.'))
+            raise exceptions.AuthenticationFailed(_("Invalid username/password."))
