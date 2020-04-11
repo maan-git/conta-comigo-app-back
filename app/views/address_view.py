@@ -9,8 +9,11 @@ from rest_framework.response import Response
 from rest_framework.schemas import ManualSchema
 from app.models.address import Address
 
+from rest_framework.permissions import AllowAny
+
 
 class AddressView(GenericViewSet):
+    permission_classes = (AllowAny,)
     queryset = Address.objects.all()
 
     def get_serializer_class(self):
