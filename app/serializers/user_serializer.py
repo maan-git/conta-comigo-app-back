@@ -4,11 +4,6 @@ from django.db.transaction import atomic
 
 
 class UserSerializer(serializers.ModelSerializer):
-    avatar = serializers.ImageField(
-        max_length=None,
-        use_url=None
-    )
-
     class Meta:
         model = User
         exclude = ("password", "addresses",)

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/address_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/address_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_serializer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,7 @@
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Migrate">
+  <component name="RunManager" selected="Django server.Runserver">
     <configuration name="Install fixtures" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app-maan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -178,6 +179,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Django server.Runserver" />
       <item itemvalue="Python.Install fixtures" />
       <item itemvalue="Python.Load addresses" />
       <item itemvalue="Python.Make migrations" />
@@ -200,6 +202,7 @@
       <workItem from="1586110121106" duration="58187000" />
       <workItem from="1586310738356" duration="2027000" />
       <workItem from="1586338699342" duration="1345000" />
+      <workItem from="1586631400539" duration="1082000" />
     </task>
     <servers />
   </component>
@@ -240,38 +243,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586220006336" />
-    <state width="1493" height="286" key="GridCell.Tab.0.bottom" timestamp="1586549232439">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586632496889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="286" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586549232439" />
-    <state width="1493" height="286" key="GridCell.Tab.0.center" timestamp="1586549232439">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586632496889" />
+    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586632496889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="286" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586549232439" />
-    <state width="1493" height="286" key="GridCell.Tab.0.left" timestamp="1586549232435">
+    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586632496889" />
+    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586632496889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="286" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586549232435" />
-    <state width="1493" height="286" key="GridCell.Tab.0.right" timestamp="1586549232439">
+    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586632496889" />
+    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586632496889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="286" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586549232439" />
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586548879076">
+    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586632496889" />
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586632453531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586548879076" />
-    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586548879076">
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586632453531" />
+    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586632453530">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586548879076" />
-    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586548879076">
+    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586632453530" />
+    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586632453530">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586548879076" />
-    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586548879076">
+    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586632453530" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586632453531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586548879076" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586632453531" />
     <state x="371" y="107" key="SettingsEditor" timestamp="1586112070809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -285,10 +288,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586338699122" />
-    <state x="468" y="0" width="983" height="1040" key="find.popup" timestamp="1586603880869">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="374" y="0" width="787" height="824" key="find.popup" timestamp="1586632483088">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="374" y="0" width="787" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1585766258703" />
+    <state x="374" y="0" width="787" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586632483088" />
     <state x="468" y="0" width="983" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586603880869" />
     <state x="431" y="4" width="672" height="820" key="search.everywhere.popup" timestamp="1586310270176">
       <screen x="0" y="0" width="1536" height="824" />
@@ -319,7 +322,16 @@
           <line>8</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/VirtualEnvs/conta-comigo/Lib/site-packages/rest_framework/fields.py</url>
+          <line>1590</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Migrate.coverage" NAME="Migrate Coverage Results" MODIFIED="1586632072804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1586632066679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -6,6 +6,11 @@ from simple_history.models import HistoricalRecords
 from app.models.user_address import UserAddress
 from utils.models_validations import validate_phone
 from utils.models_validations import validate_cpf
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+
+
+DEFAULT_USER_IMAGE_URL = 'https://firebasestorage.googleapis.com/v0/b/conta-comigo-app-files.appspot.com/o/icon-conta-comigo.jpeg?alt=media&token=0094390a-0f27-4735-a0be-5926c5302b6e'
 
 
 class UserManager(BaseUserManager):
@@ -42,7 +47,7 @@ class User(AbstractBaseUser):
     last_name = django_models.CharField(_('last name'), max_length=30, blank=True)
     date_joined = django_models.DateTimeField(_('date joined'), auto_now_add=True)
     is_active = django_models.BooleanField(_('active'), default=True)
-    avatar = django_models.ImageField(upload_to='images/%Y/%m/', null=True, blank=True)
+    avatar = django_models.URLField(_('Avatar'), default=DEFAULT_USER_IMAGE_URL)
     is_superuser = django_models.BooleanField(_('Super user'), default=True)
     addresses = django_models.ManyToManyField(UserAddress, related_query_name='user')
     cpf = django_models.CharField(_('CPF'), max_length=11, validators=[validate_cpf])
@@ -98,3 +103,9 @@ class User(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         # TODO Implement
         return True
+
+
+@receiver(pre_save, sender=User)
+def pre_save(sender, instance: User, **kwargs):
+    if instance.avatar is None:
+        instance.avatar = DEFAULT_USER_IMAGE_URL
