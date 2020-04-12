@@ -1,0 +1,1 @@
+Está pasta conterá os arquivos de credenciais das contas de serviços do google.

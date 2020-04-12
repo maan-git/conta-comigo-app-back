@@ -2,67 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/extra_files/google_credentials/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/management/commands/loadaddresses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/management/commands/loadaddresses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0007_historicaluser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0007_historicaluser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0008_auto_20200406_2249.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0008_auto_20200406_2249.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0009_auto_20200406_2302.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0009_auto_20200406_2302.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0010_auto_20200407_0223.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0010_auto_20200407_0223.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0011_auto_20200407_1450.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0011_auto_20200407_1450.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0012_auto_20200407_1541.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0012_auto_20200407_1541.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0013_auto_20200407_1542.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0013_auto_20200407_1542.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0014_auto_20200408_0107.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0014_auto_20200408_0107.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0015_user_addresses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0015_user_addresses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0016_auto_20200408_0149.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0016_auto_20200408_0149.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0017_auto_20200408_0151.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0017_auto_20200408_0151.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0018_auto_20200410_2107.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0018_auto_20200410_2107.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/migrations/0019_auto_20200411_2007.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0019_auto_20200411_2007.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/address.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/address.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/city.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/city.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/global_variable.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/global_variable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/neighborhood.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/neighborhood.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user_address.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/serializers/user_address_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_address_serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/address_provider_republica_virtual.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/address_provider_republica_virtual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/address_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/address_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/city_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/city_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/login_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/neighborhood_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/neighborhood_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/migrations/0002_helprequestcancelingreason.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0002_helprequestcancelingreason.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/migrations/0003_auto_20200329_2145.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0003_auto_20200329_2145.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/migrations/0004_helprequestcancelreason.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0004_helprequestcancelreason.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/migrations/0005_auto_20200404_0039.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0005_auto_20200404_0039.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/help_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/help_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/help_request_cancel_reason.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request_cancel_reason.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/help_request_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request_status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/helping_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/helping_status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/helprequest_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/helprequest_helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_category_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_category_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_cancel_reason_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_cancel_reason_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_status_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_status_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/helping_status_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/helping_status_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpmecorona/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/prod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/admin_edit_only_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/admin_edit_only_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/commom_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/commom_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/datetime_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/datetime_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/models_validations.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/models_validations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/simple_description_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/simple_description_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/views_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/views_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,30 +42,23 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\extra_files" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\models" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\utils" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\help\views" />
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\help\fixtures" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\help\models" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\help\serializers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/user" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\serializers" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\services" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\views" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\data" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\models" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.Runserver">
@@ -214,6 +154,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Test firebase cient" type="PythonConfigurationType" factoryName="Python">
+      <module name="conta-comigo-app-maan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value=".\Google credentials\service.json" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\nehto\VirtualEnvs\conta-comigo\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/firebase_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Runserver" type="Python.DjangoServer" factoryName="Django server">
       <module name="conta-comigo-app-maan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,6 +185,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DATABASE_URL" value="postgres://contacomigo:12345@localhost:5432/contacomigo_dev" />
         <env name="DJANGO_SETTINGS_MODULE" value="helpmecorona.settings.dev" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS_CONTENT" value="{  &quot;type&quot;: &quot;service_account&quot;,  &quot;project_id&quot;: &quot;conta-comigo-app-files&quot;,  &quot;private_key_id&quot;: &quot;2c2d90afee1426ab87de591b6863ebc9c7820372&quot;,  &quot;private_key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDLmRuhtrVe6cDk\n27tCJnx/3hePiDNzOmVWboJrWoO5LClyeEH2H4o+CwIagSs9343UCfdwOzhU3YGD\nvea8wIuQFbt3G/2MaiCTc/SLw+gVSaLgFTdFo8T/1Aw3IafLBslmMVUVlcFf1kN6\nt+yLaiheCdVc6vzngZoMtJ4FIeD0oDmwjDdRbLorogP0e/OZ9zgprHq1uuAfB14X\nssnqOawHMIcFU5QNZQjT4PpzdHxd5/sCaf4tbmEB6CV3l0cVUbKRrcUoPLJ+Pj64\nZgg5VDMYw6oQLlzAmecglrnEDSLM838VsTsnwZSNJ1706BpC95GLKczEWpiO0arG\nsHPlLvdfAgMBAAECggEAHsJTvjOZeiyW6QcuEXk5X6NrltKNHLBVWrYDu86nI5os\nQYWGnaBij9YKQXvYpGvlBFm5yXnA8cgB8afb4hIK47/3cbAdDGeE4ry8KkN03tvK\n9iTDvssrujoh2vsZhl77nWtVlJcVPx04APnO4bnY6GrUPR9UCcZ27MrQLCv+ovuu\n4M7sW9oRiwL7ViPL2FXdUM2cxcmrklLz/DeIIKojZzPhdvu2ms3jWICxXZGVLI7E\n2XmG0kSfGfrD+7r9f5EkiqX4mzWfk6Bq/EaWJVVl/2cBQd1us37j2uFnc9Suo2kv\nA+02CigvHTAJxmEglsGnQ9GeVfDfqpzVI+e+Phu6wQKBgQDw9MjrH90T7viD8Uej\nrWxDzFHeYeRPcQ3yYk7u2Y8bFu4mwKGWGpkx66MlquKQGi5CPY/ktJKbgogXtPRC\nvbDW8kPgDELnHP7QSMeWqRCGFI5ZyaMBjui7gIb8roUt9cM4stkKZ0OI6NUD1vEc\nBfouhZ/w4ckZ7zj0vJ6GL+L3nwKBgQDYTzn5e7VEgD5Yf2/QlzbO38Vp4st+duoP\nEW09sdElKwnwDNnw2iXBwYEvGCwEAULPapoiRK74tMZPHnAD6yOgyziiMd16w7OV\nod8hwzG+vcKtzX8q/hy6oA8gb8JVrzUkWmJF1yzAwknkvVYp8zWExKTlQHdHVOrJ\niot/WhroQQKBgFMUw/Y2XV8TJcMwvXfVQyA5Yf0gmb0+iQWLGhZHE43OoTzhbJW6\nBBpvWiiRvF7deBfE7El6bZaLMmuiLBqbF0915ytobuULXVzpy0/KaXUhv1d8K+VM\npjiIf4K+lhMbyz1QhX+NzX52cYRKZ4Y3FWVXE6fV4iY8EtJn+uzftA2XAoGBALMs\nvSsI69e4GuyXcvlnqECoXxAcis9QlQSyPLjT6BhPlEXBf23gZVIfhXCLJzqSCNNi\nzBYCqqTcqT+0SLkWN0bjzx+bCoi8Pq99jCSdWUFUUkRBakskfougNad6q5DqNqzM\nKYcMe8eXqDnPE+ZfzT8S3DwBsEvn7SvQlUiCTLOBAoGACG9f/IHy266z1j4pJhp6\nScKFKJ8eTB1J3cqju4zkU2R9uDZ5tbG5VRwrd2vxfoIjHsvO6gFLvtxCIMsHElwJ\no7YutS/uZovcxCo/qsxpXGlSHFXzgnSGR8ES84klxLx4bVX0GkjOsjkmHDDC/9qQ\np4pEvv8qIp0FLi+wXWDnVBY=\n-----END PRIVATE KEY-----\n&quot;,  &quot;client_email&quot;: &quot;contacomigo-backend@conta-comigo-app-files.iam.gserviceaccount.com&quot;,  &quot;client_id&quot;: &quot;103904640859558738551&quot;,  &quot;auth_uri&quot;: &quot;https://accounts.google.com/o/oauth2/auth&quot;,  &quot;token_uri&quot;: &quot;https://oauth2.googleapis.com/token&quot;,  &quot;auth_provider_x509_cert_url&quot;: &quot;https://www.googleapis.com/oauth2/v1/certs&quot;,  &quot;client_x509_cert_url&quot;: &quot;https://www.googleapis.com/robot/v1/metadata/x509/contacomigo-backend%40conta-comigo-app-files.iam.gserviceaccount.com&quot;}" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\nehto\VirtualEnvs\conta-comigo\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -241,6 +205,7 @@
     </configuration>
     <list>
       <item itemvalue="Django server.Runserver" />
+      <item itemvalue="Python.Test firebase cient" />
       <item itemvalue="Python.Install fixtures" />
       <item itemvalue="Python.Load addresses" />
       <item itemvalue="Python.Make migrations" />
@@ -264,7 +229,7 @@
       <workItem from="1586310738356" duration="2027000" />
       <workItem from="1586338699342" duration="1345000" />
       <workItem from="1586631400539" duration="9617000" />
-      <workItem from="1586651529076" duration="334000" />
+      <workItem from="1586651529076" duration="20993000" />
     </task>
     <servers />
   </component>
@@ -276,10 +241,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="31" key="#Runserver/0.0.1536.824@0.0.1536.824" timestamp="1585941987015" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586651542706">
+    <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586674462517">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586651542706" />
+    <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586674462517" />
     <state x="513" y="243" width="661" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586202482065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -289,10 +254,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585503131691" />
-    <state x="3" y="30" width="1476" height="750" key="#xdebugger.evaluate" timestamp="1586646146097">
+    <state x="3" y="30" width="1476" height="750" key="#xdebugger.evaluate" timestamp="1586670965967">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="3" y="30" width="1476" height="750" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1586646146097" />
+    <state x="3" y="30" width="1476" height="750" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1586670965967" />
     <state width="704" height="466" key="DebuggerActiveHint" timestamp="1586212458116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -301,42 +266,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="503" y="174" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585942630487" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1586220006336">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1586658543846">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586220006336" />
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586648291532">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586658543846" />
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586674841335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586648291532" />
-    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586648291532">
+    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586674841335" />
+    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586674841334">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586648291532" />
-    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586648291532">
+    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586674841334" />
+    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586674841334">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586648291532" />
-    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586648291532">
+    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586674841334" />
+    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586674841335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586648291532" />
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586648291266">
+    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586674841335" />
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586674841335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586648291266" />
-    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586648291265">
+    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586674841335" />
+    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586674841335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586648291265" />
-    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586648291265">
+    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586674841335" />
+    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586674841335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586648291265" />
-    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586648291266">
+    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586674841335" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586674841335">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586648291266" />
+    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586674841335" />
     <state x="371" y="107" key="SettingsEditor" timestamp="1586112070809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -350,11 +315,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586338699122" />
-    <state x="374" y="0" width="787" height="824" key="find.popup" timestamp="1586634459998">
+    <state x="374" y="0" width="787" height="824" key="find.popup" timestamp="1586671090983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="374" y="0" width="787" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586634459998" />
+    <state x="374" y="0" width="787" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586671090983" />
     <state x="468" y="0" width="983" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586603880869" />
+    <state x="521" y="307" key="git4idea.ui.GitResetDialog" timestamp="1586656198053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="521" y="307" key="git4idea.ui.GitResetDialog/0.0.1536.824@0.0.1536.824" timestamp="1586656198053" />
     <state x="431" y="4" width="672" height="820" key="search.everywhere.popup" timestamp="1586310270176">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -380,15 +349,16 @@
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/models_validations.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="82" />
+          <url>file://$PROJECT_DIR$/app/serializers/user_serializer.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Migrate.coverage" NAME="Migrate Coverage Results" MODIFIED="1586644995237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1586644808153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Test_firebase_cient.coverage" NAME="Test firebase cient Coverage Results" MODIFIED="1586672859138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1586670415346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

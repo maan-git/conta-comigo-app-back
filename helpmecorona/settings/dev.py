@@ -23,3 +23,5 @@ DATABASES = {
         default="postgres://contacomigo_user:12345@db:5432/contacomigo_dev",
     )
 }
+
+FIREBASE_STORAGE_BUCKET = 'staging.conta-comigo-app-files.appspot.com'

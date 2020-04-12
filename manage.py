@@ -6,6 +6,17 @@ import sys
 
 def main():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helpmecorona.settings.dev")
+    os.environ.setdefault("GOOGLE_APPLICATION_CREDENTIALS",
+                          "./extra_files/google_credentials/contacomigo-backend@conta-comigo-app-files.iam.gserviceaccount.com.json")
+
+    google_credentials_content = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_CONTENT')
+    google_credentials_path = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+
+    if google_credentials_content and google_credentials_path:
+        with open(google_credentials_path, 'w') as credentials_file:
+            credentials_file.write(google_credentials_content)
+            credentials_file.close()
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
