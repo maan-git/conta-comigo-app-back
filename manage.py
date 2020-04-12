@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import logging
 
 
 def main():
@@ -12,10 +13,13 @@ def main():
     google_credentials_content = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_CONTENT')
     google_credentials_path = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
 
+    logging.info('Checking if google credentials info is complete')
     if google_credentials_content and google_credentials_path:
+        logging.info('Starting google credentials file generations')
         with open(google_credentials_path, 'w') as credentials_file:
             credentials_file.write(google_credentials_content)
             credentials_file.close()
+            logging.info('Google credentials file generated successfully')
 
     try:
         from django.core.management import execute_from_command_line
