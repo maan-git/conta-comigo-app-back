@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/queryset_lookups/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/queryset_lookups/not_equals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,12 +198,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.Runserver" />
-      <item itemvalue="Python.Test firebase cient" />
       <item itemvalue="Python.Install fixtures" />
       <item itemvalue="Python.Load addresses" />
       <item itemvalue="Python.Make migrations" />
       <item itemvalue="Python.Migrate" />
+      <item itemvalue="Python.Test firebase cient" />
+      <item itemvalue="Django server.Runserver" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -228,7 +223,7 @@
       <workItem from="1586310738356" duration="2027000" />
       <workItem from="1586338699342" duration="1345000" />
       <workItem from="1586631400539" duration="9617000" />
-      <workItem from="1586651529076" duration="28744000" />
+      <workItem from="1586651529076" duration="30065000" />
     </task>
     <servers />
   </component>

@@ -58,6 +58,7 @@ class HelpRequestSerializer(serializers.ModelSerializer):
     category = CategorySimpleSerializer(many=False, read_only=False)
     status = StatusSimpleSerializer(many=False, read_only=True)
     cancel_reason = CancelReasonSimpleSerializer(many=False, read_only=True)
+    address_id = serializers.IntegerField()
 
     def create(self, validated_data):
         validated_data["owner_user"] = self.context["request"].user
