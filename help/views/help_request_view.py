@@ -17,12 +17,30 @@ from help.models.helprequest_helpers import HelpRequestHelpers
 from django.db import transaction
 from utils.views_utils import get_param_or_400
 from utils.views_utils import ModelViewSetNoDelete
+from django_filters import rest_framework as filters
 
 
 help_request_field_desc = _non_lazy("Help request ID")
 
 
+class HelpRequestFilters(filters.FilterSet):
+    neighborhood_id = filters.NumberFilter(field_name="address__neighborhood_id")
+    city_id = filters.NumberFilter(field_name="address__neighborhood__city_id")
+    state_id = filters.NumberFilter(field_name="address__neighborhood__city__state_id")
+    helper_user_id = filters.NumberFilter(field_name="helping_users__id")
+
+    class Meta:
+        model = HelpRequest
+        fields = {
+            'category_id': ['in'],
+            'status_id': ['exact'],
+            'owner_user_id': ['exact']
+        }
+
+
 class HelpRequestView(ModelViewSetNoDelete):
+    filterset_class = HelpRequestFilters
+
     def get_serializer_class(self):
         if self.request.method == "GET":
             return HelpRequestSerializer

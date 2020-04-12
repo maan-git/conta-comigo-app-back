@@ -9,6 +9,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from rest_framework.exceptions import ValidationError
 from help.models.helping_status import HelpingStatus
+from app.models.user_address import UserAddress
 
 
 # Created → Canceled
@@ -53,6 +54,11 @@ class HelpRequest (django_models.Model):
                                              db_index=True,
                                              null=True,
                                              blank=True)
+    address = django_models.ForeignKey(UserAddress,
+                                       verbose_name=_("Address where the help request is needed"),
+                                       on_delete=django_models.DO_NOTHING,
+                                       related_name='help_requests',
+                                       db_index=True)
     history = HistoricalRecords()
 
     def __init__(self, *args, **kwargs):
