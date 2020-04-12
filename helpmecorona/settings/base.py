@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import sys
+import django_heroku
 from corsheaders.defaults import default_headers
 from rest_framework.settings import ISO_8601
 from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
