@@ -8,19 +8,19 @@ from app.models.state import State
 class NeighborhoodSimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Neighborhood
-        fields = ('id', 'description')
+        fields = ("id", "description")
 
 
 class CitySimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ('id', 'description')
+        fields = ("id", "description")
 
 
 class StateSimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = State
-        fields = ('id', 'description')
+        fields = ("id", "description")
 
 
 class UserAddressSerializer(serializers.ModelSerializer):
@@ -30,5 +30,5 @@ class UserAddressSerializer(serializers.ModelSerializer):
         depth = 3
 
     neighborhood = NeighborhoodSimpleSerializer()
-    city = CitySimpleSerializer(source='neighborhood.city')
-    state = StateSimpleSerializer(source='neighborhood.city.state')
+    city = CitySimpleSerializer(source="neighborhood.city")
+    state = StateSimpleSerializer(source="neighborhood.city.state")

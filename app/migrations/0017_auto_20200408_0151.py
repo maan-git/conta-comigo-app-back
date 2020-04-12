@@ -5,17 +5,9 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0016_auto_20200408_0149'),
-    ]
+    dependencies = [("app", "0016_auto_20200408_0149")]
 
     operations = [
-        migrations.RemoveField(
-            model_name='useraddress',
-            name='city',
-        ),
-        migrations.RemoveField(
-            model_name='useraddress',
-            name='state',
-        ),
+        migrations.RemoveField(model_name="useraddress", name="city"),
+        migrations.RemoveField(model_name="useraddress", name="state"),
     ]

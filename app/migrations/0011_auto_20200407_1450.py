@@ -5,18 +5,11 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0010_auto_20200407_0223'),
-    ]
+    dependencies = [("app", "0010_auto_20200407_0223")]
 
     operations = [
-        migrations.RenameModel(
-            old_name='BrazilianUf',
-            new_name='State',
-        ),
+        migrations.RenameModel(old_name="BrazilianUf", new_name="State"),
         migrations.RenameField(
-            model_name='city',
-            old_name='brazilian_uf',
-            new_name='state',
+            model_name="city", old_name="brazilian_uf", new_name="state"
         ),
     ]

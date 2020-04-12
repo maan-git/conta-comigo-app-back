@@ -18,6 +18,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 DATABASES = {
     # Read the database values from environment variable DATABASE_URL in format:
     # postgres://username:password@server:port/database
-    "default": dj_database_url.config(conn_max_age=600,
-                                      default="postgres://contacomigo_user:12345@db:5432/contacomigo_dev")
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        default="postgres://contacomigo_user:12345@db:5432/contacomigo_dev",
+    )
 }

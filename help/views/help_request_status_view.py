@@ -5,7 +5,7 @@ from utils.admin_edit_only_view import AdminEditOnlyViewNoDelete
 
 class HelpRequestStatusView(AdminEditOnlyViewNoDelete):
     queryset = HelpRequestStatus.objects.all()
-    ordering = ('description',)
+    ordering = ("description",)
 
     def get_serializer_class(self):
         serializer_class = get_generic_read_serializer(HelpRequestStatus, 0)

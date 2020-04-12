@@ -6,57 +6,100 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0007_historicaluser'),
-    ]
+    dependencies = [("app", "0007_historicaluser")]
 
     operations = [
         migrations.CreateModel(
-            name='BrazilianUf',
+            name="BrazilianUf",
             fields=[
-                ('id', models.IntegerField(primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=50, verbose_name='Description')),
-                ('initials', models.CharField(max_length=2, verbose_name='Initials')),
-                ('active', models.BooleanField(default=True, verbose_name='Active')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
+                (
+                    "id",
+                    models.IntegerField(
+                        primary_key=True, serialize=False, verbose_name="ID"
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(max_length=50, verbose_name="Description"),
+                ),
+                ("initials", models.CharField(max_length=2, verbose_name="Initials")),
+                ("active", models.BooleanField(default=True, verbose_name="Active")),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='GlobalVariable',
+            name="GlobalVariable",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('key', models.CharField(max_length=100, unique=True, verbose_name='Key')),
-                ('description', models.CharField(max_length=200, verbose_name='Description')),
-                ('value', models.TextField(blank=True, null=True, verbose_name='Global variable value')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "key",
+                    models.CharField(max_length=100, unique=True, verbose_name="Key"),
+                ),
+                (
+                    "description",
+                    models.CharField(max_length=200, verbose_name="Description"),
+                ),
+                (
+                    "value",
+                    models.TextField(
+                        blank=True, null=True, verbose_name="Global variable value"
+                    ),
+                ),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='GlobalVariableType',
+            name="GlobalVariableType",
             fields=[
-                ('id', models.IntegerField(primary_key=True, serialize=False, verbose_name='Description')),
-                ('description', models.CharField(max_length=200, verbose_name='Description')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
+                (
+                    "id",
+                    models.IntegerField(
+                        primary_key=True, serialize=False, verbose_name="Description"
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(max_length=200, verbose_name="Description"),
+                ),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
             ],
         ),
-        migrations.DeleteModel(
-            name='Address',
-        ),
-        migrations.DeleteModel(
-            name='City',
-        ),
-        migrations.DeleteModel(
-            name='Country',
-        ),
-        migrations.DeleteModel(
-            name='Neighborhood',
-        ),
-        migrations.DeleteModel(
-            name='Zip',
-        ),
+        migrations.DeleteModel(name="Address"),
+        migrations.DeleteModel(name="City"),
+        migrations.DeleteModel(name="Country"),
+        migrations.DeleteModel(name="Neighborhood"),
+        migrations.DeleteModel(name="Zip"),
         migrations.AddField(
-            model_name='globalvariable',
-            name='type',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='global_variables', to='app.GlobalVariableType', verbose_name='Global variable'),
+            model_name="globalvariable",
+            name="type",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="global_variables",
+                to="app.GlobalVariableType",
+                verbose_name="Global variable",
+            ),
         ),
     ]

@@ -5,21 +5,33 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('help', '0003_auto_20200329_2145'),
-    ]
+    dependencies = [("help", "0003_auto_20200329_2145")]
 
     operations = [
         migrations.CreateModel(
-            name='HelpRequestCancelReason',
+            name="HelpRequestCancelReason",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=50, verbose_name='Description')),
-                ('active', models.BooleanField(default=True, verbose_name='Active')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Creation date')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(max_length=50, verbose_name="Description"),
+                ),
+                ("active", models.BooleanField(default=True, verbose_name="Active")),
+                (
+                    "created",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Creation date"
+                    ),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
-        ),
+            options={"abstract": False},
+        )
     ]

@@ -5,14 +5,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0014_auto_20200408_0107'),
-    ]
+    dependencies = [("app", "0014_auto_20200408_0107")]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='addresses',
-            field=models.ManyToManyField(related_query_name='user', to='app.UserAddress'),
-        ),
+            model_name="user",
+            name="addresses",
+            field=models.ManyToManyField(
+                related_query_name="user", to="app.UserAddress"
+            ),
+        )
     ]

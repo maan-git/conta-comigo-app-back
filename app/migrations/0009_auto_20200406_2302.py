@@ -5,14 +5,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0008_auto_20200406_2249'),
-    ]
+    dependencies = [("app", "0008_auto_20200406_2249")]
 
     operations = [
         migrations.AlterField(
-            model_name='globalvariable',
-            name='id',
-            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='ID'),
-        ),
+            model_name="globalvariable",
+            name="id",
+            field=models.IntegerField(
+                primary_key=True, serialize=False, verbose_name="ID"
+            ),
+        )
     ]

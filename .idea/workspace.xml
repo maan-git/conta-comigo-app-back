@@ -3,8 +3,66 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/management/commands/loadaddresses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/management/commands/loadaddresses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0007_historicaluser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0007_historicaluser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0008_auto_20200406_2249.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0008_auto_20200406_2249.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0009_auto_20200406_2302.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0009_auto_20200406_2302.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0010_auto_20200407_0223.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0010_auto_20200407_0223.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0011_auto_20200407_1450.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0011_auto_20200407_1450.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0012_auto_20200407_1541.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0012_auto_20200407_1541.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0013_auto_20200407_1542.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0013_auto_20200407_1542.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0014_auto_20200408_0107.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0014_auto_20200408_0107.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0015_user_addresses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0015_user_addresses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0016_auto_20200408_0149.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0016_auto_20200408_0149.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0017_auto_20200408_0151.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0017_auto_20200408_0151.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0018_auto_20200410_2107.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0018_auto_20200410_2107.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0019_auto_20200411_2007.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/0019_auto_20200411_2007.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/address.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/city.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/city.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/global_variable.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/global_variable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/neighborhood.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/neighborhood.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/serializers/user_address_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_address_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/address_provider_republica_virtual.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/address_provider_republica_virtual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/address_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/address_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/city_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/city_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/login_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/neighborhood_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/neighborhood_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/migrations/0002_helprequestcancelingreason.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0002_helprequestcancelingreason.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/migrations/0003_auto_20200329_2145.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0003_auto_20200329_2145.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/migrations/0004_helprequestcancelreason.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0004_helprequestcancelreason.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/migrations/0005_auto_20200404_0039.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/migrations/0005_auto_20200404_0039.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/models/help_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/help/models/help_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/models/help_request_cancel_reason.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request_cancel_reason.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/models/help_request_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request_status.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/models/helping_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/helping_status.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/models/helprequest_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/helprequest_helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/views/help_category_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_category_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/views/help_request_cancel_reason_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_cancel_reason_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/views/help_request_status_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_status_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/help/views/help_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/views/helping_status_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/helping_status_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/admin_edit_only_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/admin_edit_only_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/commom_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/commom_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/datetime_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/datetime_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/models_validations.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/models_validations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/simple_description_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/simple_description_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/views_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/views_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +264,7 @@
       <workItem from="1586310738356" duration="2027000" />
       <workItem from="1586338699342" duration="1345000" />
       <workItem from="1586631400539" duration="9617000" />
+      <workItem from="1586651529076" duration="334000" />
     </task>
     <servers />
   </component>
@@ -217,10 +276,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="31" key="#Runserver/0.0.1536.824@0.0.1536.824" timestamp="1585941987015" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586546904505">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586651542706">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586546904505" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586651542706" />
     <state x="513" y="243" width="661" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586202482065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -5,7 +5,7 @@ from utils.admin_edit_only_view import AdminEditOnlyViewNoDelete
 
 class HelpCategoryView(AdminEditOnlyViewNoDelete):
     queryset = HelpCategory.objects.all()
-    ordering = ('description',)
+    ordering = ("description",)
 
     def get_serializer_class(self):
         serializer_class = get_generic_read_serializer(HelpCategory, 0)

@@ -6,14 +6,17 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0012_auto_20200407_1541'),
-    ]
+    dependencies = [("app", "0012_auto_20200407_1541")]
 
     operations = [
         migrations.AlterField(
-            model_name='address',
-            name='neighborhood',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='addresses', to='app.Neighborhood', verbose_name='Neighborhood'),
-        ),
+            model_name="address",
+            name="neighborhood",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="addresses",
+                to="app.Neighborhood",
+                verbose_name="Neighborhood",
+            ),
+        )
     ]

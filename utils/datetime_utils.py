@@ -63,8 +63,11 @@ def _convert_str(
     if default_value is not None:
         return default_value
     else:
-        raise ValueError('The value "{}" is not valid for any of the formats: "{}"'.format(string_to_convert,
-                                                                                           ','.join(formats)))
+        raise ValueError(
+            'The value "{}" is not valid for any of the formats: "{}"'.format(
+                string_to_convert, ",".join(formats)
+            )
+        )
 
 
 def diff_in_months(start_date, end_date):

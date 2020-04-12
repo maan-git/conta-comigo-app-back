@@ -5,19 +5,15 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('app', '0015_user_addresses'),
-    ]
+    dependencies = [("app", "0015_user_addresses")]
 
     operations = [
         migrations.RenameField(
-            model_name='useraddress',
-            old_name='city_name',
-            new_name='city',
+            model_name="useraddress", old_name="city_name", new_name="city"
         ),
         migrations.RenameField(
-            model_name='useraddress',
-            old_name='neighborhood_name',
-            new_name='neighborhood',
+            model_name="useraddress",
+            old_name="neighborhood_name",
+            new_name="neighborhood",
         ),
     ]

@@ -7,15 +7,17 @@ from utils import commom_utils
 
 
 class GlobalVariable(django_models.Model):
-    id = django_models.IntegerField(_('ID'), primary_key=True)
+    id = django_models.IntegerField(_("ID"), primary_key=True)
     key = django_models.CharField("Key", max_length=100, null=False, unique=True)
     description = django_models.CharField(_("Description"), max_length=200)
     value = django_models.TextField(_("Global variable value"), null=True, blank=True)
     created = django_models.DateTimeField(_("Creation date"), auto_now_add=True)
-    type = django_models.ForeignKey(GlobalVariableType,
-                                    verbose_name=_("Global variable"),
-                                    on_delete=django_models.DO_NOTHING,
-                                    related_name='global_variables')
+    type = django_models.ForeignKey(
+        GlobalVariableType,
+        verbose_name=_("Global variable"),
+        on_delete=django_models.DO_NOTHING,
+        related_name="global_variables",
+    )
 
     @property
     def converted_value(self):
@@ -85,7 +87,7 @@ def pre_save(sender, instance: GlobalVariable, created=False, raw=False, **kwarg
             saved_value = GlobalVariable.objects.get(id=instance.id).value
             exists = True
         except GlobalVariable.DoesNotExist:
-            saved_value = ''
+            saved_value = ""
             exists = False
 
         if exists and saved_value != instance.value:
