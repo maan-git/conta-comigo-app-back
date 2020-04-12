@@ -1,3 +1,4 @@
 helpmecorona/venv
 *__pycache__*
 .idea
+extra_files/google_credentials/*
