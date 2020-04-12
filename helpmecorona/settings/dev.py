@@ -25,5 +25,3 @@ DATABASES = {
 }
 
 FIREBASE_STORAGE_BUCKET = 'staging.conta-comigo-app-files.appspot.com'
-
-django_heroku.settings(locals(), databases=False, logging=False)

@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import sys
-import django_heroku
 from corsheaders.defaults import default_headers
 from rest_framework.settings import ISO_8601
 from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
+
+
+LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -188,7 +190,7 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "DEBUG",
+            "level": LOG_LEVEL,
             "class": "logging.StreamHandler",
             "formatter": "simple",
             "stream": sys.stdout,
@@ -209,7 +211,7 @@ LOGGING = {
         #     "handlers": ["console", 'file'],
         #     'level': 'INFO',
         # },
-        "django": {"handlers": ["console"], "level": "INFO"},
+        "django": {"handlers": ["console"], "level": LOG_LEVEL},
         "django.db.backends": {"level": "INFO", "handlers": ["console"]},
     },
 }
