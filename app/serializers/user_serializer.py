@@ -10,7 +10,7 @@ from django.conf import settings
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        exclude = ("password", "addresses")
+        exclude = ("password",)
 
 
 class Base64ImageFieldReturnUrl(Base64ImageField):
