@@ -29,7 +29,7 @@ class CancelReasonSimpleSerializer(serializers.ModelSerializer):
 class UserSimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "email", "first_name", "last_name", "avatar")
+        fields = ("id", "email", "first_name", "last_name", "avatar", "birth_date")
 
 
 class HelpingStatusSimpleSerializer(serializers.ModelSerializer):
