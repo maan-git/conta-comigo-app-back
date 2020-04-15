@@ -15,15 +15,27 @@ from utils.views_utils import get_param_or_400
 from app.models.user_address import UserAddress
 from utils.commom_utils import str_to_boolean
 from app.serializers.user_address_serializer import UserAddressSerializer
+from django_filters import rest_framework as filters
 
 from rest_framework import status
 from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
+
+
+class UserFilters(filters.FilterSet):
+    id = filters.NumberFilter(field_name="id")
+
+    class Meta:
+        model = User
+        fields = {
+            'id': ['ne']
+        }
 
 
 class UserView(ModelViewSetNoDelete):
     queryset = User.objects.all()
     permission_classes = [AllowAny]
     parser_classes = (JSONParser, FormParser, MultiPartParser)
+    filterset_class = UserFilters
 
     def get_serializer_class(self):
         if self.request.method == "GET":
