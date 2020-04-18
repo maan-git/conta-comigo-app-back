@@ -51,9 +51,6 @@ class HelpRequest(django_models.Model):
         verbose_name=_("Users helping"),
         related_name="helping_requests",
     )
-    telephone_allowed = django_models.BooleanField(_("Autorizar divulgar o número de telefone?"),
-                                                   null=True,
-                                                   default=False)
     description = django_models.TextField(_("Description"), db_index=True)
     created = django_models.DateTimeField(_("Creation date"), auto_now_add=True)
     status = django_models.ForeignKey(HelpRequestStatus,
@@ -79,6 +76,8 @@ class HelpRequest(django_models.Model):
                                        on_delete=django_models.DO_NOTHING,
                                        related_name='help_requests',
                                        db_index=True)
+    telephone_allowed = django_models.BooleanField(_("Telephone Allowed"))
+
     history = HistoricalRecords()
 
     def __init__(self, *args, **kwargs):
