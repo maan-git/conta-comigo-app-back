@@ -51,6 +51,7 @@ class HelpRequest(django_models.Model):
         verbose_name=_("Users helping"),
         related_name="helping_requests",
     )
+    telephone_allowed = django_models.BooleanField(_("Autorizar divulgar o número de telefone?"))
     description = django_models.TextField(_("Description"), db_index=True)
     created = django_models.DateTimeField(_("Creation date"), auto_now_add=True)
     status = django_models.ForeignKey(HelpRequestStatus,
