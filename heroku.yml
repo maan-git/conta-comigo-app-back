@@ -3,7 +3,7 @@ setup:
   - plan: heroku-postgresql
 build:
   docker:
-    web: Dockerfile-dev
+    web: Dockerfile
 run:
   web: gunicorn helpmecorona.wsgi --log-file=- --log-level=debug
 release:
