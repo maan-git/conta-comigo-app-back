@@ -76,7 +76,7 @@ class HelpRequest(django_models.Model):
                                        on_delete=django_models.DO_NOTHING,
                                        related_name='help_requests',
                                        db_index=True)
-    telephone_allowed = django_models.BooleanField(_("Telephone Allowed"))
+    telephone_allowed = django_models.BooleanField(_("Telephone Allowed"), default=True)
 
     history = HistoricalRecords()
 

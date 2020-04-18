@@ -50,7 +50,7 @@ class User(AbstractBaseUser):
     avatar = django_models.URLField(_("Avatar"), default=DEFAULT_USER_IMAGE_URL)
     is_superuser = django_models.BooleanField(_("Super user"), default=True)
     addresses = django_models.ManyToManyField(UserAddress, related_query_name="user")
-    cpf = django_models.CharField(_("CPF"), max_length=11, validators=[validate_cpf], unique=True)
+    cpf = django_models.CharField(_("CPF"), max_length=11, validators=[validate_cpf], unique=True, default=None)
     birth_date = django_models.DateField(_("Data de nascimento"))
     phone_number = django_models.CharField(
         _("Telefone"), max_length=14, validators=[validate_phone]
