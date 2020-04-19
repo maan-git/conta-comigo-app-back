@@ -10,12 +10,18 @@ from .views.city_view import CityView
 from .views.state_view import StateView
 from .views.address_view import AddressView
 
+from push_notifications.api.rest_framework import APNSDeviceAuthorizedViewSet, GCMDeviceAuthorizedViewSet
+from rest_framework.routers import DefaultRouter
+
 router = DefaultRouter()
 router.register(r"user", UserView)
 router.register(r"neighborhood", NeighborhoodView)
 router.register(r"city", CityView)
 router.register(r"state", StateView)
 router.register(r"address", AddressView)
+
+router.register(r'device/apns', APNSDeviceAuthorizedViewSet)
+router.register(r'device/gcm', GCMDeviceAuthorizedViewSet)
 
 app_name = "app"
 

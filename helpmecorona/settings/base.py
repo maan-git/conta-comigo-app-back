@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "rest_framework_swagger",
     "rest_framework.authtoken",
     "django_filters",
+    "push_notifications",
     "corsheaders",
     "simple_history",
     "utils",
@@ -236,3 +237,15 @@ FIXTURE_DIRS = ("/help/fixtures/", "/app/fixtures/")
 MEDIA_URL = "/"
 
 EXTERNAL_ADDRESS_PROVIDER = ExternalProviderRepVirtual
+
+PUSH_NOTIFICATIONS_SETTINGS = {
+        # "FCM_API_KEY": "[your api key]",
+        # "GCM_API_KEY": "[your api key]",
+        # "APNS_CERTIFICATE": "/path/to/your/certificate.pem",
+        # "APNS_TOPIC": "com.example.push_test",
+        # "WNS_PACKAGE_SECURITY_ID": "[your package security id, e.g: 'ms-app://e-3-4-6234...']",
+        # "WNS_SECRET_KEY": "[your app secret key, e.g.: 'KDiejnLKDUWodsjmewuSZkk']",
+        "WP_PRIVATE_KEY": os.path.join(BASE_DIR, 'extra_files', 'push_servers_credentials', 'web_pages', 'private_key.pem'),
+        "WP_CLAIMS": {'sub': "mailto: contacomigoapp@gmail.com"},
+        "UPDATE_ON_DUPLICATE_REG_ID": True
+}
