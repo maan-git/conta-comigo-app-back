@@ -69,12 +69,12 @@ class UserView(ModelViewSetNoDelete):
 
         return Response(data=serializer_class(request.user).data)
 
-    def post(self, request, pk=None, format=None):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(photo=request.data.get("avatar"))
-            return Response(data=serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # def post(self, request, pk=None, format=None):
+    #     serializer = UserSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save(photo=request.data.get("avatar"))
+    #         return Response(data=serializer.data, status=status.HTTP_200_OK)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @action(
         methods=["get"],

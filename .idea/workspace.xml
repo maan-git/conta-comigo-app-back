@@ -2,10 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/help/migrations/0002_auto_20200419_1503.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment-tasks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deployment-tasks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile-dev" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/address_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/address_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment-tasks.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-maskable-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-maskable-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-120x120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-152x152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-180x180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-60x60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-76x76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/msapplication-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/mstile-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/img/icons/safari-pinned-tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/icone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/intro/step1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/intro/step2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/intro/step3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/logo_completa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/pattern.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/CardContainer.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/HelpForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/NavBar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/UserForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/plugins/vuetify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/registerServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/modules/help.store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/modules/user.store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/validation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/CreateAccount.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/CreateHelp.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/HowTo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/ListHelp.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/tests/unit/example.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/vue.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/models/help_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroku.yml" beforeDir="false" afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +110,8 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -226,6 +295,7 @@
       <workItem from="1586338699342" duration="1345000" />
       <workItem from="1586631400539" duration="9617000" />
       <workItem from="1586651529076" duration="30065000" />
+      <workItem from="1587312042131" duration="518000" />
     </task>
     <servers />
   </component>
@@ -254,10 +324,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="3" y="30" width="1476" height="750" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1586703020165" />
+    <state x="516" y="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587312154968">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="516" y="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1587312154968" />
     <state width="704" height="466" key="DebuggerActiveHint" timestamp="1586212458116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="704" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1586212458116" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1587311417613">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1587311417613" />
     <state x="503" y="174" key="EnvironmentVariablesDialog" timestamp="1585942630487">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -266,51 +344,51 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586679365111" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1587302336019">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1587312023241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587302336019" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1587302336019">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587312023241" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1587312023240">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587302336019" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1587302336018">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587312023240" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1587312023240">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587302336018" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1587302336019">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587312023240" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1587312023241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587302336019" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587301563295">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587312023241" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587312023241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587301563295" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1587301563294">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587312023241" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1587312023241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587301563294" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1587301563294">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587312023241" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1587312023241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587301563294" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1587301563294">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587312023241" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1587312023241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587301563294" />
-    <state x="371" y="107" key="SettingsEditor" timestamp="1586112070809">
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587312023241" />
+    <state x="365" y="86" key="SettingsEditor" timestamp="1587310134100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="371" y="107" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586112070809" />
+    <state x="365" y="86" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587310134100" />
     <state x="464" y="135" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585303252955" />
     <state width="774" height="419" key="XDebugger.FullValuePopup" timestamp="1586646145995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="774" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1586646145995" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586338699122">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587312042174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586338699122" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587312042174" />
     <state x="374" y="0" width="787" height="824" key="find.popup" timestamp="1586671090983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -320,6 +398,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="521" y="307" key="git4idea.ui.GitResetDialog/0.0.1536.824@0.0.1536.824" timestamp="1586656198053" />
+    <state x="361" y="61" key="scopes" timestamp="1587311209405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="61" key="scopes/0.0.1536.824@0.0.1536.824" timestamp="1587311209405" />
     <state x="431" y="4" width="672" height="820" key="search.everywhere.popup" timestamp="1586310270176">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -348,7 +430,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Migrate.coverage" NAME="Migrate Coverage Results" MODIFIED="1587301570563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1587301563284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Migrate.coverage" NAME="Migrate Coverage Results" MODIFIED="1587304989454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1587304982873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
