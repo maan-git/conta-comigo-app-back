@@ -13,7 +13,7 @@ RUN apk --update add \
     build-base \
     jpeg-dev \
     zlib-dev \
-    libssl-dev
+    libressl-dev
 
 # install dependencies
 RUN pip install --upgrade pip
