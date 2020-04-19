@@ -1,4 +1,4 @@
-#!/bin/bash
+py#!/bin/bash
 
 # Delpoyment tasks
 
