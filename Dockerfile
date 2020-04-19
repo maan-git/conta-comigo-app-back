@@ -8,12 +8,14 @@ RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
 # libssl-dev is a dependency for python cryptography package
+# libffi-dev is a dependency for cffi package (that in turn is a dependency of cryptography package)
 
 RUN apk --update add \
     build-base \
     jpeg-dev \
     zlib-dev \
-    libressl-dev
+    libressl-dev \
+    libffi-dev
 
 # install dependencies
 RUN pip install --upgrade pip
