@@ -1,4 +1,4 @@
-from rest_framework.routers import DefaultRouter
+from utils.views_utils import CustomRouterNoPut
 from django.conf.urls import url
 from django.conf.urls import include
 
@@ -10,7 +10,7 @@ from .views.city_view import CityView
 from .views.state_view import StateView
 from .views.address_view import AddressView
 
-router = DefaultRouter()
+router = CustomRouterNoPut()
 router.register(r"user", UserView)
 router.register(r"neighborhood", NeighborhoodView)
 router.register(r"city", CityView)

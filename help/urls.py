@@ -1,11 +1,11 @@
-from rest_framework.routers import DefaultRouter
+from utils.views_utils import CustomRouterNoPut
 from django.conf.urls import include, url
 from help import views
 
 app_name = "help"
 
 # Create a router and register our viewsets with it.
-router = DefaultRouter()
+router = CustomRouterNoPut()
 router.register(r"helpcategory", views.HelpCategoryView, basename="helpcategory")
 router.register(
     r"helprequeststatus", views.HelpRequestStatusView, basename="helprequeststatus"
