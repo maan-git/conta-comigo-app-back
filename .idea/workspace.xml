@@ -2,78 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/help/migrations/0002_auto_20200419_1503.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile-dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/address_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/address_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment-tasks.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/jest.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-192x192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-512x512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-maskable-192x192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/android-chrome-maskable-512x512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-120x120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-152x152.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-180x180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-60x60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon-76x76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/msapplication-icon-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/mstile-150x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/img/icons/safari-pinned-tab.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/icone.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/intro/step1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/intro/step2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/intro/step3.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/logo_completa.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/pattern.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/CardContainer.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/HelpForm.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/NavBar.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/UserForm.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/plugins/vuetify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/registerServiceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/router/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/store/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/store/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/store/modules/help.store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/store/modules/user.store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/utils/validation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/CreateAccount.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/CreateHelp.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/Home.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/HowTo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/ListHelp.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/Login.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/tests/unit/example.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/vue.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/help_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroku.yml" beforeDir="false" afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +225,7 @@
       <workItem from="1586338699342" duration="1345000" />
       <workItem from="1586631400539" duration="9617000" />
       <workItem from="1586651529076" duration="30065000" />
-      <workItem from="1587312042131" duration="518000" />
+      <workItem from="1587312042131" duration="993000" />
     </task>
     <servers />
   </component>

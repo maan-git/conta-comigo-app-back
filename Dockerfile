@@ -7,10 +7,13 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
+# libssl-dev is a dependency for python cryptography package
+
 RUN apk --update add \
     build-base \
     jpeg-dev \
-    zlib-dev
+    zlib-dev \
+    libssl-dev
 
 # install dependencies
 RUN pip install --upgrade pip
