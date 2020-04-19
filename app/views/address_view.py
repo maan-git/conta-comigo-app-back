@@ -8,8 +8,8 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.schemas import ManualSchema
 from app.models.address import Address
-
 from rest_framework.permissions import AllowAny
+from django.utils.translation import ugettext_lazy as _
 
 
 class AddressView(GenericViewSet):
