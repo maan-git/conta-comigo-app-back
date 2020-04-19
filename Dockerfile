@@ -1,3 +1,4 @@
+
 FROM python:3.8.0-alpine
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -28,7 +29,6 @@ COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
 COPY . /app/
-
 # start server
 EXPOSE 8000
 EXPOSE 5432
