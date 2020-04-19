@@ -43,20 +43,32 @@ class UserSerializerPost(serializers.ModelSerializer):
         else:
             return None
 
-    @atomic
-    def create(self, validated_data):
-        password = validated_data.pop("password")
-        user = User.objects.create(**validated_data)
-        user.set_password(password)
+    def process_special_fields(self, validated_data, user: User):
+        if 'password' in validated_data:
+            password = validated_data.pop("password")
+            user.set_password(password)
+
         user_avatar = self.save_user_avatar(validated_data, user.id)
+
         if user_avatar:
             user.avatar = user_avatar
-        user.save()
 
+    @atomic
+    def create(self, validated_data):
+        user = User.objects.create(**validated_data)
+        self.process_special_fields(validated_data, user)
+        user.save()
         return user
 
     def update(self, instance, validated_data):
-        user_avatar = self.save_user_avatar(validated_data, instance.id)
-        if user_avatar:
-            validated_data['avatar'] = user_avatar
+        self.process_special_fields(validated_data, instance)
         return super().update(instance, validated_data)
+
+    def to_representation(self, instance):
+        result = super().to_representation(instance)
+
+        # Remove password from serialized object
+        if 'password' in result:
+            result.pop('password')
+
+        return result

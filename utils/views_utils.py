@@ -6,6 +6,7 @@ from rest_framework.serializers import ModelSerializer
 from . import commom_utils
 from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
+from rest_framework.routers import DefaultRouter
 
 
 class GenericReadSerializer(ModelSerializer):
@@ -97,7 +98,6 @@ class ModelViewSetNoDelete(
     A viewset that provides default `create()`, `retrieve()`, `update()`,
     `partial_update()` and `list()` actions.
     """
-
     pass
 
 
@@ -109,3 +109,15 @@ class ModelViewSetReadOnly(
     """
 
     pass
+
+
+class CustomRouterNoPut(DefaultRouter):
+    """
+    Custom router to remove the 'put' method from viewsets.
+    """
+    def get_method_map(self, viewset, method_map):
+        methods_map = super().get_method_map(viewset, method_map)
+        if 'put' in methods_map:
+            methods_map.pop('put')
+
+        return methods_map
