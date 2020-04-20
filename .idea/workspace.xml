@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/views/help_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/staticfiles/staticfiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/staticfiles/staticfiles.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Make migrations">
+  <component name="RunManager" selected="Django server.Runserver">
     <configuration name="Install fixtures" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app-maan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -230,6 +229,7 @@
       <workItem from="1586651529076" duration="30065000" />
       <workItem from="1586724638982" duration="3518000" />
       <workItem from="1586984340032" duration="363000" />
+      <workItem from="1587417948353" duration="5092000" />
     </task>
     <servers />
   </component>
@@ -278,38 +278,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586815436604" />
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586984722309">
+    <state width="1493" height="343" key="GridCell.Tab.0.bottom" timestamp="1587423352386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586984722309" />
-    <state width="1493" height="282" key="GridCell.Tab.0.center" timestamp="1586984722307">
+    <state width="1493" height="343" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587423352386" />
+    <state width="1493" height="343" key="GridCell.Tab.0.center" timestamp="1587423352386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586984722307" />
-    <state width="1493" height="282" key="GridCell.Tab.0.left" timestamp="1586984722307">
+    <state width="1493" height="343" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587423352386" />
+    <state width="1493" height="343" key="GridCell.Tab.0.left" timestamp="1587423352386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586984722307" />
-    <state width="1493" height="282" key="GridCell.Tab.0.right" timestamp="1586984722308">
+    <state width="1493" height="343" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587423352386" />
+    <state width="1493" height="343" key="GridCell.Tab.0.right" timestamp="1587423352386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586984722308" />
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom" timestamp="1586984722038">
+    <state width="1493" height="343" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587423352386" />
+    <state width="1493" height="343" key="GridCell.Tab.1.bottom" timestamp="1587423352387">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586984722038" />
-    <state width="1493" height="282" key="GridCell.Tab.1.center" timestamp="1586984722037">
+    <state width="1493" height="343" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587423352387" />
+    <state width="1493" height="343" key="GridCell.Tab.1.center" timestamp="1587423352387">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586984722037" />
-    <state width="1493" height="282" key="GridCell.Tab.1.left" timestamp="1586984722037">
+    <state width="1493" height="343" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587423352387" />
+    <state width="1493" height="343" key="GridCell.Tab.1.left" timestamp="1587423352386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586984722037" />
-    <state width="1493" height="282" key="GridCell.Tab.1.right" timestamp="1586984722037">
+    <state width="1493" height="343" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587423352386" />
+    <state width="1493" height="343" key="GridCell.Tab.1.right" timestamp="1587423352387">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586984722037" />
+    <state width="1493" height="343" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587423352387" />
     <state x="371" y="107" key="SettingsEditor" timestamp="1586112070809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -375,6 +375,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Test_firebase_cient.coverage" NAME="Test firebase cient Coverage Results" MODIFIED="1586672859138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Migrate.coverage" NAME="Migrate Coverage Results" MODIFIED="1586984708320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1586724934815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1587418638903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

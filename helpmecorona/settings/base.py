@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_swagger",
     "rest_framework.authtoken",
+    "ws4redis",
     "django_filters",
     "corsheaders",
     "simple_history",
@@ -248,3 +249,51 @@ PUSH_NOTIFICATIONS_SETTINGS = {
         "WP_CLAIMS": {'sub': "mailto: contacomigoapp@gmail.com"},
         "UPDATE_ON_DUPLICATE_REG_ID": True
 }
+
+# For django-websocket-redis
+WEBSOCKET_URL = '/ws/'
+
+WS4REDIS_HEARTBEAT = '--heartbeat--'
+
+# WS4REDIS_CONNECTION = {
+#     'host': 'localhost',
+#     'port': 16379,
+#     'db': 17,
+#     'password': 'verysecret',
+# }
+
+# Time to store message (default is 3600)
+# WS4REDIS_EXPIRE = 3600
+
+# Prefix to store objects in redis. Should be used if the server is shared with other applications
+# WS4REDIS_PREFIX = 'ws'
+
+# Change redis subscriber implementation. Default is ws4redis.subscriber.RedisSubscriber
+# WS4REDIS_SUBSCRIBER = 'myapp.subscriber.RedisSubscriber'
+
+# Needed in debug only and ignored in production.
+# Overrides Django’s internal main loop and adds a URL dispatcher in front of the request handler
+WSGI_APPLICATION = 'ws4redis.django_runserver.application'
+
+# Should be implemented a callback to restrict access to the channels
+# https://django-websocket-redis.readthedocs.io/en/latest/usage.html#safetyconsiderations
+# WS4REDIS_ALLOWED_CHANNELS =
+# Ex:
+# def get_allowed_channels(request, channels):
+#     return set(channels).intersection(['subscribe-broadcast', 'subscribe-group'])
+# or
+# (disallow not logged users)
+# from django.core.exceptions import PermissionDenied
+#
+# def get_allowed_channels(request, channels):
+#     if not request.user.is_authenticated():
+#         raise PermissionDenied('Not allowed to subscribe nor to publish on the Websocket!')
+
+# Use redis a session cache
+# https://github.com/martinrusev/django-redis-sessions
+# https://github.com/sebleier/django-redis-cache
+# http://michal.karzynski.pl/blog/2013/07/14/using-redis-as-django-session-store-and-cache-backend/
+# pip install django-redis-sessions
+#
+# SESSION_ENGINE = 'redis_sessions.session'
+# SESSION_REDIS_PREFIX = 'session'
