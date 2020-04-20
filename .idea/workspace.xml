@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/extra_files/push_servers_credentials/web_pages/application_server_key.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra_files/push_servers_credentials/web_pages/claim.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
@@ -230,12 +228,8 @@
       <workItem from="1586338699342" duration="1345000" />
       <workItem from="1586631400539" duration="9617000" />
       <workItem from="1586651529076" duration="30065000" />
-<<<<<<< HEAD
-      <workItem from="1587312042131" duration="12705000" />
-=======
       <workItem from="1586724638982" duration="3518000" />
       <workItem from="1586984340032" duration="363000" />
->>>>>>> Implementing push notifications
     </task>
     <servers />
   </component>
@@ -247,17 +241,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="31" key="#Runserver/0.0.1536.824@0.0.1536.824" timestamp="1585941987015" />
-<<<<<<< HEAD
-    <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587300625163">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587300625163" />
-=======
     <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586724930624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586724930624" />
->>>>>>> Implementing push notifications
     <state x="513" y="243" width="661" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586202482065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -290,42 +277,6 @@
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1586815436604">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-<<<<<<< HEAD
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586679365111" />
-    <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state width="1493" height="144" key="GridCell.Tab.0.center" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state width="1493" height="144" key="GridCell.Tab.0.left" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state width="1493" height="144" key="GridCell.Tab.0.right" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state width="1493" height="144" key="GridCell.Tab.1.bottom" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state width="1493" height="144" key="GridCell.Tab.1.center" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state width="1493" height="144" key="GridCell.Tab.1.left" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state width="1493" height="144" key="GridCell.Tab.1.right" timestamp="1587324929034">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
-    <state x="365" y="86" key="SettingsEditor" timestamp="1587310134100">
-=======
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586815436604" />
     <state width="1493" height="282" key="GridCell.Tab.0.bottom" timestamp="1586984722309">
       <screen x="0" y="0" width="1536" height="824" />
@@ -360,7 +311,6 @@
     </state>
     <state width="1493" height="282" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586984722037" />
     <state x="371" y="107" key="SettingsEditor" timestamp="1586112070809">
->>>>>>> Implementing push notifications
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="365" y="86" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587310134100" />

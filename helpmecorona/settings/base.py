@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     "rest_framework_swagger",
     "rest_framework.authtoken",
     "django_filters",
-    "push_notifications",
     "corsheaders",
     "simple_history",
     "utils",
