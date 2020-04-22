@@ -57,8 +57,7 @@ class UserSerializerPost(serializers.ModelSerializer):
         if 'avatar' not in validated_data.keys():
             return None
         if user.avatar != DEFAULT_USER_IMAGE_URL:
-            if not cls.delete_user_avatar(user):
-                raise Exception("Error during changing the user avatar..")
+            assert (cls.delete_user_avatar(user), "Error during changing the user avatar..")
         return cls.save_user_avatar(validated_data)
 
     def process_special_fields(self, validated_data, user: User):
