@@ -200,3 +200,64 @@ class UserView(ModelViewSetNoDelete):
         user.save()
 
         return Response(data=UserAddressSerializer(new_address).data)
+
+    @action(
+        methods=["patch"],
+        detail=True,
+        url_path="updateaddress",
+        schema=ManualSchema(
+            description="Updates a user address",
+            fields=[
+                coreapi.Field(
+                    "id",
+                    required=True,
+                    location="path",
+                    schema=coreschema.Integer(),
+                    description="User ID",
+                ),
+                coreapi.Field(
+                    "user_address_id",
+                    required=False,
+                    location="form",
+                    schema=coreschema.Integer(),
+                    description="User address ID",
+                ),
+                coreapi.Field(
+                    "neighborhood_id",
+                    required=False,
+                    location="form",
+                    schema=coreschema.Integer(),
+                    description="Neighborhood' ID",
+                ),
+                coreapi.Field(
+                    "address",
+                    required=False,
+                    location="form",
+                    schema=coreschema.String(max_length=150),
+                    description="State' ID",
+                ),
+                coreapi.Field(
+                    "zip",
+                    required=False,
+                    location="form",
+                    schema=coreschema.String(max_length=8),
+                    description="ZIP code",
+                ),
+            ],
+        ),
+    )
+    @transaction.atomic
+    def update_address(self, request: Request, pk: int):
+        user = self.get_object()
+        address_id = get_param_or_400(request.data, "user_address_id", int)
+        neighborhood_id = get_param_or_400(request.data, "neighborhood_id", int)
+        address = get_param_or_400(request.data, "address", str)
+        zip_code = get_param_or_400(request.data, "zip", str)
+
+        user_address = user.addresses.get(id=address_id)
+        user_address.neighborhood_id = neighborhood_id
+        user_address.zip_code = zip_code
+        user_address.address = address
+        user_address.save()
+
+        return Response()
