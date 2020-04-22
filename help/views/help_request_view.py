@@ -18,7 +18,6 @@ from django.db import transaction
 from utils.views_utils import get_param_or_400
 from utils.views_utils import ModelViewSetNoDelete
 from django_filters import rest_framework as filters
-from utils.queryset_lookups.not_equals import NotEqualLookup
 
 
 help_request_field_desc = _non_lazy("Help request ID")

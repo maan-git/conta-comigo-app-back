@@ -5,6 +5,7 @@ from django.db.transaction import atomic
 from drf_extra_fields.fields import Base64ImageField
 from utils.firebase_client import upload_file
 from django.conf import settings
+from app.serializers.user_address_serializer import UserAddressSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -72,3 +73,8 @@ class UserSerializerPost(serializers.ModelSerializer):
             result.pop('password')
 
         return result
+
+
+class UserSerializerCurrentUser(UserSerializer):
+    addresses = UserAddressSerializer(many=True, read_only=True)
+    pass

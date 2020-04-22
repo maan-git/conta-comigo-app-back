@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/helpmecorona/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/prod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/user_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/serializers/help_request_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/views/help_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/views/help_request_view.py" afterDir="false" />
+>>>>>>> 8baa0c17e4608271b9413d489adbd7f9cbc0e8ad
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +64,11 @@
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.Install fixtures">
+=======
+  <component name="RunManager" selected="Python.Make migrations">
+>>>>>>> 8baa0c17e4608271b9413d489adbd7f9cbc0e8ad
     <configuration name="Install fixtures" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app-maan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -225,7 +236,7 @@
       <workItem from="1586338699342" duration="1345000" />
       <workItem from="1586631400539" duration="9617000" />
       <workItem from="1586651529076" duration="30065000" />
-      <workItem from="1587312042131" duration="7749000" />
+      <workItem from="1587312042131" duration="12705000" />
     </task>
     <servers />
   </component>
@@ -250,10 +261,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585503131691" />
-    <state x="60" y="74" width="1476" height="750" key="#xdebugger.evaluate" timestamp="1587319910473">
+    <state x="60" y="74" width="1476" height="750" key="#xdebugger.evaluate" timestamp="1587322045533">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="60" y="74" width="1476" height="750" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1587319910473" />
+    <state x="60" y="74" width="1476" height="750" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1587322045533" />
     <state x="516" y="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587312154968">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -262,10 +273,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="704" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1586212458116" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1587311417613">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1587322693342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1587311417613" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1587322693342" />
     <state x="503" y="174" key="EnvironmentVariablesDialog" timestamp="1585942630487">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -274,38 +285,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586679365111" />
-    <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1587319850514">
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587319850514" />
-    <state width="1493" height="144" key="GridCell.Tab.0.center" timestamp="1587319850514">
+    <state width="1493" height="144" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
+    <state width="1493" height="144" key="GridCell.Tab.0.center" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587319850514" />
-    <state width="1493" height="144" key="GridCell.Tab.0.left" timestamp="1587319850514">
+    <state width="1493" height="144" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
+    <state width="1493" height="144" key="GridCell.Tab.0.left" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587319850514" />
-    <state width="1493" height="144" key="GridCell.Tab.0.right" timestamp="1587319850514">
+    <state width="1493" height="144" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
+    <state width="1493" height="144" key="GridCell.Tab.0.right" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587319850514" />
-    <state width="1493" height="144" key="GridCell.Tab.1.bottom" timestamp="1587319857092">
+    <state width="1493" height="144" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
+    <state width="1493" height="144" key="GridCell.Tab.1.bottom" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587319857092" />
-    <state width="1493" height="144" key="GridCell.Tab.1.center" timestamp="1587319857092">
+    <state width="1493" height="144" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
+    <state width="1493" height="144" key="GridCell.Tab.1.center" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587319857092" />
-    <state width="1493" height="144" key="GridCell.Tab.1.left" timestamp="1587319857092">
+    <state width="1493" height="144" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
+    <state width="1493" height="144" key="GridCell.Tab.1.left" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587319857092" />
-    <state width="1493" height="144" key="GridCell.Tab.1.right" timestamp="1587319857092">
+    <state width="1493" height="144" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
+    <state width="1493" height="144" key="GridCell.Tab.1.right" timestamp="1587324929034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="144" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587319857092" />
+    <state width="1493" height="144" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587324929034" />
     <state x="365" y="86" key="SettingsEditor" timestamp="1587310134100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -356,7 +367,20 @@
           <line>65</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/models/address.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Migrate.coverage" NAME="Migrate Coverage Results" MODIFIED="1587304989454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Install_fixtures.coverage" NAME="Install fixtures Coverage Results" MODIFIED="1587322575985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/conta_comigo_app_maan$Make_migrations.coverage" NAME="Make migrations Coverage Results" MODIFIED="1587324929014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+>>>>>>> 8baa0c17e4608271b9413d489adbd7f9cbc0e8ad
 </project>

@@ -6,6 +6,8 @@ from app.models.user import User
 from help.models.helping_status import HelpingStatus
 from help.models.helprequest_helpers import HelpRequestHelpers
 from help.models.help_request_cancel_reason import HelpRequestCancelReason
+from app.serializers.user_address_serializer import UserAddressSerializer
+from app.models.user_address import UserAddress
 
 
 class CategorySimpleSerializer(serializers.ModelSerializer):
@@ -47,6 +49,13 @@ class HelpRequestHelpersSerializer(serializers.ModelSerializer):
     status = HelpingStatusSimpleSerializer()
 
 
+class UserAddressSerializerCustom(UserAddressSerializer):
+    class Meta:
+        model = UserAddress
+        exclude = ('id', 'created', 'address', 'active')
+        depth = 0
+
+
 class HelpRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = HelpRequest
@@ -58,7 +67,7 @@ class HelpRequestSerializer(serializers.ModelSerializer):
     category = CategorySimpleSerializer(many=False, read_only=False)
     status = StatusSimpleSerializer(many=False, read_only=True)
     cancel_reason = CancelReasonSimpleSerializer(many=False, read_only=True)
-    address_id = serializers.IntegerField()
+    address = UserAddressSerializerCustom(read_only=True)
 
     def create(self, validated_data):
         validated_data["owner_user"] = self.context["request"].user
@@ -72,6 +81,8 @@ class HelpRequestSerializer(serializers.ModelSerializer):
 
 
 class HelpRequestSerializerWrite(HelpRequestSerializer):
+    address_id = serializers.IntegerField()
+
     category = serializers.PrimaryKeyRelatedField(
         many=False, read_only=False, queryset=HelpCategory.objects.all()
     )
