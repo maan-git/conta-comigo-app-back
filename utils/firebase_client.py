@@ -17,6 +17,29 @@ def upload_file(bucket_name: str, file_path: str, file_bytes: bytes, mime_type: 
     return new_file.public_url
 
 
+def delete_file(bucket_name: str, file_path: str) -> bool:
+    try:
+        storage_client = storage.Client()
+        bucket: Bucket = storage_client.bucket(bucket_name)
+    except:
+        logging.exception('Error while connecting to bucket "%s" to delete file "%s"',
+                          bucket_name,
+                          file_path)
+        return False
+
+    new_file = bucket.blob(file_path)
+
+    try:
+        new_file.delete()
+    except:
+        logging.exception('Error while deleting file "%s" from bucket "%s"',
+                          file_path,
+                          bucket_name)
+        return False
+
+    return True
+
+
 def prepare_credentials():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helpmecorona.settings.dev")
     os.environ.setdefault("GOOGLE_APPLICATION_CREDENTIALS",

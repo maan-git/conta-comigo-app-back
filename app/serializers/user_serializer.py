@@ -1,11 +1,13 @@
 import os
+import uuid
 from rest_framework import serializers
 from app.models.user import User
 from django.db.transaction import atomic
 from drf_extra_fields.fields import Base64ImageField
-from utils.firebase_client import upload_file
+from utils.firebase_client import (upload_file, delete_file)
 from django.conf import settings
 from app.serializers.user_address_serializer import UserAddressSerializer
+from app.models.user import DEFAULT_USER_IMAGE_URL
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -27,13 +29,19 @@ class UserSerializerPost(serializers.ModelSerializer):
     avatar = Base64ImageFieldReturnUrl(required=False)
 
     @classmethod
-    def save_user_avatar(cls, validated_data, user_id: int):
-        if 'avatar' not in validated_data.keys():
-            return None
+    def delete_user_avatar(cls, user: User):
+        user_avatar_name = user.avatar.split('/')[-1]
+        user_avatar_folder = user.avatar.split('/')[-2]
+        return delete_file(settings.FIREBASE_STORAGE_BUCKET,
+                           f'{user_avatar_folder}/{user_avatar_name}')
+
+    @classmethod
+    def save_user_avatar(cls, validated_data):
         avatar = validated_data.pop('avatar')
         if avatar is not None:
             ext = os.path.splitext(avatar.name)[1]
-            file_path = 'Avatars/{}{}'.format(user_id, ext)
+            file_name = str(uuid.uuid4())
+            file_path = f'Avatars/{file_name}{ext}'
             file_content = avatar.file.read()
             file_url = upload_file(settings.FIREBASE_STORAGE_BUCKET,
                                    file_path,
@@ -44,12 +52,21 @@ class UserSerializerPost(serializers.ModelSerializer):
         else:
             return None
 
+    @classmethod
+    def change_user_image(cls, validated_data, user: User):
+        if 'avatar' not in validated_data.keys():
+            return None
+        if user.avatar != DEFAULT_USER_IMAGE_URL:
+            if not cls.delete_user_avatar(user):
+                raise Exception("Error during changing the user avatar..")
+        return cls.save_user_avatar(validated_data)
+
     def process_special_fields(self, validated_data, user: User):
         if 'password' in validated_data:
             password = validated_data.pop("password")
             user.set_password(password)
 
-        user_avatar = self.save_user_avatar(validated_data, user.id)
+        user_avatar = self.change_user_image(validated_data, user)
 
         if user_avatar:
             user.avatar = user_avatar
