@@ -2,10 +2,14 @@
 from .base import *
 import dj_database_url
 
-
 # Cors allowed sources
 # TODO Configure to production
-CORS_ORIGIN_WHITELIST = ("localhost:80", "localhost:8080", "localhost:8081")
+CORS_ORIGIN_WHITELIST = ("localhost:80", "localhost:8080", "localhost:8081",
+                         "https://conta-comigo-app-front.herokuapp.com",
+                         "https://www.contacomigoapp.com.br",
+                         "http://www.contacomigoapp.com.br",
+                         "http://contacomigoapp.com.br",
+                         "http://contacomigoapp.com.br",)
 
 # Read the database values from environment variable DATABASE_URL in format:
 # postgres://username:password@server:port/database
