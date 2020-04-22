@@ -238,18 +238,6 @@ MEDIA_URL = "/"
 
 EXTERNAL_ADDRESS_PROVIDER = ExternalProviderRepVirtual
 
-PUSH_NOTIFICATIONS_SETTINGS = {
-        # "FCM_API_KEY": "[your api key]",
-        # "GCM_API_KEY": "[your api key]",
-        # "APNS_CERTIFICATE": "/path/to/your/certificate.pem",
-        # "APNS_TOPIC": "com.example.push_test",
-        # "WNS_PACKAGE_SECURITY_ID": "[your package security id, e.g: 'ms-app://e-3-4-6234...']",
-        # "WNS_SECRET_KEY": "[your app secret key, e.g.: 'KDiejnLKDUWodsjmewuSZkk']",
-        "WP_PRIVATE_KEY": os.path.join(BASE_DIR, 'extra_files', 'push_servers_credentials', 'web_pages', 'private_key.pem'),
-        "WP_CLAIMS": {'sub': "mailto: contacomigoapp@gmail.com"},
-        "UPDATE_ON_DUPLICATE_REG_ID": True
-}
-
 # For django-websocket-redis
 WEBSOCKET_URL = '/ws/'
 
@@ -277,7 +265,7 @@ WSGI_APPLICATION = 'ws4redis.django_runserver.application'
 
 # Should be implemented a callback to restrict access to the channels
 # https://django-websocket-redis.readthedocs.io/en/latest/usage.html#safetyconsiderations
-# WS4REDIS_ALLOWED_CHANNELS =
+WS4REDIS_ALLOWED_CHANNELS = 'utils.django_ws_for_redis.get_allowed_channels'
 # Ex:
 # def get_allowed_channels(request, channels):
 #     return set(channels).intersection(['subscribe-broadcast', 'subscribe-group'])
@@ -297,3 +285,5 @@ WSGI_APPLICATION = 'ws4redis.django_runserver.application'
 #
 # SESSION_ENGINE = 'redis_sessions.session'
 # SESSION_REDIS_PREFIX = 'session'
+
+FACILITY_WS4REDIS = 'frontend'

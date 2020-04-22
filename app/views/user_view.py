@@ -17,6 +17,7 @@ from app.models.user_address import UserAddress
 from utils.commom_utils import str_to_boolean
 from app.serializers.user_address_serializer import UserAddressSerializer
 from django_filters import rest_framework as filters
+import uuid
 
 
 class UserFilters(filters.FilterSet):
@@ -204,7 +205,7 @@ class UserView(ModelViewSetNoDelete):
     @action(
         methods=["post"],
         detail=False,
-        url_path="test-message",
+        url_path="test-message-broadcast",
         schema=ManualSchema(
             description="Test messages in django-websocket",
             fields=[
@@ -226,7 +227,7 @@ class UserView(ModelViewSetNoDelete):
         ),
     )
     @transaction.atomic
-    def test_message(self, request: Request):
+    def test_message_broadcast(self, request: Request):
         msg = get_param_or_400(request.data, 'message')
         count = get_param_or_400(request.data, 'count', int)
         if count < 1:
@@ -236,6 +237,67 @@ class UserView(ModelViewSetNoDelete):
 
         # Broadcast message
         redis_publisher = RedisPublisher(facility='foobar', broadcast=True)
+
+        # and somewhere else
+        for i in range(0, count):
+            message = RedisMessage(msg + str(i + 1))
+            redis_publisher.publish_message(message)
+
+        # Message to specific users
+        # redis_publisher = RedisPublisher(facility='foobar', users=['john', 'mary'])
+        # message = RedisMessage('Hello World')
+        # # and somewhere else
+        # redis_publisher.publish_message(message)
+
+        # Message to logged user
+        # from ws4redis.redis_store import SELF
+        # redis_publisher = RedisPublisher(facility='foobar', users=[SELF], request=request)
+
+        return Response()
+
+    @action(
+        methods=["post"],
+        detail=True,
+        url_path="test-message-to-user",
+        schema=ManualSchema(
+            description="Test messages in django-websocket",
+            fields=[
+                coreapi.Field(
+                    "id",
+                    required=True,
+                    location="path",
+                    schema=coreschema.Integer(),
+                    description="Destination user ID",
+                ),
+                coreapi.Field(
+                    "message",
+                    required=True,
+                    location="form",
+                    schema=coreschema.String(),
+                    description="Message to send",
+                ),
+                coreapi.Field(
+                    "count",
+                    required=True,
+                    location="form",
+                    schema=coreschema.Integer(),
+                    description="Count",
+                )
+            ],
+        ),
+    )
+    @transaction.atomic
+    def test_message_user(self, request: Request, pk):
+        user = self.get_object()
+        msg = get_param_or_400(request.data, 'message')
+        count = get_param_or_400(request.data, 'count', int)
+        if count < 1:
+            count = 1
+        from ws4redis.publisher import RedisPublisher
+        from ws4redis.redis_store import RedisMessage
+
+        # Broadcast message
+        redis_publisher = RedisPublisher(facility='foobar', broadcast=True, users=[user.email])
 
         # and somewhere else
         for i in range(0, count):
