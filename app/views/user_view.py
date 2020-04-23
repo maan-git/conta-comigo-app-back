@@ -17,7 +17,6 @@ from app.models.user_address import UserAddress
 from utils.commom_utils import str_to_boolean
 from app.serializers.user_address_serializer import UserAddressSerializer
 from django_filters import rest_framework as filters
-import uuid
 
 
 class UserFilters(filters.FilterSet):
@@ -290,28 +289,30 @@ class UserView(ModelViewSetNoDelete):
     def test_message_user(self, request: Request, pk):
         user = self.get_object()
         msg = get_param_or_400(request.data, 'message')
-        count = get_param_or_400(request.data, 'count', int)
-        if count < 1:
-            count = 1
-        from ws4redis.publisher import RedisPublisher
-        from ws4redis.redis_store import RedisMessage
-
-        # Broadcast message
-        redis_publisher = RedisPublisher(facility='foobar', broadcast=True, users=[user.email])
-
-        # and somewhere else
-        for i in range(0, count):
-            message = RedisMessage(msg + str(i + 1))
-            redis_publisher.publish_message(message)
-
-        # Message to specific users
-        # redis_publisher = RedisPublisher(facility='foobar', users=['john', 'mary'])
-        # message = RedisMessage('Hello World')
+        # count = get_param_or_400(request.data, 'count', int)
+        # if count < 1:
+        #     count = 1
+        # from ws4redis.publisher import RedisPublisher
+        # from ws4redis.redis_store import RedisMessage
+        #
+        # # Broadcast message
+        # redis_publisher = RedisPublisher(facility='foobar', broadcast=True, users=[user.email])
+        #
         # # and somewhere else
-        # redis_publisher.publish_message(message)
-
-        # Message to logged user
-        # from ws4redis.redis_store import SELF
-        # redis_publisher = RedisPublisher(facility='foobar', users=[SELF], request=request)
+        # for i in range(0, count):
+        #     message = RedisMessage(msg + str(i + 1))
+        #     redis_publisher.publish_message(message)
+        #
+        # # Message to specific users
+        # # redis_publisher = RedisPublisher(facility='foobar', users=['john', 'mary'])
+        # # message = RedisMessage('Hello World')
+        # # # and somewhere else
+        # # redis_publisher.publish_message(message)
+        #
+        # # Message to logged user
+        # # from ws4redis.redis_store import SELF
+        # # redis_publisher = RedisPublisher(facility='foobar', users=[SELF], request=request)
+        from utils.django_ws_for_redis import notify_user
+        notify_user([user.email], msg)
 
         return Response()

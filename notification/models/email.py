@@ -1,49 +1,42 @@
+import logging
 from django.db import models as django_models
 from notification.models.email_status import EmailStatus
 from utils.templates_helper import render_template
+from django.utils.translation import ugettext_lazy as _
 
 
 class Email(django_models.Model):
-    mail_from = django_models.CharField("Remetente", max_length=300, null=False)
-    mail_to = django_models.TextField("Destinatario", null=False)
-    subject = django_models.CharField("Assunto", max_length=300)
-    content = django_models.TextField("Mensagem")
+    sender = django_models.CharField(_("Sender"), max_length=300, null=False)
+    recipient = django_models.TextField(_("Recipient"), null=False)
+    subject = django_models.CharField(_("Subject"), max_length=300)
+    content = django_models.TextField(_("HTML content"))
     status = django_models.ForeignKey(
-        "EmailStatus",
+        EmailStatus,
         on_delete=django_models.DO_NOTHING,
-        related_name='Status',
-        related_query_name="Status",
+        related_name='status',
         null=False
     )
-    error_message = django_models.TextField("Mensagem de erro", null=True)
+    error_message = django_models.TextField(_("Error message"), null=True, blank=True)
 
-    def __str__(self):
-        return self.mail_from
+    def __str__(self) -> str:
+        return self.subject
 
-    @classmethod
-    def create_email_using_default_layout(cls, mail_from, mail_to, subject, header, body, status):
-        for destiny in mail_to.split(','):
-            email_html = EmailLib.render_template('emails/alteracao_avaliacao.html',
-                                                  {'user': destiny.split('@')[0], 'header': header, 'mensagem': body})
 
-            if email_html is None:
-                print('Falha ao renderizar template')
-                return
+def create_email(sender: str, recipient: str, subject: str, template: str, render_data: dict) -> Email:
+    email_html = render_template(template, render_data)
 
-            new_email = Email()
+    if email_html is None:
+        logging.error(_('System has failed to create email from template "%s" with data "%s"'),
+                      template,
+                      render_data)
+        return None
 
-            new_email.mail_from = mail_from
-            new_email.mail_to = destiny
-            new_email.subject = subject
-            new_email.content = str(email_html)
-            new_email.status = status
-            new_email.save()
+    new_email = Email()
 
-    @classmethod
-    def create_email_evaluation_edited(cls, mail_to):
-        body = 'Você está recebendo esta mensagem porque uma de suas avaliação foi alterada recentemente no Ldxtools.'
-        mail_from = 'leandrocarneiro@landix.com.br'
-        subject = 'Avaliação alterada'
-        status = EmailStatus.objects.get(id=1)
-
-        Email.create_email_using_default_layout(mail_from, mail_to, subject, '', body, status)
+    new_email.sender = sender
+    new_email.recipient = recipient
+    new_email.subject = subject
+    new_email.content = email_html
+    new_email.status_id = EmailStatus.AllStatus.WAITING
+    new_email.save()
+    return new_email

@@ -15,6 +15,7 @@ import sys
 from corsheaders.defaults import default_headers
 from rest_framework.settings import ISO_8601
 from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
+import dj_email_url
 
 
 LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     "utils",
     "app",
     "help",
+    "notification"
 ]
 
 MIDDLEWARE = [
@@ -90,9 +92,7 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
@@ -287,3 +287,21 @@ WS4REDIS_ALLOWED_CHANNELS = 'utils.django_ws_for_redis.get_allowed_channels'
 # SESSION_REDIS_PREFIX = 'session'
 
 FACILITY_WS4REDIS = 'frontend'
+
+email_config = dj_email_url.config()
+
+if any(email_config):
+    EMAIL_FILE_PATH = email_config['EMAIL_FILE_PATH']
+    EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
+    EMAIL_HOST = email_config['EMAIL_HOST']
+    EMAIL_PORT = email_config['EMAIL_PORT']
+    EMAIL_BACKEND = email_config['EMAIL_BACKEND']
+    EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
+    EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
+
+# To get error messages automatically
+# ADMINS = (
+#     ('you', 'you@email.com'),
+# )
+# MANAGERS = ADMINS

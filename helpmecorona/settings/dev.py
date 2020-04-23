@@ -25,3 +25,6 @@ DATABASES = {
 }
 
 FIREBASE_STORAGE_BUCKET = 'staging.conta-comigo-app-files.appspot.com'
+
+# TODO put correct value
+OUTPUT_EMAILS_SENDER = 'contacomigoapp@gmail.com'

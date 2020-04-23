@@ -6,3 +6,5 @@ from . import city
 from . import neighborhood
 from . import address
 from . import user_address
+from . import notification
+from . import notification_type

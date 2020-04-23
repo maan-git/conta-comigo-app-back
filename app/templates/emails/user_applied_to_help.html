@@ -1,0 +1,19 @@
+{% extends "emails/template_base.html" %}
+
+{% block content %}
+
+<p style="line-height: 150%;">
+    <span style="font-weight: 400;">
+        Olá, {{user}}.
+    </span>
+</p>
+
+<p style="line-height: 150%;">
+    <span style="font-weight: 400;">
+        O usuário {{applied_user}} se acaba de se inscrever para ajudá-lo em seu pedido de ajuda {{help_request}}.
+    </span>
+</p>
+<br>
+<br>
+
+{% endblock %}

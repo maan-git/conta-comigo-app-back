@@ -8,6 +8,13 @@ from utils.models_validations import validate_phone
 from utils.models_validations import validate_cpf
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+from notification.models.email import create_email
+from utils.django_ws_for_redis import notify_user
+from django.conf import settings
+from django.db import transaction
+from app.models.notification import Notification
+from app.models.notification_type import NotificationType
+from notification.models.user_notification import UserNotification
 
 
 DEFAULT_USER_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/conta-comigo-app-files.appspot.com/o/icon-conta-comigo.jpeg?alt=media&token=0094390a-0f27-4735-a0be-5926c5302b6e"
@@ -52,9 +59,7 @@ class User(AbstractBaseUser):
     addresses = django_models.ManyToManyField(UserAddress, related_query_name="user")
     cpf = django_models.CharField(_("CPF"), max_length=11, validators=[validate_cpf], unique=True)
     birth_date = django_models.DateField(_("Data de nascimento"))
-    phone_number = django_models.CharField(
-        _("Telefone"), max_length=14, validators=[validate_phone]
-    )
+    phone_number = django_models.CharField(_("Telefone"), max_length=14, validators=[validate_phone])
     is_phone_whatsapp = django_models.BooleanField(_("Telefone é whatsapp"))
     is_at_risk_group = django_models.BooleanField(_("É do grupo de risco"))
     live_alone = django_models.BooleanField(_("Mora sozinho"))
@@ -105,6 +110,38 @@ class User(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         # TODO Implement
         return True
+
+    @transaction.atomic
+    def send_email(self, template: str, render_data: dict, subject: str):
+        return create_email(settings.OUTPUT_EMAILS_SENDER,
+                            self.email,
+                            subject,
+                            template,
+                            render_data)
+
+    def send_notification(self, content: str, type_id: int):
+        notify_user([self.email], {'type': type_id, 'content': content})
+        return UserNotification.objects.create(content=content)
+
+    def notify(self,
+               notification_type: int,
+               notification_message: str = None,
+               email_template: str = None,
+               email_render_data: dict = None,
+               email_subject: str = None):
+        user_notification = None
+        email = None
+
+        if notification_message is not None:
+            user_notification = self.send_notification(notification_message, notification_type)
+
+        if email_template is not None and email_render_data is not None and email_subject is not None:
+            email = self.send_email(email_template, email_render_data, email_subject)
+
+        Notification.objects.create(user=self,
+                                    email=email,
+                                    notification_type_id=notification_type,
+                                    user_notification=user_notification)
 
 
 @receiver(pre_save, sender=User)

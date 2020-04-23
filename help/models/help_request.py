@@ -133,9 +133,7 @@ class HelpRequest(django_models.Model):
     def any_user_helping(self):
         from help.models.helprequest_helpers import HelpRequestHelpers
 
-        return HelpRequestHelpers.objects.filter(
-            help_request=self, status_id=HelpingStatus.AllStatus.Helping
-        ).exists()
+        return HelpRequestHelpers.objects.filter(help_request=self, status_id=HelpingStatus.AllStatus.Helping).exists()
 
 
 @receiver(pre_save, sender=HelpRequest)

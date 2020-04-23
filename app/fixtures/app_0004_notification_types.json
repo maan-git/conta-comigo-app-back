@@ -1,0 +1,20 @@
+[
+  {
+    "model": "app.NotificationType",
+    "pk": 1,
+    "fields":
+    {
+      "description": "User applied to help",
+      "created": "2020-04-23T01:32:00.000Z"
+    }
+  },
+  {
+    "model": "app.NotificationType",
+    "pk": 2,
+    "fields":
+    {
+      "description": "User unapplied from help",
+      "created": "2020-04-23T01:32:00.000Z"
+    }
+  }
+]
