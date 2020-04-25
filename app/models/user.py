@@ -9,7 +9,6 @@ from utils.models_validations import validate_cpf
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
-
 DEFAULT_USER_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/conta-comigo-app-files.appspot.com/o/icon-conta-comigo.jpeg?alt=media&token=0094390a-0f27-4735-a0be-5926c5302b6e"
 
 

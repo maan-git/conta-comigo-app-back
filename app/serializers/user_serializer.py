@@ -4,7 +4,7 @@ from rest_framework import serializers
 from app.models.user import User
 from django.db.transaction import atomic
 from drf_extra_fields.fields import Base64ImageField
-from utils.firebase_client import (upload_file, delete_file)
+from utils.firebase_client import (upload_file, delete_file, read_file)
 from django.conf import settings
 from app.serializers.user_address_serializer import UserAddressSerializer
 from app.models.user import DEFAULT_USER_IMAGE_URL
@@ -29,7 +29,16 @@ class UserSerializerPost(serializers.ModelSerializer):
     avatar = Base64ImageFieldReturnUrl(required=False)
 
     @classmethod
+    def consult_user_avatar(cls, user: User):
+        print('Consult the image..')
+        user_avatar_name = user.avatar.split('/')[-1]
+        user_avatar_folder = user.avatar.split('/')[-2]
+        return read_file(settings.FIREBASE_STORAGE_BUCKET,
+                         user_avatar_folder, user_avatar_name)
+
+    @classmethod
     def delete_user_avatar(cls, user: User):
+        print('Deleting the image..')
         user_avatar_name = user.avatar.split('/')[-1]
         user_avatar_folder = user.avatar.split('/')[-2]
         return delete_file(settings.FIREBASE_STORAGE_BUCKET,
@@ -37,6 +46,7 @@ class UserSerializerPost(serializers.ModelSerializer):
 
     @classmethod
     def save_user_avatar(cls, validated_data):
+        print('Saving the image..')
         avatar = validated_data.pop('avatar')
         if avatar is not None:
             ext = os.path.splitext(avatar.name)[1]
@@ -56,8 +66,11 @@ class UserSerializerPost(serializers.ModelSerializer):
     def change_user_image(cls, validated_data, user: User):
         if 'avatar' not in validated_data.keys():
             return None
-        if user.avatar != DEFAULT_USER_IMAGE_URL:
-            assert (cls.delete_user_avatar(user), "Error during changing the user avatar..")
+
+        if user.avatar != DEFAULT_USER_IMAGE_URL and user.avatar.__class__.__name__ != 'ContentFile':
+            if cls.consult_user_avatar(user):
+                if not cls.delete_user_avatar(user):
+                    raise Exception("Error during changing the user avatar..")
         return cls.save_user_avatar(validated_data)
 
     def process_special_fields(self, validated_data, user: User):
@@ -93,4 +106,3 @@ class UserSerializerPost(serializers.ModelSerializer):
 
 class UserSerializerCurrentUser(UserSerializer):
     addresses = UserAddressSerializer(many=True, read_only=True)
-    pass

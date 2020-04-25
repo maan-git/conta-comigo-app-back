@@ -4,6 +4,22 @@ from google.cloud import storage
 from google.cloud.storage import Bucket
 
 
+def read_file(bucket_name: str, file_path: str, file_name: str) -> bool:
+    try:
+        storage_client = storage.Client()
+        bucket: Bucket = storage_client.bucket(bucket_name)
+
+        gcs_file = bucket.get_blob(f'{file_path}/{file_name}')
+
+        return gcs_file
+    except Exception as ex:
+        logging.exception('Error while consulting file "%s" from bucket "%s"',
+                          f'{file_path}/{file_name}',
+                          bucket_name)
+        logging.exception(ex)
+        return False
+
+
 def upload_file(bucket_name: str, file_path: str, file_bytes: bytes, mime_type: str, public: bool) -> str:
     storage_client = storage.Client()
     bucket: Bucket = storage_client.bucket(bucket_name)
