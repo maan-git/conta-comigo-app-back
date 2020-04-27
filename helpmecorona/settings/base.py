@@ -246,7 +246,8 @@ WEBSOCKET_URL = '/ws/'
 
 WS4REDIS_HEARTBEAT = '--heartbeat--'
 
-WS4REDIS_CONNECTION = dj_redis_url.config()
+if os.environ.get('REDIS_URL') is not None:
+    WS4REDIS_CONNECTION = dj_redis_url.config()
 
 # Time to store message (default is 3600)
 # WS4REDIS_EXPIRE = 3600
