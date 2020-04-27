@@ -17,6 +17,7 @@ from rest_framework.settings import ISO_8601
 from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
 import dj_email_url
 from django.utils.translation import ugettext_lazy as _
+import dj_redis_url
 
 
 LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
@@ -245,12 +246,7 @@ WEBSOCKET_URL = '/ws/'
 
 WS4REDIS_HEARTBEAT = '--heartbeat--'
 
-# WS4REDIS_CONNECTION = {
-#     'host': 'localhost',
-#     'port': 16379,
-#     'db': 17,
-#     'password': 'verysecret',
-# }
+WS4REDIS_CONNECTION = dj_redis_url.config()
 
 # Time to store message (default is 3600)
 # WS4REDIS_EXPIRE = 3600
