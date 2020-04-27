@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/fixtures/app_0004_notification_types.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/migrations/0002_historicalnotification_notification_notificationtype.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/notification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/notification_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/emails/user_applied_to_help.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/emails/user_unapplied_from_help.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpmecorona/locale/'pt'/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpmecorona/locale/'pt'/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpmecorona/staticfiles/js/ws4redis.25bc7f1a8569.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpmecorona/staticfiles/js/ws4redis.25bc7f1a8569.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpmecorona/staticfiles/js/ws4redis.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpmecorona/staticfiles/js/ws4redis.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/fixtures/notification_001_email_status.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/management/commands/sendemails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/models/email.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/models/email_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/models/user_notification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/templates/emails/template_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/django_ws_for_redis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/templates_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/help_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/help_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/models/helprequest_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/helprequest_helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/dev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/staticfiles/staticfiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/staticfiles/staticfiles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -344,7 +301,7 @@
       <workItem from="1587919777884" duration="2636000" />
       <workItem from="1587945300031" duration="63000" />
       <workItem from="1587946265741" duration="5509000" />
-      <workItem from="1587956398468" duration="5689000" />
+      <workItem from="1587956398468" duration="6182000" />
     </task>
     <servers />
   </component>
