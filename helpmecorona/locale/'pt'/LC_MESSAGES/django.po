@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-27 04:14+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\app\models\address.py:14 .\app\models\city.py:7
+#: .\app\models\global_variable.py:12 .\app\models\global_variable_type.py:13
+#: .\app\models\global_variable_type.py:14 .\app\models\neighborhood.py:8
+#: .\app\models\state.py:7 .\app\models\user_address.py:13
+#: .\help\models\help_request.py:54 .\notification\models\email_status.py:12
+#: .\utils\simple_description_base.py:10
+msgid "Description"
+msgstr "Descrição"
+
+#: .\app\models\address.py:15 .\app\models\city.py:8
+#: .\app\models\neighborhood.py:9 .\app\models\state.py:9
+#: .\app\models\user_address.py:15 .\utils\simple_description_base.py:12
+msgid "Active"
+msgstr "Ativo"
+
+#: .\app\models\address.py:16 .\app\models\city.py:9
+#: .\app\models\global_variable.py:14 .\app\models\global_variable_type.py:15
+#: .\app\models\neighborhood.py:10 .\app\models\state.py:10
+#: .\app\models\user_address.py:16 .\help\models\help_request.py:55
+#: .\utils\simple_description_base.py:13
+msgid "Creation date"
+msgstr "Data de criação"
+
+#: .\app\models\address.py:17 .\app\models\user_address.py:14
+msgid "Zip code"
+msgstr "Código postal"
+
+#: .\app\models\address.py:20 .\app\models\user_address.py:9
+msgid "Neighborhood"
+msgstr "Bairro"
+
+#: .\app\models\city.py:12
+msgid "State"
+msgstr "Estado"
+
+#: .\app\models\global_variable.py:10 .\app\models\state.py:6
+#: .\utils\simple_description_base.py:20
+msgid "ID"
+msgstr "ID"
+
+#: .\app\models\global_variable.py:13
+msgid "Global variable value"
+msgstr "Valor de variável global"
+
+#: .\app\models\global_variable.py:17
+msgid "Global variable"
+msgstr "Variável global"
+
+#: .\app\models\neighborhood.py:13
+msgid "City"
+msgstr "Cidade"
+
+#: .\app\models\state.py:8
+msgid "Initials"
+msgstr "Iniciais"
+
+#: .\app\models\user.py:51
+msgid "email address"
+msgstr "Endereço de email"
+
+#: .\app\models\user.py:52
+msgid "first name"
+msgstr "Primeiro nome"
+
+#: .\app\models\user.py:53
+msgid "last name"
+msgstr "Último nome"
+
+#: .\app\models\user.py:54
+msgid "date joined"
+msgstr "Data de cadastro"
+
+#: .\app\models\user.py:55
+msgid "active"
+msgstr "Ativo"
+
+#: .\app\models\user.py:56
+msgid "Avatar"
+msgstr "Avatar"
+
+#: .\app\models\user.py:57
+msgid "Super user"
+msgstr "Super usuário"
+
+#: .\app\models\user.py:59
+msgid "CPF"
+msgstr "CPF"
+
+#: .\app\models\user.py:60
+msgid "Data de nascimento"
+msgstr "Data de nascimento"
+
+#: .\app\models\user.py:61
+msgid "Telefone"
+msgstr "Telefone"
+
+#: .\app\models\user.py:62
+msgid "Telefone é whatsapp"
+msgstr "Telefone é whatsapp"
+
+#: .\app\models\user.py:63
+msgid "É do grupo de risco"
+msgstr "É do grupo de risco"
+
+#: .\app\models\user.py:64
+msgid "Mora sozinho"
+msgstr "Mora sozinho"
+
+#: .\app\models\user.py:72
+msgid "user"
+msgstr "Usuário"
+
+#: .\app\models\user.py:73
+msgid "users"
+msgstr "Usuários"
+
+#: .\app\views\address_view.py:44
+msgid "Zip code length should have exactly 8"
+msgstr "O tamanho do código postal deve ser exatamente 8 caracteres"
+
+#: .\app\views\login_view.py:40
+msgid "Invalid username/password."
+msgstr "Nome de usuário/senha inválidos"
+
+#: .\help\models\help_request.py:51
+msgid "Users helping"
+msgstr "Usuários ajudando"
+
+#: .\help\models\help_request.py:57
+msgid "Status"
+msgstr "Status"
+
+#: .\help\models\help_request.py:63
+msgid "Category"
+msgstr "Categoria"
+
+#: .\help\models\help_request.py:68
+msgid "Cancel reason"
+msgstr "Motivo de cancelamento"
+
+#: .\help\models\help_request.py:75
+msgid "Address where the help request is needed"
+msgstr "Endereço onde o pedido de ajuda é necessário"
+
+#: .\help\models\help_request.py:79
+msgid "Telephone Allowed"
+msgstr "Permite divulgar telefone"
+
+#: .\help\models\help_request.py:94
+msgid "This help request was already in a final status"
+msgstr "Esse pedido de ajuda já está em um status final"
+
+#: .\help\models\help_request.py:109
+msgid "Status change not allowed from {} to {}"
+msgstr "Mudança de status não permitida de {} para {}"
+
+#: .\help\models\help_request.py:119
+msgid "Cancellations require a cancel reason"
+msgstr "É necessário um motivo para cancelamentos"
+
+#: .\help\models\helprequest_helpers.py:27
+msgid "User applied to help"
+msgstr "Usuário que se cadastrou para ajudar"
+
+#: .\help\models\helprequest_helpers.py:29
+msgid "User {} applied to help in request {}"
+msgstr "O osuário {} se cadastrou para ajudar na solicitação {}"
+
+#: .\help\models\helprequest_helpers.py:33
+msgid "User unapplied to help"
+msgstr "O usuário se descadastrou do pedido de ajuda"
+
+#: .\help\models\helprequest_helpers.py:35
+msgid "User {} unapplied to help in request {}"
+msgstr "O usuário {} se descadastrou do pedido de ajuda {} "
+
+#: .\help\views\help_request_view.py:86
+msgid "You can not help in your own request"
+msgstr "Você não pode ajudar no seu próprio pedido de ajuda"
+
+#: .\help\views\help_request_view.py:92
+msgid "You can not help in finished/canceled requests"
+msgstr "Você não pode ajudar em pedidos de ajuda finalizados/cancelados"
+
+#: .\help\views\help_request_view.py:103
+msgid "You are already helping in this request"
+msgstr "Você já está ajudando nesse pedido de ajuda"
+
+#: .\help\views\help_request_view.py:109
+msgid "Another user is already helping in the request"
+msgstr "Outro usuário já está ajudando nesse pedido de ajuda"
+
+#: .\help\views\help_request_view.py:153
+msgid "You are not helping in this request"
+msgstr "Você nao está ajudando nesse pedido de ajuda"
+
+#: .\help\views\help_request_view.py:159
+msgid "You can not unapply from finished requests"
+msgstr "Você não pode se descadastrar de pedidos de ajuda finalizados"
+
+#: .\helpmecorona\settings\base.py:313
+msgid "English"
+msgstr "Ingês"
+
+#: .\helpmecorona\settings\base.py:314
+msgid "Portuguese"
+msgstr "Português"
+
+#: .\notification\models\email.py:9
+msgid "Sender"
+msgstr "Remetente"
+
+#: .\notification\models\email.py:10
+msgid "Recipient"
+msgstr "Destinatário"
+
+#: .\notification\models\email.py:11
+msgid "Subject"
+msgstr "Assunto"
+
+#: .\notification\models\email.py:12
+msgid "HTML content"
+msgstr "Conteúdo HTML"
+
+#: .\notification\models\email.py:19
+msgid "Error message"
+msgstr "Mensagem de erro"
+
+#: .\notification\models\email.py:29
+#, python-format
+msgid "System has failed to create email from template \"%s\" with data \"%s\""
+msgstr ""
+"O sistema falhou ao criar um email a partir do templete  \"%s\" com os dados "
+"\"%s\""
+
+#: .\notification\models\email_status.py:11
+msgid "Email status id"
+msgstr "ID to status de email"
+
+#: .\notification\models\user_notification.py:6
+msgid "Notification content"
+msgstr "Conteúdo da notificação"
+
+#: .\utils\models_validations.py:11
+#, python-format
+msgid "%(value)s is not a valid phone number"
+msgstr "%(value)s não é um telefone válido"
+
+#: .\utils\models_validations.py:25
+#, fuzzy, python-format
+#| msgid "%(value)s is not a valid phone number"
+msgid "%(value)s is not a valid CPF"
+msgstr "%(value)s não é um telefone válido"

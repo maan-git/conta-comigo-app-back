@@ -16,6 +16,7 @@ from corsheaders.defaults import default_headers
 from rest_framework.settings import ISO_8601
 from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
 import dj_email_url
+from django.utils.translation import ugettext_lazy as _
 
 
 LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -305,3 +307,17 @@ if any(email_config):
 #     ('you', 'you@email.com'),
 # )
 # MANAGERS = ADMINS
+
+# Provide a lists of languages which your site supports.
+LANGUAGES = (
+    ('en', _('English')),
+    ('pt', _('Portuguese')),
+)
+
+# Set the default language for your site.
+LANGUAGE_CODE = 'pt'
+
+# Tell Django where the project's translation files should be.
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

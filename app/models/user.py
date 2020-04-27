@@ -13,7 +13,6 @@ from utils.django_ws_for_redis import notify_user
 from django.conf import settings
 from django.db import transaction
 from app.models.notification import Notification
-from app.models.notification_type import NotificationType
 from notification.models.user_notification import UserNotification
 
 
@@ -120,8 +119,9 @@ class User(AbstractBaseUser):
                             render_data)
 
     def send_notification(self, content: str, type_id: int):
-        notify_user([self.email], {'type': type_id, 'content': content})
-        return UserNotification.objects.create(content=content)
+        notification = UserNotification.objects.create(content=content)
+        notify_user([self.email], {'id': notification.id, 'type': type_id, 'content': content})
+        return
 
     def notify(self,
                notification_type: int,

@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from help.models.help_request_status import HelpRequestStatus
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
 from app.models.notification_type import NotificationType
 
 
@@ -25,13 +26,13 @@ class HelpRequestHelpers(django_models.Model):
         if self.status_id == HelpingStatus.AllStatus.Helping:
             email_subject = _('User applied to help')
             notification_type = NotificationType.AllTypes.USER_APPLIED_TO_HELP
-            notification_message = _('User {} applied to help in notification {}'.format(self.helper_user.first_name,
-                                                                                         self.help_request.description))
+            notification_message = ugettext('User {} applied to help in request {}'
+                                            .format(self.helper_user.first_name, self.help_request.description))
             email_template_name = 'user_applied_to_help.html'
         else:
             email_subject = _('User unapplied to help')
             notification_type = NotificationType.AllTypes.USER_UNAPPLIED_FROM_HELP
-            notification_message = _('User {} unapplied to help in notification {}'
+            notification_message = ugettext('User {} unapplied to help in request {}'
                                      .format(self.helper_user.first_name, self.help_request.description))
             email_template_name = 'user_unapplied_from_help.html'
 
