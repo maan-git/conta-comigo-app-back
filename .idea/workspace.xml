@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroku.yml" beforeDir="false" afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +304,7 @@
       <workItem from="1587919777884" duration="2636000" />
       <workItem from="1587945300031" duration="63000" />
       <workItem from="1587946265741" duration="5509000" />
-      <workItem from="1587956398468" duration="7569000" />
+      <workItem from="1587956398468" duration="8793000" />
     </task>
     <servers />
   </component>

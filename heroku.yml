@@ -5,4 +5,5 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: gunicorn helpmecorona.wsgi --log-file=- --log-level=debug
+#  web: gunicorn helpmecorona.wsgi --log-file=- --log-level=debug
+  web: python manage.py runserver
