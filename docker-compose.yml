@@ -1,6 +1,7 @@
 version: '3.7'
 
 services:
+
   web:
     build:
       context: ./
@@ -14,6 +15,7 @@ services:
       - ./.env.dev
     depends_on:
       - db
+      - redis
   db:
     image: postgres:12.0-alpine
     volumes:
@@ -25,5 +27,17 @@ services:
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=contacomigo_dev
 
+  redis:
+    image: "redis:alpine"
+    command: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - $PWD/redis-data:/var/lib/redis
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
 volumes:
   postgres_data:
+  redis:
