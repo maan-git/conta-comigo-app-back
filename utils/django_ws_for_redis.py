@@ -21,8 +21,10 @@ def get_allowed_channels(request, channels):
 
 def notify_user(user_names: List[str], content: dict):
     try:
-        redis_publisher = RedisPublisher(facility=settings.FACILITY_WS4REDIS, broadcast=False, users=user_names)
+        redis_publisher = RedisPublisher(facility=settings.FACILITY_WS4REDIS,
+                                         broadcast=False,
+                                         users=user_names)
         message = RedisMessage(json.dumps(content))
-        redis_publisher.publish_message(message)
+        print(redis_publisher.publish_message(message))
     except:
         logging.exception('Error while sending notification to users "%s"', user_names)

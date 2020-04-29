@@ -312,6 +312,7 @@ class UserView(ModelViewSetNoDelete):
         # # Message to logged user
         # # from ws4redis.redis_store import SELF
         # # redis_publisher = RedisPublisher(facility='foobar', users=[SELF], request=request)
+        print(user.email)
         from utils.django_ws_for_redis import notify_user
         notify_user([user.email], msg)
 

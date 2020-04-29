@@ -29,26 +29,17 @@ services:
 
   redis:
     image: "redis:alpine"
-    command: redis-server --requirepass ConTa@Comig@
+    container_name: "contacomigo_redis"
+#    command: redis-server --requirepass ConTaComigoApp
+    command: redis-server
     ports:
       - "6379:6379"
     volumes:
-      - $PWD/redis-data:/var/lib/redis
-      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+      - redis_data:/var/lib/redis
     environment:
       - REDIS_REPLICATION_MODE=master
-    networks:
-      node_net:
-        ipv4_address: 172.28.1.4
+
 
 volumes:
   postgres_data:
-  redis:
-
-# networking for the Redis container
-networks:
-  node_net:
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.28.0.0/16
+  redis_data:

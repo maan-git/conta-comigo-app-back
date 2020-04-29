@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/redis.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/django_ws_for_redis.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/django_ws_for_redis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -403,11 +404,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587312042174" />
-    <state x="468" y="0" width="983" height="1040" key="find.popup" timestamp="1588078479074">
+    <state x="468" y="0" width="983" height="1040" key="find.popup" timestamp="1588116987069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="374" y="0" width="787" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1587589146243" />
-    <state x="468" y="0" width="983" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588078479074" />
+    <state x="468" y="0" width="983" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588116987069" />
     <state x="521" y="307" key="git4idea.ui.GitResetDialog" timestamp="1586656198053">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -416,11 +417,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="61" key="scopes/0.0.1536.824@0.0.1536.824" timestamp="1587311209405" />
-    <state x="431" y="4" width="672" height="820" key="search.everywhere.popup" timestamp="1587604947120">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1588117185866">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="4" width="672" height="820" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587604947120" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585354430976" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588117185866" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

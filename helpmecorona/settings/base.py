@@ -19,12 +19,10 @@ import dj_email_url
 from django.utils.translation import ugettext_lazy as _
 import dj_redis_url
 
-
 LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -33,7 +31,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "g3dm$@^@dfq3zqia4ito+c%2vuo%r$&1eg(7b#y5)s$=t469jz"
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -116,10 +113,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -248,6 +243,11 @@ WS4REDIS_HEARTBEAT = '--heartbeat--'
 
 if os.environ.get('REDIS_URL') is not None:
     WS4REDIS_CONNECTION = dj_redis_url.config()
+
+WS4REDIS_CONNECTION = {
+    'host': 'redis',
+    'port': 6379
+}
 
 # Time to store message (default is 3600)
 # WS4REDIS_EXPIRE = 3600
