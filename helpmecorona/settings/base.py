@@ -245,7 +245,7 @@ if os.environ.get('REDIS_URL') is not None:
     WS4REDIS_CONNECTION = dj_redis_url.config()
 
 WS4REDIS_CONNECTION = {
-    'host': 'redis',
+    'host': 'contacomigo-redis',
     'port': 6379
 }
 

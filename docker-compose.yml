@@ -6,6 +6,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    container_name: "contacomigo-web"
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app/
@@ -17,6 +18,7 @@ services:
       - db
       - redis
   db:
+    container_name: "contacomigo-db"
     image: postgres:12.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -29,8 +31,7 @@ services:
 
   redis:
     image: "redis:alpine"
-    container_name: "contacomigo_redis"
-#    command: redis-server --requirepass ConTaComigoApp
+    container_name: "contacomigo-redis"
     command: redis-server
     ports:
       - "6379:6379"
