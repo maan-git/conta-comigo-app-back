@@ -9,6 +9,8 @@ from django.conf import settings
 from app.serializers.user_address_serializer import UserAddressSerializer
 from app.models.user import DEFAULT_USER_IMAGE_URL
 
+from cryptography.fernet import Fernet
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -86,6 +88,10 @@ class UserSerializerPost(serializers.ModelSerializer):
     @atomic
     def create(self, validated_data):
         user = User.objects.create(**validated_data)
+
+        # Password
+        user.password = self.decrypt_pass(user.password)
+
         self.process_special_fields(validated_data, user)
         user.save()
         return user
@@ -102,6 +108,22 @@ class UserSerializerPost(serializers.ModelSerializer):
             result.pop('password')
 
         return result
+
+    def decrypt_fernet(self, pass_str):
+        try:
+            fernet_ = Fernet(os.environ.get('SECRET_KEY_PASS', ''))
+            return fernet_.decrypt(pass_str)
+        except Exception as ex:
+            print(f"Error: {ex}")
+
+    @classmethod
+    def decrypt_pass(self, pass_str):
+        decoded_text = self.get_fernet_obj(pass_str)
+        res = []
+        pas_ = decoded_text.split('95')[:-1]
+        for x, pas in enumerate(pas_):
+            res.append(chr(((x - (len(pas_) + 1)) - int(pas)) * -1))
+        return ''.join(res)
 
 
 class UserSerializerCurrentUser(UserSerializer):
