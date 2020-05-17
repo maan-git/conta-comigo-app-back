@@ -200,15 +200,15 @@ LOGGING = {
             "stream": sys.stdout,
             "filters": ["require_debug_true"],
         },
-        "file": {
-            "level": "INFO",
-            "class": "logging.handlers.TimedRotatingFileHandler",
-            "filename": "logs/general.log",
-            "when": "midnight",
-            "interval": 1,
-            "backupCount": 10,
-            "formatter": "simple",
-        },
+        # "file": {
+        #     "level": "INFO",
+        #     "class": "logging.handlers.TimedRotatingFileHandler",
+        #     "filename": "logs/general.log",
+        #     "when": "midnight",
+        #     "interval": 1,
+        #     "backupCount": 10,
+        #     "formatter": "simple",
+        # },
     },
     "loggers": {
         "": {

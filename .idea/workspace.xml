@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
-    </list>
+    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +33,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/helpmecorona" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -46,17 +41,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\notification\models" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\templates\emails" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\fixtures" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\notification\templates\emails" />
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\extra_files" />
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\helpmecorona" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\notification\models" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\templates\emails" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\fixtures" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.Runserver">
@@ -308,7 +303,7 @@
       <workItem from="1587946265741" duration="5509000" />
       <workItem from="1587956398468" duration="11145000" />
       <workItem from="1588606004366" duration="10000" />
-      <workItem from="1589729888891" duration="406000" />
+      <workItem from="1589729888891" duration="1117000" />
     </task>
     <servers />
   </component>
