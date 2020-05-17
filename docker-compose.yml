@@ -1,10 +1,25 @@
 version: '3.7'
 
 services:
-  web:
+  front:
+    build:
+      context: ./
+      dockerfile: Dockerfile-front
+    container_name: "front"
+    volumes:
+      - ./:/usr/src/app/front/node_modules
+    ports:
+      - '8080:8080'
+    depends_on:
+        - api
+    networks:
+      - nginx_network
+
+  api:
     build:
       context: ./
       dockerfile: Dockerfile
+    container_name: "api"
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/usr/src/app/
@@ -14,8 +29,12 @@ services:
       - ./.env.dev
     depends_on:
       - db
+    networks:
+      - nginx_network
+
   db:
     image: postgres:12.0-alpine
+    container_name: "db"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     ports:
@@ -24,6 +43,12 @@ services:
       - POSTGRES_USER=contacomigo_user
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=contacomigo_dev
+    networks:
+      - nginx_network
 
 volumes:
   postgres_data:
+
+networks:  # <-- and here
+  nginx_network:
+    driver: bridge
