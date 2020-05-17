@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        {% block header_text %}{% endblock %} <br>
-        {% block content %}{% endblock %}
-    </body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Conta Comigo</title>
+  </head>
+  <body>
+	<div style="margin-left:auto;margin-right:auto;width:600px;">
+		<div id="header" style="background-color:#532594;height:200px;width:600px;">
+			<img src="https://localhost:8000/static/email_image/headerEmail.jpg" />
+		</div>
+		<div style="width:500px;margin-left: auto;margin-right: auto;">
+            {% block header_text %}{% endblock %} <br>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
 </html>
