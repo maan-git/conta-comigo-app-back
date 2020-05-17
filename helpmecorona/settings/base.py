@@ -204,19 +204,19 @@ LOGGING = {
             "level": "INFO",
             "class": "logging.handlers.TimedRotatingFileHandler",
             "filename": "logs/general.log",
-            "when": "d",
+            "when": "midnight",
             "interval": 1,
             "backupCount": 10,
             "formatter": "simple",
         },
     },
     "loggers": {
-        # "": {
-        #     "handlers": ["console", 'file'],
-        #     'level': 'INFO',
-        # },
+        "": {
+            "handlers": ["console"],
+            'level': LOG_LEVEL,
+        },
         "django": {"handlers": ["console"], "level": LOG_LEVEL},
-        "django.db.backends": {"level": "INFO", "handlers": ["console"]},
+        "django.db.backends": {"level": LOG_LEVEL, "handlers": ["console"]},
     },
 }
 
@@ -250,7 +250,7 @@ if os.environ.get('REDIS_URL') is not None:
     WS4REDIS_CONNECTION = dj_redis_url.config()
 
 # Time to store message (default is 3600)
-# WS4REDIS_EXPIRE = 3600
+WS4REDIS_EXPIRE = 60
 
 # Prefix to store objects in redis. Should be used if the server is shared with other applications
 # WS4REDIS_PREFIX = 'ws'

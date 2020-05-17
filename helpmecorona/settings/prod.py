@@ -19,8 +19,6 @@ DATABASES = {
     "default": dj_database_url.config(conn_max_age=600)
 }
 
-WSGI_APPLICATION = "helpmecorona.wsgi-prod.application"
-
 FIREBASE_STORAGE_BUCKET = 'conta-comigo-app-files.appspot.com'
 
 # TODO put correct value
