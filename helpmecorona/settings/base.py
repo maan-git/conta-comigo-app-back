@@ -198,7 +198,7 @@ LOGGING = {
             "class": "logging.StreamHandler",
             "formatter": "simple",
             "stream": sys.stdout,
-            "filters": ["require_debug_true"],
+            # "filters": ["require_debug_true"],
         },
         # "file": {
         #     "level": "INFO",
