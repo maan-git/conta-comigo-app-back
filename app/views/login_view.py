@@ -32,7 +32,7 @@ class LoginView(APIView):
         username = get_param_or_400(request.data, "username", str)
         password = get_param_or_400(request.data, "password", str)
 
-        print(f"Pass on login: {password}")
+        print(f"Password for login method: {password}")
         ## Decrypt the password
         password = decrypt_pass(password)
         user = authenticate(username=username, password=password)

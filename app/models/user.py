@@ -33,7 +33,7 @@ class UserManager(BaseUserManager):
         user = self.model(email=email, **extra_fields)
 
         ## Decrypt pass
-        print(f"Password for create method: {password}")
+        print(f"Password for _create_user method: {password}")
         password = decrypt_pass(password)
 
         user.set_password(password)

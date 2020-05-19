@@ -78,7 +78,7 @@ class UserSerializerPost(serializers.ModelSerializer):
         if 'password' in validated_data:
             password = validated_data.pop("password")
             ## Decrypt pass
-            print(f"Password for create method: {password}")
+            print(f"Password for process_special_fields method: {password}")
             password = decrypt_pass(password)
             user.set_password(password)
 
