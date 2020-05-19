@@ -11,6 +11,8 @@ from utils.views_utils import get_param_or_400
 from app.serializers.user_serializer import UserSerializer
 from django.contrib.auth import authenticate
 
+from app import decrypt_pass
+
 
 class LoginView(APIView):
     permission_classes = (AllowAny,)
@@ -30,6 +32,9 @@ class LoginView(APIView):
         username = get_param_or_400(request.data, "username", str)
         password = get_param_or_400(request.data, "password", str)
 
+        print(f"Pass on login: {password}")
+        ## Decrypt the password
+        password = decrypt_pass(password)
         user = authenticate(username=username, password=password)
 
         if user:
