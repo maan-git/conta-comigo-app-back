@@ -8,6 +8,7 @@ from utils.firebase_client import (upload_file, delete_file, read_file)
 from django.conf import settings
 from app.serializers.user_address_serializer import UserAddressSerializer
 from app.models.user import DEFAULT_USER_IMAGE_URL
+from app import decrypt_pass
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -76,6 +77,9 @@ class UserSerializerPost(serializers.ModelSerializer):
     def process_special_fields(self, validated_data, user: User):
         if 'password' in validated_data:
             password = validated_data.pop("password")
+            ## Decrypt pass
+            print(f"Password for create method: {password}")
+            password = decrypt_pass(password)
             user.set_password(password)
 
         user_avatar = self.change_user_image(validated_data, user)
