@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/login_token_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/login_token_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login_token_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,7 +310,7 @@
       <workItem from="1590606143530" duration="1292000" />
       <workItem from="1590609850084" duration="911000" />
       <workItem from="1590610787498" duration="1710000" />
-      <workItem from="1590612603432" duration="323000" />
+      <workItem from="1590612603432" duration="617000" />
     </task>
     <servers />
   </component>
@@ -461,16 +460,6 @@
           <url>file://$PROJECT_DIR$/app/models/address.py</url>
           <line>43</line>
           <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/views/login_token_view.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/VirtualEnvs/conta-comigo/Lib/site-packages/rest_framework/authtoken/views.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

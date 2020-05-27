@@ -33,7 +33,7 @@ class LoginTokenView(ObtainAuthToken):
 
         print(f"Password for login method: {password}")
         # Decrypt the password
-        # password = decrypt_pass(password)
+        password = decrypt_pass(password)
         request.data["password"] = password
 
         result = super().post(request, *args, **kwargs)
