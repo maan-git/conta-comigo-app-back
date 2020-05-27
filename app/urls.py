@@ -3,6 +3,7 @@ from django.conf.urls import url
 from django.conf.urls import include
 
 from .views.login_view import LoginView
+from .views.login_token_view import LoginTokenView
 from .views.logout_view import LogoutView
 from .views.user_view import UserView
 from .views.neighborhood_view import NeighborhoodView
@@ -22,5 +23,6 @@ app_name = "app"
 urlpatterns = [
     url(r"^", include(router.urls)),
     url(r"^login/", LoginView.as_view()),
+    url(r"^login-token/", LoginTokenView.as_view()),
     url(r"^logout/", LogoutView.as_view()),
 ]

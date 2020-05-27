@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/login_token_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +37,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend_flexfi" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -43,20 +45,20 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\views" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/front" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\helpmecorona" />
+      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\notification\models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\notification\templates\emails" />
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\extra_files" />
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/front" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\helpmecorona" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\notification\models" />
-      <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app-maan\app\templates\emails" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.Compile messages">
+  <component name="RunManager" selected="Django Server.Runserver">
     <configuration name="Compile messages" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app-maan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,7 +250,6 @@
         <env name="DATABASE_URL" value="postgres://contacomigo:12345@localhost:5432/contacomigo_dev" />
         <env name="DJANGO_SETTINGS_MODULE" value="helpmecorona.settings.dev" />
         <env name="GOOGLE_APPLICATION_CREDENTIALS_CONTENT" value="{  &quot;type&quot;: &quot;service_account&quot;,  &quot;project_id&quot;: &quot;conta-comigo-app-files&quot;,  &quot;private_key_id&quot;: &quot;2c2d90afee1426ab87de591b6863ebc9c7820372&quot;,  &quot;private_key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDLmRuhtrVe6cDk\n27tCJnx/3hePiDNzOmVWboJrWoO5LClyeEH2H4o+CwIagSs9343UCfdwOzhU3YGD\nvea8wIuQFbt3G/2MaiCTc/SLw+gVSaLgFTdFo8T/1Aw3IafLBslmMVUVlcFf1kN6\nt+yLaiheCdVc6vzngZoMtJ4FIeD0oDmwjDdRbLorogP0e/OZ9zgprHq1uuAfB14X\nssnqOawHMIcFU5QNZQjT4PpzdHxd5/sCaf4tbmEB6CV3l0cVUbKRrcUoPLJ+Pj64\nZgg5VDMYw6oQLlzAmecglrnEDSLM838VsTsnwZSNJ1706BpC95GLKczEWpiO0arG\nsHPlLvdfAgMBAAECggEAHsJTvjOZeiyW6QcuEXk5X6NrltKNHLBVWrYDu86nI5os\nQYWGnaBij9YKQXvYpGvlBFm5yXnA8cgB8afb4hIK47/3cbAdDGeE4ry8KkN03tvK\n9iTDvssrujoh2vsZhl77nWtVlJcVPx04APnO4bnY6GrUPR9UCcZ27MrQLCv+ovuu\n4M7sW9oRiwL7ViPL2FXdUM2cxcmrklLz/DeIIKojZzPhdvu2ms3jWICxXZGVLI7E\n2XmG0kSfGfrD+7r9f5EkiqX4mzWfk6Bq/EaWJVVl/2cBQd1us37j2uFnc9Suo2kv\nA+02CigvHTAJxmEglsGnQ9GeVfDfqpzVI+e+Phu6wQKBgQDw9MjrH90T7viD8Uej\nrWxDzFHeYeRPcQ3yYk7u2Y8bFu4mwKGWGpkx66MlquKQGi5CPY/ktJKbgogXtPRC\nvbDW8kPgDELnHP7QSMeWqRCGFI5ZyaMBjui7gIb8roUt9cM4stkKZ0OI6NUD1vEc\nBfouhZ/w4ckZ7zj0vJ6GL+L3nwKBgQDYTzn5e7VEgD5Yf2/QlzbO38Vp4st+duoP\nEW09sdElKwnwDNnw2iXBwYEvGCwEAULPapoiRK74tMZPHnAD6yOgyziiMd16w7OV\nod8hwzG+vcKtzX8q/hy6oA8gb8JVrzUkWmJF1yzAwknkvVYp8zWExKTlQHdHVOrJ\niot/WhroQQKBgFMUw/Y2XV8TJcMwvXfVQyA5Yf0gmb0+iQWLGhZHE43OoTzhbJW6\nBBpvWiiRvF7deBfE7El6bZaLMmuiLBqbF0915ytobuULXVzpy0/KaXUhv1d8K+VM\npjiIf4K+lhMbyz1QhX+NzX52cYRKZ4Y3FWVXE6fV4iY8EtJn+uzftA2XAoGBALMs\nvSsI69e4GuyXcvlnqECoXxAcis9QlQSyPLjT6BhPlEXBf23gZVIfhXCLJzqSCNNi\nzBYCqqTcqT+0SLkWN0bjzx+bCoi8Pq99jCSdWUFUUkRBakskfougNad6q5DqNqzM\nKYcMe8eXqDnPE+ZfzT8S3DwBsEvn7SvQlUiCTLOBAoGACG9f/IHy266z1j4pJhp6\nScKFKJ8eTB1J3cqju4zkU2R9uDZ5tbG5VRwrd2vxfoIjHsvO6gFLvtxCIMsHElwJ\no7YutS/uZovcxCo/qsxpXGlSHFXzgnSGR8ES84klxLx4bVX0GkjOsjkmHDDC/9qQ\np4pEvv8qIp0FLi+wXWDnVBY=\n-----END PRIVATE KEY-----\n&quot;,  &quot;client_email&quot;: &quot;contacomigo-backend@conta-comigo-app-files.iam.gserviceaccount.com&quot;,  &quot;client_id&quot;: &quot;103904640859558738551&quot;,  &quot;auth_uri&quot;: &quot;https://accounts.google.com/o/oauth2/auth&quot;,  &quot;token_uri&quot;: &quot;https://oauth2.googleapis.com/token&quot;,  &quot;auth_provider_x509_cert_url&quot;: &quot;https://www.googleapis.com/oauth2/v1/certs&quot;,  &quot;client_x509_cert_url&quot;: &quot;https://www.googleapis.com/robot/v1/metadata/x509/contacomigo-backend%40conta-comigo-app-files.iam.gserviceaccount.com&quot;}" />
-        <env name="REDIS_URL" value="redis://h:pf7024d9a226ce81e9b18a11b0f52a6286a8f5034d57e205441724571afa62834@ec2-18-206-138-40.compute-1.amazonaws.com:8019" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\nehto\VirtualEnvs\conta-comigo\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -257,7 +258,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="" />
+      <option name="host" value="0.0.0.0" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -267,6 +268,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Django Server.Runserver" />
       <item itemvalue="Python.Compile messages" />
       <item itemvalue="Python.Install fixtures" />
       <item itemvalue="Python.Load addresses" />
@@ -305,6 +307,11 @@
       <workItem from="1587956398468" duration="11145000" />
       <workItem from="1588606004366" duration="10000" />
       <workItem from="1589729888891" duration="1117000" />
+      <workItem from="1590322655430" duration="610000" />
+      <workItem from="1590606143530" duration="1292000" />
+      <workItem from="1590609850084" duration="911000" />
+      <workItem from="1590610787498" duration="1710000" />
+      <workItem from="1590612603432" duration="323000" />
     </task>
     <servers />
   </component>
@@ -316,10 +323,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="31" key="#Runserver/0.0.1536.824@0.0.1536.824" timestamp="1585941987015" />
-    <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588035890760">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="249" y="170" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590610088885">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="199" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588035890759" />
+    <state x="249" y="170" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590610088885" />
     <state x="513" y="243" width="661" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587957151928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -345,46 +353,56 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1587322693342" />
-    <state x="503" y="174" width="664" height="488" key="EnvironmentVariablesDialog" timestamp="1588035889335">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="629" y="220" width="881" height="489" key="EnvironmentVariablesDialog" timestamp="1590610087633">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="503" y="174" width="664" height="488" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588035889335" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587957124843">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="629" y="220" width="881" height="489" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590610087633" />
+    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1590611216050">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587957124843" />
-    <state width="1493" height="340" key="GridCell.Tab.0.bottom" timestamp="1588030385794">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590611216050" />
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom" timestamp="1590612715715">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588030385794" />
-    <state width="1493" height="340" key="GridCell.Tab.0.center" timestamp="1588030385790">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590612715715" />
+    <state width="1877" height="344" key="GridCell.Tab.0.center" timestamp="1590612715715">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588030385790" />
-    <state width="1493" height="340" key="GridCell.Tab.0.left" timestamp="1588030385790">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590612715715" />
+    <state width="1877" height="344" key="GridCell.Tab.0.left" timestamp="1590612715715">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588030385790" />
-    <state width="1493" height="340" key="GridCell.Tab.0.right" timestamp="1588030385790">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590612715715" />
+    <state width="1877" height="344" key="GridCell.Tab.0.right" timestamp="1590612715715">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588030385790" />
-    <state width="1493" height="340" key="GridCell.Tab.1.bottom" timestamp="1588030385795">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590612715715" />
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1590612657517">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588030385795" />
-    <state width="1493" height="340" key="GridCell.Tab.1.center" timestamp="1588030385795">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590612657517" />
+    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1590612657517">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588030385795" />
-    <state width="1493" height="340" key="GridCell.Tab.1.left" timestamp="1588030385794">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590612657517" />
+    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1590612657516">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588030385794" />
-    <state width="1493" height="340" key="GridCell.Tab.1.right" timestamp="1588030385795">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590612657516" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1590612657517">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="340" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588030385795" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590612657517" />
     <state x="365" y="86" key="SettingsEditor" timestamp="1587945359232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -443,6 +461,16 @@
           <url>file://$PROJECT_DIR$/app/models/address.py</url>
           <line>43</line>
           <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/views/login_token_view.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/VirtualEnvs/conta-comigo/Lib/site-packages/rest_framework/authtoken/views.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
