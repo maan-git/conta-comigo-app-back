@@ -41,7 +41,7 @@ jobs:
         # Copy all repository to the deploy folder
         sudo cp -r . /opt/conta-comigo/prod/back/source
         
-        chown -R contacomigoback:githubrunnerprod /opt/conta-comigo/prod/back/source
+        chown -R backendprod:githubrunnerprod /opt/conta-comigo/prod/back/source
         
         chmod -R 770 "$BACKEND_DIR"
         
