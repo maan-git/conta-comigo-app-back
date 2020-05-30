@@ -9,28 +9,37 @@ from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from utils.views_utils import get_param_or_400
 from app.serializers.user_serializer import UserSerializer
-from app.models.user import User
 from django.contrib.auth import authenticate
+
+from app import decrypt_pass
 
 
 class LoginView(APIView):
     permission_classes = (AllowAny,)
 
     schema = AutoSchema(
-        manual_fields=[coreapi.Field("username"), coreapi.Field("password")]
+        manual_fields=[
+            coreapi.Field("username", description="User email"),
+            coreapi.Field("password", description="User password"),
+        ]
     )
 
-    def post(self, request: Request, *args, **kwargs):
+    @classmethod
+    def post(cls, request: Request, *args, **kwargs):
         """
         Authenticate an user.
         """
         username = get_param_or_400(request.data, "username", str)
         password = get_param_or_400(request.data, "password", str)
 
+        print(f"Password for login method: {password}")
+        ## Decrypt the password
+        password = decrypt_pass(password)
         user = authenticate(username=username, password=password)
 
         if user:
             login(request, user)
-            return Response(data=UserSerializer(user).data)
+            data = UserSerializer(user).data
+            return Response(data=data)
         else:
             raise exceptions.AuthenticationFailed(_("Invalid username/password."))

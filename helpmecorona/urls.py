@@ -22,6 +22,7 @@ schema_view_swagger = get_swagger_view(
     title="Conta comigo API", url=settings.SWAGGER_API_PREFIX
 )
 
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("app/", include("app.urls")),
@@ -29,4 +30,5 @@ urlpatterns = [
     path("docs/", schema_view_swagger),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("help/", include("help.urls")),
-]
+    path("", schema_view_swagger),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True)

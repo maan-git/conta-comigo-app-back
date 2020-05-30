@@ -1,0 +1,22 @@
+[
+  {
+    "model": "help.HelpRequestCancelReason",
+    "pk": 100000,
+    "fields":
+    {
+      "description": "Outra pessoa ajudou",
+      "active": true,
+      "created": "2020-04-04T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "help.HelpRequestCancelReason",
+    "pk": 100001,
+    "fields":
+    {
+      "description": "Não preciso mais",
+      "active": true,
+      "created": "2020-04-04T00:00:00.000Z"
+    }
+  }
+]

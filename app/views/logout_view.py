@@ -4,7 +4,8 @@ from rest_framework.authtoken.views import APIView
 
 
 class LogoutView(APIView):
-    def post(self, request, *args, **kwargs):
+    @classmethod
+    def post(cls, request, *args, **kwargs):
         """
         Logout an user.
         """

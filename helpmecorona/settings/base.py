@@ -16,7 +16,13 @@ import dj_database_url
 
 from corsheaders.defaults import default_headers
 from rest_framework.settings import ISO_8601
-import dj_database_url
+from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
+import dj_email_url
+from django.utils.translation import ugettext_lazy as _
+import dj_redis_url
+
+
+LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,22 +49,28 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_swagger",
     "rest_framework.authtoken",
+    "ws4redis",
     "django_filters",
     "corsheaders",
+    "simple_history",
+    "utils",
     "app",
     "help",
+    "notification"
 ]
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -86,9 +98,7 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
@@ -145,6 +155,9 @@ REST_FRAMEWORK = {
     ),
     # 'DATETIME_FORMAT': ISO_8601,
     "DATETIME_INPUT_FORMATS": (
+        "%Y-%m-%dT%H:%M:%S.%f",
+        "%Y-%m-%dT%H:%M:%S.%fZ",
+        "%Y-%m-%dT%H:%M:%S",
         "%Y/%m/%d %H:%M",
         "%m/%d/%Y %H:%M",
         "%d/%m/%Y %H:%M",
@@ -184,29 +197,29 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "INFO",
+            "level": LOG_LEVEL,
             "class": "logging.StreamHandler",
             "formatter": "simple",
             "stream": sys.stdout,
-            "filters": ["require_debug_true"],
+            # "filters": ["require_debug_true"],
         },
-        "file": {
-            "level": "INFO",
-            "class": "logging.handlers.TimedRotatingFileHandler",
-            "filename": "logs/general.log",
-            "when": "d",
-            "interval": 1,
-            "backupCount": 10,
-            "formatter": "simple",
-        },
+        # "file": {
+        #     "level": "INFO",
+        #     "class": "logging.handlers.TimedRotatingFileHandler",
+        #     "filename": "logs/general.log",
+        #     "when": "midnight",
+        #     "interval": 1,
+        #     "backupCount": 10,
+        #     "formatter": "simple",
+        # },
     },
     "loggers": {
-        # "": {
-        #     "handlers": ["console", 'file'],
-        #     'level': 'INFO',
-        # },
-        "django": {"handlers": ["console"], "level": "INFO"},
-        "django.db.backends": {"level": "INFO", "handlers": ["console"]},
+        "": {
+            "handlers": ["console"],
+            'level': LOG_LEVEL,
+        },
+        "django": {"handlers": ["console"], "level": LOG_LEVEL},
+        "django.db.backends": {"level": LOG_LEVEL, "handlers": ["console"]},
     },
 }
 
@@ -225,11 +238,86 @@ SWAGGER_SETTINGS = {
 # TODO check if will be needed in production
 SWAGGER_API_PREFIX = ""
 
-DATABASES = {
-    # Read the database values from environment variable DATABASE_URL in format:
-    # postgres://username:password@server:port/database
-    "default": dj_database_url.config(
-        conn_max_age=600,
-        default="postgres://contacomigo:12345@localhost:5432/contacomigo_dev",
-    )
-}
+FIXTURE_DIRS = ("/help/fixtures/", "/app/fixtures/")
+
+MEDIA_URL = "/"
+
+EXTERNAL_ADDRESS_PROVIDER = ExternalProviderRepVirtual
+
+# For django-websocket-redis
+WEBSOCKET_URL = '/ws/'
+
+WS4REDIS_HEARTBEAT = '--heartbeat--'
+
+if os.environ.get('REDIS_URL') is not None:
+    WS4REDIS_CONNECTION = dj_redis_url.config()
+
+# Time to store message (default is 3600)
+WS4REDIS_EXPIRE = 60
+
+# Prefix to store objects in redis. Should be used if the server is shared with other applications
+# WS4REDIS_PREFIX = 'ws'
+
+# Change redis subscriber implementation. Default is ws4redis.subscriber.RedisSubscriber
+# WS4REDIS_SUBSCRIBER = 'myapp.subscriber.RedisSubscriber'
+
+# Needed in debug only and ignored in production.
+# Overrides Django’s internal main loop and adds a URL dispatcher in front of the request handler
+WSGI_APPLICATION = 'ws4redis.django_runserver.application'
+
+# Should be implemented a callback to restrict access to the channels
+# https://django-websocket-redis.readthedocs.io/en/latest/usage.html#safetyconsiderations
+WS4REDIS_ALLOWED_CHANNELS = 'utils.django_ws_for_redis.get_allowed_channels'
+# Ex:
+# def get_allowed_channels(request, channels):
+#     return set(channels).intersection(['subscribe-broadcast', 'subscribe-group'])
+# or
+# (disallow not logged users)
+# from django.core.exceptions import PermissionDenied
+#
+# def get_allowed_channels(request, channels):
+#     if not request.user.is_authenticated():
+#         raise PermissionDenied('Not allowed to subscribe nor to publish on the Websocket!')
+
+# Use redis a session cache
+# https://github.com/martinrusev/django-redis-sessions
+# https://github.com/sebleier/django-redis-cache
+# http://michal.karzynski.pl/blog/2013/07/14/using-redis-as-django-session-store-and-cache-backend/
+# pip install django-redis-sessions
+#
+# SESSION_ENGINE = 'redis_sessions.session'
+# SESSION_REDIS_PREFIX = 'session'
+
+FACILITY_WS4REDIS = 'frontend'
+
+email_config = dj_email_url.config()
+
+if any(email_config):
+    EMAIL_FILE_PATH = email_config['EMAIL_FILE_PATH']
+    EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
+    EMAIL_HOST = email_config['EMAIL_HOST']
+    EMAIL_PORT = email_config['EMAIL_PORT']
+    EMAIL_BACKEND = email_config['EMAIL_BACKEND']
+    EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
+    EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
+
+# To get error messages automatically
+# ADMINS = (
+#     ('you', 'you@email.com'),
+# )
+# MANAGERS = ADMINS
+
+# Provide a lists of languages which your site supports.
+LANGUAGES = (
+    ('en', _('English')),
+    ('pt', _('Portuguese')),
+)
+
+# Set the default language for your site.
+LANGUAGE_CODE = 'pt'
+
+# Tell Django where the project's translation files should be.
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

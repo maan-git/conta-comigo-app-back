@@ -39,7 +39,7 @@ def str_to_datetime(
 
 
 def _convert_str(
-    string_to_convert: str, to_date: bool, formats: dict = None, default_value=None
+    string_to_convert: str, to_date: bool, formats: list = None, default_value=None
 ):
     if not formats:
         formats = list(settings.REST_FRAMEWORK.get("DATE_INPUT_FORMATS"))
@@ -63,14 +63,11 @@ def _convert_str(
     if default_value is not None:
         return default_value
     else:
-        error = ValueError(string_to_convert)
-        if not error.args:
-            error.args = ("",)
-
-        error.args = error.args + (
-            "The value is not valid for any of the formats " + formats,
+        raise ValueError(
+            'The value "{}" is not valid for any of the formats: "{}"'.format(
+                string_to_convert, ",".join(formats)
+            )
         )
-        raise error.args
 
 
 def diff_in_months(start_date, end_date):

@@ -1,0 +1,26 @@
+[
+  {
+    "model": "notification.EmailStatus",
+    "pk": 1,
+    "fields":
+    {
+      "description": "Não enviado"
+    }
+  },
+  {
+    "model": "notification.EmailStatus",
+    "pk": 2,
+    "fields":
+    {
+      "description": "Enviado com sucesso"
+    }
+  },
+  {
+    "model": "notification.EmailStatus",
+    "pk": 3,
+    "fields":
+    {
+      "description": "Erro ao enviar"
+    }
+  }
+]

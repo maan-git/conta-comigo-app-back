@@ -1,0 +1,32 @@
+[
+  {
+    "model": "help.HelpCategory",
+    "pk": 100000,
+    "fields":
+    {
+      "description": "Passear com cachorro",
+      "active": true,
+      "created": "2020-03-29T16:52:00.000Z"
+    }
+  },
+  {
+    "model": "help.HelpCategory",
+    "pk": 100001,
+    "fields":
+    {
+      "description": "Buscar remédio",
+      "active": true,
+      "created": "2020-03-29T16:52:00.000Z"
+    }
+  },
+  {
+    "model": "help.HelpCategory",
+    "pk": 100002,
+    "fields":
+    {
+      "description": "Fazer compras de mercado",
+      "active": true,
+      "created": "2020-03-29T16:52:00.000Z"
+    }
+  }
+]

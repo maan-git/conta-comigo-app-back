@@ -2,10 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from utils.firebase_client import prepare_credentials
 
 
 def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helpmecorona.settings.dev")
+    prepare_credentials()
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

@@ -4,6 +4,9 @@ from rest_framework import status
 from rest_framework.exceptions import ParseError
 from rest_framework.serializers import ModelSerializer
 from . import commom_utils
+from rest_framework import mixins
+from rest_framework.viewsets import GenericViewSet
+from rest_framework.routers import DefaultRouter
 
 
 class GenericReadSerializer(ModelSerializer):
@@ -44,13 +47,11 @@ def get_param_or_400(
     try:
         if parameter_type is not None:
             if parameter_type == int:
-                param_value = commom_utils.convert_to_int(param_value, default_value)
+                param_value = commom_utils.str_to_int(param_value, default_value)
             if parameter_type == float:
-                param_value = commom_utils.convert_to_float(param_value, default_value)
+                param_value = commom_utils.str_to_float(param_value, default_value)
             if parameter_type == bool:
-                param_value = commom_utils.convert_to_boolean(
-                    param_value, default_value
-                )
+                param_value = commom_utils.str_to_boolean(param_value, default_value)
             if parameter_type == list:
                 param_value = param_value.split(",")
                 if not isinstance(param_value, list):
@@ -58,11 +59,9 @@ def get_param_or_400(
                 if integer_list:
                     param_value = [int(v) for v in param_value]
             if parameter_type == datetime.date:
-                param_value = commom_utils.convert_to_date(param_value, default_value)
+                param_value = commom_utils.str_to_date(param_value, default_value)
             if parameter_type == datetime.datetime:
-                param_value = commom_utils.convert_to_datetime(
-                    param_value, default_value
-                )
+                param_value = commom_utils.str_to_datetime(param_value, default_value)
     except ValueError:
         raise ParseError(
             detail="The " + param_name + " value is not valid",
@@ -86,3 +85,39 @@ def get_generic_write_serializer(model: type, depth: int):
     serializer.Meta.model = model
     serializer.Meta.depth = depth
     return serializer
+
+
+class ModelViewSetNoDelete(
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.ListModelMixin,
+    GenericViewSet,
+):
+    """
+    A viewset that provides default `create()`, `retrieve()`, `update()`,
+    `partial_update()` and `list()` actions.
+    """
+    pass
+
+
+class ModelViewSetReadOnly(
+    mixins.RetrieveModelMixin, mixins.ListModelMixin, GenericViewSet
+):
+    """
+    A viewset that provides default `retrieve()` and `list()` actions.
+    """
+
+    pass
+
+
+class CustomRouterNoPut(DefaultRouter):
+    """
+    Custom router to remove the 'put' method from viewsets.
+    """
+    def get_method_map(self, viewset, method_map):
+        methods_map = super().get_method_map(viewset, method_map)
+        if 'put' in methods_map:
+            methods_map.pop('put')
+
+        return methods_map
