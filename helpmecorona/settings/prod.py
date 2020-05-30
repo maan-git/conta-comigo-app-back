@@ -12,7 +12,10 @@ CORS_ORIGIN_WHITELIST = ("https://www.contacomigoapp.com.br",
 DATABASES = {
     # Read the database values from environment variable DATABASE_URL in format:
     # postgres://username:password@server:port/database
-    "default": dj_database_url.config(conn_max_age=600)
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        default="postgres://contacomigoprod:12345@localhost:5432/contacomigo_prod",
+    )
 }
 
 FIREBASE_STORAGE_BUCKET = 'conta-comigo-app-files.appspot.com'
