@@ -23,7 +23,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        - DESTINATION_PATH=/opt/conta-comigo/prod/back/source
+        - export DESTINATION_PATH=/opt/conta-comigo/prod/back/source
         # Clear deploy folder
         - sudo rm -r $DESTINATION_PATH/*
         # Copy all repository to the deploy folder
