@@ -44,7 +44,7 @@ jobs:
         
         sudo chown -R backendprod:githubrunnerprod /opt/conta-comigo/prod/back/source
         
-        sudo chmod -R 770 "$BACKEND_DIR"
+        sudo chmod -R 770 "/opt/conta-comigo/prod/back/source"
         
         # Change dir to deploy folder
         cd /opt/conta-comigo/prod/back/source
