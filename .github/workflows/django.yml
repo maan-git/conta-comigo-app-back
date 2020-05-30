@@ -41,7 +41,7 @@ jobs:
         # Copy all repository to the deploy folder
         sudo cp -r . /opt/conta-comigo/prod/back/source
         # Change dir to deploy folder
-        sudo cd /opt/conta-comigo/prod/back/source
+        cd /opt/conta-comigo/prod/back/source
         sudo ../virtualenv/bin/pip install -r requirements.txt
         sudo ../virtualenv/bin/python manage.py migrate --settings helpmecorona.settings.prod
         sudo ../virtualenv/bin/python manage.py collectstatic --settings helpmecorona.settings.prod --noinput
