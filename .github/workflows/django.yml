@@ -22,6 +22,8 @@ jobs:
         # Get password for posrgres user
         PG_PASSWORD=$(sudo /root/linuxscripts/get_postgres_password.sh prod)
         
+        echo $PG_PASSWORD
+        
         if [ $? -ne 0 ];
         then
           echo "System has failed to get postgres password"
