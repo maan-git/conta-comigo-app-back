@@ -19,7 +19,6 @@ jobs:
     #- uses: actions/checkout@v2
     - name: Deploy to production
       run: |
-        whoami
         # Get password for posrgres user
         export PG_PASSWORD=$(sudo /root/linuxscripts/get_postgres_password.sh prod)
         
@@ -35,8 +34,6 @@ jobs:
         export DATABASE_URL=postgres://contacomigoprod:$PG_PASSWORD@localhost:5432/contacomigo_prod
         export SECRET_KEY_PASS=4IaokWbQcl7RnXdmTqnPaYHkV0m3YZiePSqchMAqwHk=
         
-        echo $DATABASE_URL
-
         # Clear deploy folder
         sudo rm -r /opt/conta-comigo/prod/back/source/*
         # Copy all repository to the deploy folder
