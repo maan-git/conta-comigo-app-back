@@ -20,7 +20,7 @@ jobs:
     - name: Deploy to production
       run: |
         # Get password for posrgres user
-        sudo export PG_PASSWORD=$(sudo /root/linuxscripts/get_postgres_password.sh prod)
+        export PG_PASSWORD=$(sudo /root/linuxscripts/get_postgres_password.sh prod)
         
         if [ $? -ne 0 ];
         then
@@ -28,11 +28,11 @@ jobs:
           exit 1
         fi
         # Set environment variables requires for manage.py commands
-        sudo export DJANGO_SETTINGS_MODULE=helpmecorona.settings.prod
-        sudo export DJANGO_STATIC_ROOT=helpmecorona/static
-        sudo export GOOGLE_APPLICATION_CREDENTIALS_CONTENT="{  \"type\": \"service_account\",  \"project_id\": \"conta-comigo-app-files\",  \"private_key_id\": \"2c2d90afee1426ab87de591b6863ebc9c7820372\",  \"private_key\": \"-----BEGIN PRIVATE KEY-----\nMIIEvQIBADA$"
-        sudo export DATABASE_URL=postgres://contacomigoprod:$PG_PASSWORD@localhost:5432/contacomigo_prod
-        sudo export SECRET_KEY_PASS=4IaokWbQcl7RnXdmTqnPaYHkV0m3YZiePSqchMAqwHk=
+        export DJANGO_SETTINGS_MODULE=helpmecorona.settings.prod
+        export DJANGO_STATIC_ROOT=helpmecorona/static
+        export GOOGLE_APPLICATION_CREDENTIALS_CONTENT="{  \"type\": \"service_account\",  \"project_id\": \"conta-comigo-app-files\",  \"private_key_id\": \"2c2d90afee1426ab87de591b6863ebc9c7820372\",  \"private_key\": \"-----BEGIN PRIVATE KEY-----\nMIIEvQIBADA$"
+        export DATABASE_URL=postgres://contacomigoprod:$PG_PASSWORD@localhost:5432/contacomigo_prod
+        export SECRET_KEY_PASS=4IaokWbQcl7RnXdmTqnPaYHkV0m3YZiePSqchMAqwHk=
         
         echo $DATABASE_URL
 
