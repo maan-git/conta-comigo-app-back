@@ -1,0 +1,52 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  deploy:
+    
+    runs-on: do-conta-comigo-dev-back
+    steps:
+    - name: Deploy to production
+      run: |
+        # Get password for posrgres user
+        export PG_PASSWORD=$(sudo /root/linuxscripts/get_postgres_password.sh dev)
+        
+        if [ $? -ne 0 ];
+        then
+          echo "System has failed to get postgres password"
+          exit 1
+        fi
+        
+        # Set environment variables requires for manage.py commands
+        export DJANGO_SETTINGS_MODULE=helpmecorona.settings.dev
+        export DJANGO_STATIC_ROOT=helpmecorona/static
+        export GOOGLE_APPLICATION_CREDENTIALS_CONTENT="{  \"type\": \"service_account\",  \"project_id\": \"conta-comigo-app-files\",  \"private_key_id\": \"2c2d90afee1426ab87de591b6863ebc9c7820372\",  \"private_key\": \"-----BEGIN PRIVATE KEY-----\nMIIEvQIBADA$"
+        export DATABASE_URL=postgres://contacomigoprod:$PG_PASSWORD@localhost:5432/contacomigo_prod
+        export SECRET_KEY_PASS=4IaokWbQcl7RnXdmTqnPaYHkV0m3YZiePSqchMAqwHk=
+        
+        echo $DATABASE_URL
+
+        # Clear deploy folder
+        sudo rm -r /opt/conta-comigo/dev/back/source/*
+        # Copy all repository to the deploy folder
+        sudo cp -r . /opt/conta-comigo/dev/back/source
+        
+        sudo chown -R backendprod:githubrunnerprod /opt/conta-comigo/dev/back/source
+        
+        sudo chmod -R 770 "/opt/conta-comigo/dev/back/source"
+        
+        # Change dir to deploy folder
+        cd /opt/conta-comigo/dev/back/source
+        ../virtualenv/bin/pip install -r requirements.txt
+        ../virtualenv/bin/python manage.py migrate --settings helpmecorona.settings.dev
+        # ../virtualenv/bin/python manage.py collectstatic --settings helpmecorona.settings.dev --noinput
+        ../virtualenv/bin/python manage.py loaddata help_0001_help_category help_0002_help_request_status help_0003_helping_status help_0004_help_request_cancel_reason app_0001_global_variable_type app_0002_brazilian_states app_0003_global_variable app_0004_notification_types notification_001_email_status --settings helpmecorona.settings.dev
+        sudo systemctl restart emperor.uwsgi
+    #- name: Run Tests
+    #  run: |
+    #    python manage.py test
