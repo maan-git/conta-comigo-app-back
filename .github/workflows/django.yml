@@ -20,7 +20,7 @@ jobs:
     - name: Deploy to production
       run: |
         # Get password for posrgres user
-        PG_PASSWORD=$(/root/linuxscripts/get_postgres_password.sh $ENVIRONMENT_NAME)
+        PG_PASSWORD=$(sudo /root/linuxscripts/get_postgres_password.sh $ENVIRONMENT_NAME)
         
         if [ $? -ne 0 ];
         then
