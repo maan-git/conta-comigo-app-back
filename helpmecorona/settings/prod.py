@@ -1,6 +1,7 @@
 # Import all configuration from base config file
 from .base import *
 import dj_database_url
+import json
 
 # Cors allowed sources
 # TODO Configure to production
@@ -17,6 +18,8 @@ DATABASES = {
         default="postgres://contacomigoprod:12345@localhost:5432/contacomigo_prod",
     )
 }
+
+print("Databases: " + json.dumps(DATABASES))
 
 FIREBASE_STORAGE_BUCKET = 'conta-comigo-app-files.appspot.com'
 
