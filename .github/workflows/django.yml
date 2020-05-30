@@ -11,20 +11,31 @@ jobs:
     
     runs-on: self-hosted
     strategy:
-      max-parallel: 4
+      max-parallel: 1
       matrix:
         python-version: [3.6, 3.7, 3.8]
 
     steps:
-    - uses: actions/checkout@v2
+    #- uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Run Tests
-      run: |
-        python manage.py test
+        - DESTINATION_PATH=/opt/conta-comigo/prod/back/source
+        # Clear deploy folder
+        - sudo rm -r $DESTINATION_PATH/*
+        # Copy all repository to the deploy folder
+        - sudo cp -r . $DESTINATION_PATH
+        # Change dir to deploy folder
+        - cd $DESTINATION_PATH
+        - sudo ../virtualenv/bin/bin/pip install -r requirements.txt
+        - sudo ../virtualenv/bin/python manage.py migrate --settings helpmecorona.settings.prod
+        - sudo ../virtualenv/bin/python manage.py collectstatic --settings helpmecorona.settings.prod --noinput
+        - sudo ../virtualenv/bin/python manage.py loaddata help_0001_help_category help_0002_help_request_status help_0003_helping_status help_0004_help_request_cancel_reason app_0001_global_variable_type app_0002_brazilian_states app_0003_global_variable app_0004_notification_types notification_001_email_status --settings helpmecorona.settings.prod
+        - sudo chown -R contacomigoback:contacomigoback $DESTINATION_PATH
+        - sudo systemctl restart emperor.uwsgi
+    #- name: Run Tests
+    #  run: |
+    #    python manage.py test
