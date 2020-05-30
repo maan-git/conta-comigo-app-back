@@ -12,6 +12,7 @@ def decrypt_fernet(pass_str):
         return res
     except Exception as ex:
         print(f"Error decrypting the password through Fernet: {ex}")
+        raise
 
 
 def decrypt_pass(pass_str):
@@ -25,3 +26,4 @@ def decrypt_pass(pass_str):
 
     except Exception as ex:
         print(f"Error decrypting the password with our own method: {ex}")
+        raise
