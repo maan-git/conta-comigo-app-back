@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/firebase_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/firebase_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +268,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.Runserver" />
       <item itemvalue="Python.Compile messages" />
       <item itemvalue="Python.Install fixtures" />
       <item itemvalue="Python.Load addresses" />
@@ -277,6 +276,7 @@
       <item itemvalue="Python.Migrate" />
       <item itemvalue="Python.Send emails" />
       <item itemvalue="Python.Test firebase cient" />
+      <item itemvalue="Django Server.Runserver" />
     </list>
   </component>
   <component name="SvnConfiguration">
