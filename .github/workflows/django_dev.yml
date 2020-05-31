@@ -16,7 +16,7 @@ jobs:
     
     - name: Deploy to test
       run: |
-        git branch
+        pwd
         # Get password for posrgres user
         export PG_PASSWORD=$(sudo /root/linuxscripts/get_postgres_password.sh test)
         
