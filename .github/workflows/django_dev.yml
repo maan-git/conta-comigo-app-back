@@ -10,6 +10,7 @@ jobs:
   deploy:
     
     runs-on: do-conta-comigo-test-back
+    - uses: actions/checkout@v2
     steps:
     - name: Deploy to test
       run: |
