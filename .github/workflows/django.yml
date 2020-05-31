@@ -49,6 +49,9 @@ jobs:
         ../virtualenv/bin/python manage.py migrate --settings helpmecorona.settings.prod
         # ../virtualenv/bin/python manage.py collectstatic --settings helpmecorona.settings.prod --noinput
         ../virtualenv/bin/python manage.py loaddata help_0001_help_category help_0002_help_request_status help_0003_helping_status help_0004_help_request_cancel_reason app_0001_global_variable_type app_0002_brazilian_states app_0003_global_variable app_0004_notification_types notification_001_email_status --settings helpmecorona.settings.prod
+        # Transfer any new file to the correct user
+        sudo chown -R backendprod:githubrunnerprod /opt/conta-comigo/prod/back/source
+        sudo chmod -R 770 "/opt/conta-comigo/prod/back/source"
         sudo systemctl restart emperor.uwsgi
     #- name: Run Tests
     #  run: |
