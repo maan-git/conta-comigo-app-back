@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="" />
+    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/test.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -265,7 +267,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.Runserver" />
       <item itemvalue="Python.Compile messages" />
       <item itemvalue="Python.Install fixtures" />
       <item itemvalue="Python.Load addresses" />
@@ -274,6 +275,7 @@
       <item itemvalue="Python.Migrate" />
       <item itemvalue="Python.Send emails" />
       <item itemvalue="Python.Test firebase cient" />
+      <item itemvalue="Django Server.Runserver" />
     </list>
   </component>
   <component name="SvnConfiguration">
