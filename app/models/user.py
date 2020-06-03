@@ -15,6 +15,8 @@ from django.db import transaction
 from app.models.notification import Notification
 from notification.models.user_notification import UserNotification
 
+from app import decrypt_pass
+
 DEFAULT_USER_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/conta-comigo-app-files.appspot.com/o/icon-conta-comigo.jpeg?alt=media&token=0094390a-0f27-4735-a0be-5926c5302b6e"
 
 
@@ -29,6 +31,11 @@ class UserManager(BaseUserManager):
             raise ValueError("The given email must be set")
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
+
+        ## Decrypt pass
+        print(f"Password for _create_user method: {password}")
+        password = decrypt_pass(password)
+
         user.set_password(password)
         user.save(using=self._db)
         return user

@@ -58,8 +58,12 @@ def delete_file(bucket_name: str, file_path: str) -> bool:
 
 def prepare_credentials():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helpmecorona.settings.dev")
+
+    output_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                               "../extra_files/google_credentials/contacomigo-backend@conta-comigo-app-files.iam.gserviceaccount.com.json")
+
     os.environ.setdefault("GOOGLE_APPLICATION_CREDENTIALS",
-                          "./extra_files/google_credentials/contacomigo-backend@conta-comigo-app-files.iam.gserviceaccount.com.json")
+                          output_path)
 
     google_credentials_content = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_CONTENT')
     google_credentials_path = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')

@@ -14,15 +14,11 @@ CORS_ORIGIN_WHITELIST = (
     "http://localhost:8080",
     "http://localhost:8081",
     "https://localhost",
-    "https://test.helpmecorona.com",
     "https://localhost:80",
     "https://localhost:8080",
     "https://localhost:8081",
-    "https://conta-comigo-app-front.herokuapp.com",
-    "https://www.contacomigoapp.com.br",
-    "http://www.contacomigoapp.com.br",
-    "http://contacomigoapp.com.br",
-    "http://contacomigoapp.com.br",
+    "https://www.test.contacomigoapp.com.br",
+    "https://test.contacomigoapp.com.br"
 )
 
 DATABASES = {

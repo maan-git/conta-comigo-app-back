@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import sys
+import dj_database_url
+
 from corsheaders.defaults import default_headers
 from rest_framework.settings import ISO_8601
 from app.services.address_provider_republica_virtual import ExternalProviderRepVirtual
@@ -70,6 +72,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "simple_history.middleware.HistoryRequestMiddleware",
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -198,7 +201,7 @@ LOGGING = {
             "class": "logging.StreamHandler",
             "formatter": "simple",
             "stream": sys.stdout,
-            "filters": ["require_debug_true"],
+            # "filters": ["require_debug_true"],
         },
         # "file": {
         #     "level": "INFO",
