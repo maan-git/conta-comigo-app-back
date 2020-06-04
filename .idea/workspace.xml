@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="" />
+    <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/models/helprequest_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/help/models/helprequest_helpers.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +57,7 @@
       <recent name="C:\Users\nehto\Sources\Sebastiao\conta-comigo-app\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.Runserver">
+  <component name="RunManager" selected="Python.Compile messages">
     <configuration name="Compile messages" type="PythonConfigurationType" factoryName="Python">
       <module name="conta-comigo-app-maan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -273,7 +276,6 @@
       <item itemvalue="Python.Migrate" />
       <item itemvalue="Python.Send emails" />
       <item itemvalue="Python.Test firebase cient" />
-      <item itemvalue="Django Server.Runserver" />
     </list>
   </component>
   <component name="SvnConfiguration">

@@ -51,5 +51,12 @@ class HelpRequestHelpers(django_models.Model):
 
 @receiver(post_save, sender=HelpRequestHelpers)
 def post_save(sender, instance: HelpRequestHelpers, created=False, **kwargs):
+    if instance.help_request.any_user_helping:
+        instance.help_request.status_id = HelpRequestStatus.AllStatus.InProgress
+    else:
+        instance.help_request.status_id = HelpRequestStatus.AllStatus.Created
+
+    instance.help_request.save()
+    
     if created or (instance.status_id != instance.original_status_id):
         instance.notify_help_request_owner_status()
