@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/django.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/django.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/django_dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/django_dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpmecorona/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpmecorona/settings/base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +322,8 @@
       <workItem from="1592161213377" duration="2022000" />
       <workItem from="1592163380147" duration="1035000" />
       <workItem from="1592165668697" duration="1225000" />
-      <workItem from="1592167807530" duration="807000" />
+      <workItem from="1592167807530" duration="1406000" />
+      <workItem from="1592170045244" duration="32000" />
     </task>
     <servers />
   </component>

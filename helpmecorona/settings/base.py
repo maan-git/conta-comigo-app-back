@@ -292,15 +292,23 @@ FACILITY_WS4REDIS = 'frontend'
 
 email_config = dj_email_url.config()
 
-if any(email_config):
-    EMAIL_FILE_PATH = email_config['EMAIL_FILE_PATH']
-    EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
-    EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
-    EMAIL_HOST = email_config['EMAIL_HOST']
-    EMAIL_PORT = email_config['EMAIL_PORT']
-    EMAIL_BACKEND = email_config['EMAIL_BACKEND']
-    EMAIL_USE_TLS = False
-    EMAIL_USE_SSL = True
+# if any(email_config):
+#     EMAIL_FILE_PATH = email_config['EMAIL_FILE_PATH']
+#     EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
+#     EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
+#     EMAIL_HOST = email_config['EMAIL_HOST']
+#     EMAIL_PORT = email_config['EMAIL_PORT']
+#     EMAIL_BACKEND = email_config['EMAIL_BACKEND']
+#     EMAIL_USE_TLS = False
+#     EMAIL_USE_SSL = True
+EMAIL_FILE_PATH = ""
+EMAIL_HOST_USER = "contato@contacomigoapp.com.br"
+EMAIL_HOST_PASSWORD = "Helpme!@#"
+EMAIL_HOST = "smtpout.secureserver.net"
+EMAIL_PORT = 465
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 # To get error messages automatically
 # ADMINS = (
