@@ -56,9 +56,8 @@ jobs:
 
         # Configure cron
         echo "Configurando cron"
-        crontab -l | grep -v manage.py > jobs.txt
-        echo "* /5 * * * /opt/conta-comigo/prod/back/virtualenv/bin/python manage.py sendemails --settings helpmecorona.settings.prod" >> jobs.txt
-        crontab jobs.txt
+        echo "* /5 * * * /opt/conta-comigo/prod/back/virtualenv/bin/python manage.py sendemails --settings helpmecorona.settings.prod" >> cronjobs.txt
+        crontab cronjobs.txt
         echo "Cron configured"
 
     #- name: Run Tests
