@@ -53,6 +53,14 @@ jobs:
         sudo chown -R backendprod:githubrunnerprod /opt/conta-comigo/prod/back/source
         sudo chmod -R 770 "/opt/conta-comigo/prod/back/source"
         sudo systemctl restart emperor.uwsgi
+
+        # Configure cron
+        echo "Configurando cron"
+        crontab -l | grep -v manage.py > jobs.txt
+        echo "* /5 * * * /opt/conta-comigo/prod/back/virtualenv/bin/python manage.py sendemails --settings helpmecorona.settings.prod" >> jobs.txt
+        crontab jobs.txt
+        echo "Cron configured"
+
     #- name: Run Tests
     #  run: |
     #    python manage.py test
