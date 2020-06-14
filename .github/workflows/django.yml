@@ -56,7 +56,7 @@ jobs:
 
         # Configure cron
         echo "Configurando cron"
-        echo "* * * * * /opt/conta-comigo/prod/back/virtualenv/bin/python /opt/conta-comigo/prod/back/source/manage.py sendemails --settings helpmecorona.settings.prod" >> cronjobs.txt
+        echo "* * * * * source ~/.bash_profile; /opt/conta-comigo/prod/back/virtualenv/bin/python /opt/conta-comigo/prod/back/source/manage.py sendemails --settings helpmecorona.settings.prod" >> cronjobs.txt
         crontab cronjobs.txt
         echo "Cron configured"
 
