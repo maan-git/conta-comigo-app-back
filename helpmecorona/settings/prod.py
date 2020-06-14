@@ -23,5 +23,4 @@ print("Databases: " + json.dumps(DATABASES))
 
 FIREBASE_STORAGE_BUCKET = 'conta-comigo-app-files.appspot.com'
 
-# TODO put correct value
-OUTPUT_EMAILS_SENDER = 'contacomigoapp@gmail.com'
+OUTPUT_EMAILS_SENDER = 'contato@contacomigoapp.com.br'
