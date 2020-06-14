@@ -299,8 +299,8 @@ if any(email_config):
     EMAIL_HOST = email_config['EMAIL_HOST']
     EMAIL_PORT = email_config['EMAIL_PORT']
     EMAIL_BACKEND = email_config['EMAIL_BACKEND']
-    EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
-    EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
+    EMAIL_USE_TLS = False
+    EMAIL_USE_SSL = True
 
 # To get error messages automatically
 # ADMINS = (
