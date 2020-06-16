@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1051ca52-dcb2-4ffb-9171-248c605d8832" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/notification/templates/emails/template_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/notification/templates/emails/template_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/emails/user_applied_to_help.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/emails/user_applied_to_help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/emails/user_unapplied_from_help.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/emails/user_unapplied_from_help.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

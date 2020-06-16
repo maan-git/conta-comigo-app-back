@@ -1,16 +1,16 @@
 {% extends "emails/template_base.html" %}
 
 {% block content %}
-<p style="color:#532594;text-align:left;font-family:Arial;font-size:30px;">
-				<span style="font-weight: 400;">
-					Olá, {{user}}.
-				</span>
-</p>
-<p style="color:#532594;text-align:justify;font-family:Arial;font-size:15px;">
-				<span style="font-weight: 400;">
-					O usuário {{applied_user}} cancelou sua inscrição em seu pedido de ajuda {{help_request}}.
-				</span>
-</p>
+	<p style="color:#532594;text-align:left;font-family:Arial;font-size:30px;">
+		<span style="font-weight: 400;">
+			Olá, {{user}}.
+		</span>
+	</p>
+	<p style="color:#532594;text-align:justify;font-family:Arial;font-size:15px;">
+		<span style="font-weight: 400;">
+			O usuário {{applied_user}} cancelou sua inscrição em seu pedido de ajuda {{help_request}}.
+		</span>
+	</p>
 <br>
 <br>
 {% endblock %}
