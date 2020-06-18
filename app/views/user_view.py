@@ -294,6 +294,13 @@ class UserView(ModelViewSetNoDelete):
                 user_reset_pass.set_password(new_pass)
                 user_reset_pass.save()
 
+                email_render_data = {
+                    'user': user_reset_pass.first_name,
+                    'new_password': user_reset_pass
+                }
+                User.send_email('user_reset_password',
+                                email_render_data,
+                                'Conta Comigo APP - Recuperação de Senha')
                 return Response(data=UserNewPasswordSerializer(user_reset_pass).data)
 
         except Exception as ex:
