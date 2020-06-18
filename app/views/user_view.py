@@ -298,10 +298,11 @@ class UserView(ModelViewSetNoDelete):
                     'user': user_reset_pass.first_name,
                     'new_password': user_reset_pass
                 }
-                User.send_email('user_reset_password',
-                                email_render_data,
-                                'Conta Comigo APP - Recuperação de Senha')
-                return Response(data=UserNewPasswordSerializer(user_reset_pass).data)
+                # user.send_email('user_reset_password.html',
+                #                 email_render_data,
+                #                 'Conta Comigo APP - Recuperação de Senha')
+                # return Response(data=UserNewPasswordSerializer(user_reset_pass).data)
+                return Response(data={"password": new_pass})
 
         except Exception as ex:
             raise ValueError(f"There is no register for {email}: {ex}")
