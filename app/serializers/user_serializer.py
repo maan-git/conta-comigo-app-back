@@ -110,3 +110,9 @@ class UserSerializerPost(serializers.ModelSerializer):
 
 class UserSerializerCurrentUser(UserSerializer):
     addresses = UserAddressSerializer(many=True, read_only=True)
+
+
+class UserNewPasswordSerializer(UserSerializer):
+    class Meta:
+        model = User
+        fields = ("first_name", "email")

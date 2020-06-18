@@ -11,6 +11,7 @@ from app.models.user import User
 from app.serializers.user_serializer import UserSerializer
 from app.serializers.user_serializer import UserSerializerPost
 from app.serializers.user_serializer import UserSerializerCurrentUser
+from app.serializers.user_serializer import UserNewPasswordSerializer
 from utils.views_utils import ModelViewSetNoDelete
 from utils.views_utils import get_param_or_400
 from app.models.user_address import UserAddress
@@ -293,7 +294,7 @@ class UserView(ModelViewSetNoDelete):
                 user_reset_pass.set_password(new_pass)
                 user_reset_pass.save()
 
-                return Response(new_pass)
+                return Response(data=UserNewPasswordSerializer(user_reset_pass).data)
 
         except Exception as ex:
             raise ValueError(f"There is no register for {email}: {ex}")
