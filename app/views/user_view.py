@@ -18,6 +18,8 @@ from utils.commom_utils import str_to_boolean
 from app.serializers.user_address_serializer import UserAddressSerializer
 from django_filters import rest_framework as filters
 
+from app import generate_new_pass
+
 
 class UserFilters(filters.FilterSet):
     neighborhood_id = filters.NumberFilter(field_name="addresses__neighborhood_id")
@@ -46,7 +48,7 @@ class UserView(ModelViewSetNoDelete):
         """
        Instantiates and returns the list of permissions that this view requires.
        """
-        if self.action == "create":
+        if self.action == "create" or self.action == "reset_password":
             permission_classes = [AllowAny]
         else:
             permission_classes = [IsAuthenticated]
@@ -259,5 +261,41 @@ class UserView(ModelViewSetNoDelete):
         user_address.zip_code = zip_code
         user_address.address = address
         user_address.save()
+
+        return Response()
+
+    @action(
+        methods=["post"],
+        detail=False,
+        url_path="resetpassword",
+        schema=ManualSchema(
+            description="User e-mail",
+            fields=[
+                coreapi.Field(
+                    "email",
+                    required=True,
+                    location="form",
+                    schema=coreschema.String(),
+                    description="User e-mail",
+                ),
+            ],
+        ),
+    )
+    @transaction.atomic
+    def reset_password(self, request: Request):
+        user = User.objects.all()
+        email = get_param_or_400(request.data, "email", str)
+
+        try:
+            user_reset_pass = user.get(email=email)
+            if user_reset_pass:
+                new_pass = generate_new_pass(user_reset_pass)
+                user_reset_pass.set_password(new_pass)
+                user_reset_pass.save()
+
+                return Response(new_pass)
+
+        except Exception as ex:
+            raise ValueError(f"There is no register for {email}: {ex}")
 
         return Response()
