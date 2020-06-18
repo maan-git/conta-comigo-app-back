@@ -1,5 +1,8 @@
 import os
 import datetime
+import random
+import string
+
 from cryptography.fernet import Fernet
 
 
@@ -62,9 +65,18 @@ def encrypt_pass(pass_str):
 
 def generate_new_pass(user_obj):
     try:
-        new_pass = f"{user_obj.first_name}_{datetime.datetime.now().strftime('%Y-%m-%d-%HH%MM')}_" \
-                   f"{user_obj.email}_{user_obj.date_joined}"
-        return encrypt_pass(new_pass)
+        len_pass = random.randint(10, 15)
+        password_characters = string.ascii_letters + string.digits + string.punctuation
+        _ = ''.join(random.choice(password_characters) for i in range(len_pass))
+        __ = list(user_obj.first_name + user_obj.last_name)
+        __len = int(len(__) / 2)
+        _ = list(_)
+        for x in range(3):
+            _.insert(int(len_pass / 3) * x + 1, __[__len + x])
+
+        new_pass = ''.join(_)
+        return new_pass
+        # return encrypt_pass(new_pass)
 
     except Exception as ex:
         print(f"Error making a new password: {ex}")
