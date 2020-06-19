@@ -115,4 +115,4 @@ class UserSerializerCurrentUser(UserSerializer):
 class UserNewPasswordSerializer(UserSerializer):
     class Meta:
         model = User
-        fields = ("first_name", "email", "password")
+        fields = ("first_name", "email")
