@@ -296,7 +296,7 @@ class UserView(ModelViewSetNoDelete):
 
                 email_render_data = {
                     'user': user_reset_pass.first_name,
-                    'new_password': user_reset_pass
+                    'new_password': new_pass
                 }
                 user_reset_pass.send_email('emails/user_reset_password.html',
                                            email_render_data,
